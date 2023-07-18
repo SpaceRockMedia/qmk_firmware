@@ -60,8 +60,7 @@ void                       post_process_record_user(uint16_t keycode, keyrecord_
     post_process_record_keymap(keycode, record);
 }
 
-#undef COMBO_LEN
-uint16_t COMBO_LEN = COMBO_LENGTH;
+
 const uint16_t PROGMEM cb_bspc[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM cb_del[] = {KC_E, KC_R, COMBO_END};
 combo_t key_combos[] = {

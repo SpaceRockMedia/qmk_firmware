@@ -85,4 +85,6 @@ enum combo_keycodes {
 
     COMBO_LENGTH,
 };
-
+#undef COMBO_LEN
+// uint16_t COMBO_LEN = COMBO_LENGTH;
+combo_t key_combos[COMBO_LENGTH];
