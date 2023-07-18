@@ -71,13 +71,14 @@ endif
 # │ s e c r e t s                                   │
 # └─────────────────────────────────────────────────┘
 
-ifneq ($(strip $(NO_SECRETS)), yes)
-    ifneq ("$(wildcard $(USER_PATH)/../../../qmk_secrets/secrets.c)","")
-        SRC += $(USER_PATH)/../../../qmk_secrets/secrets.c
-        $(shell touch $(USER_PATH)/../../../qmk_secrets/secrets.c)
-        SECURE_ENABLE = yes
-    endif
-    ifeq ($(strip $(NO_SECRETS)), lite)
-        OPT_DEFS += -DNO_SECRETS
-    endif
-endif
+include $(USER_PATH)/../../../qmk_secrets/rules.mk
+# ifneq ($(strip $(NO_SECRETS)), yes)
+#     ifneq ("$(wildcard $(USER_PATH)/../../../qmk_secrets/secrets.c)","")
+#         SRC += $(USER_PATH)/../../../qmk_secrets/secrets.c
+#         $(shell touch $(USER_PATH)/../../../qmk_secrets/secrets.c)
+#         SECURE_ENABLE = yes
+#     endif
+#     ifeq ($(strip $(NO_SECRETS)), lite)
+#         OPT_DEFS += -DNO_SECRETS
+#     endif
+# endif
