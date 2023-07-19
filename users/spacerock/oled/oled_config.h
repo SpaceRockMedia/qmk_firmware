@@ -17,7 +17,9 @@
 #define OLED_DISABLE_TIMEOUT
 
 
-#define OLED_FONT_H "oled/drashna_font.h"
+//#define OLED_FONT_H "oled/drashna_font.h"
+// klor font
+#define OLED_FONT_H  "./lib/glcdfont.c"
 // #define OLED_FONT_END 255
 // #    define OLED_FONT_5X5
 // #    define OLED_FONT_AZTECH

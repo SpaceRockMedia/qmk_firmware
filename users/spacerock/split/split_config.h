@@ -24,3 +24,7 @@
 //
 // I've found this helps with some ProMicros where the slave does not boot
 #define SPLIT_USB_DETECT
+
+#ifdef HAPTIC_ENABLE
+#  define SPLIT_HAPTIC_ENABLE
+#endif

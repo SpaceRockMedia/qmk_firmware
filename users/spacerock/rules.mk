@@ -25,32 +25,39 @@ MOUSEKEY_ENABLE    ?= no       # Mouse keys
 NKRO_ENABLE        ?= yes
 OLED_ENABLE        ?= yes
 OLED_DRIVER        ?= SSD1306      # Enables the use of OLED displays
+SPLIT_KEYBOARD     ?= yes
+SWAP_HANDS_ENABLE  ?= yes
 
 ifeq ($(strip $(OLED_ENABLE)), yes)
 	SRC += $(USER_PATH)/oled/oled_stuff.c
     # DEFERRED_EXEC_ENABLE = yes
 endif
 
-RGB_MATRIX_ENABLE      ?= yes     # do not use together with RGBLIGHT_ENABLE
-RGB_MATRIX_DRIVER      ?= WS2812 # RGB matrix driver support
-RGB_MATRIX_CUSTOM_USER ?= no
-RGBLIGHT_ENABLE        ?= no      # Enable keyboard RGB underglow
+BACKLIGHT_ENABLE      = no       # Enable keyboard backlight functionality
+RGBLIGHT_ENABLE       = no        # Enable keyboard RGB underglow
+RGB_MATRIX_ENABLE    ?= yes     # do not use together with RGBLIGHT_ENABLE
+RGB_MATRIX_DRIVER    ?= WS2812 # RGB matrix driver support
+RGBLIGHT_ENABLE      ?= no      # Enable keyboard RGB underglow
+RGB_MATRIX_SUPPORTED ?= yes
 
 ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
 	SRC += $(USER_PATH)/rgb/rgb_matrix_stuff.c
 	OPT_DEFS += -DCUSTOM_RGB_MATRIX
 endif
 
+ifdef KEYBOARD_klor
+	HAPTIC_DRIVER = DRV2605L
+endif
+
 # ┌─────────────────────────────────────────────────┐
 # │ s o f t w a r e   f e a t u r e s               │
 # └─────────────────────────────────────────────────┘
 
-CONSOLE_ENABLE       ?= yes       # Console for debug
-EXTRAKEY_ENABLE      ?= yes	# multi media keys
-KEY_OVERRIDE_ENABLE  ?= yes
-MOUSEKEY_ENABLE      ?= no       # Mouse keys
-OS_DETECTION_ENABLE  ?= yes
-SWAP_HANDS_ENABLE    ?= yes
+CONSOLE_ENABLE      ?= yes       # Console for debug
+EXTRAKEY_ENABLE     ?= yes	# multi media keys
+KEY_OVERRIDE_ENABLE ?= yes
+MOUSEKEY_ENABLE     ?= no       # Mouse keys
+OS_DETECTION_ENABLE ?= yes
 
 # AUTO_SHIFT_ENABLE = yes
 CAPS_WORD_ENABLE     ?= yes
