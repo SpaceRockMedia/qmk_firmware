@@ -19,6 +19,8 @@ BOOTMAGIC_ENABLE = yes      # Enable Bootmagic Lite
 # │ h a r d w a r e   f e a t u r e s               │
 # └─────────────────────────────────────────────────┘
 
+AUDIO_ENABLE       ?= no
+MUSIC_ENABLE       ?= no
 ENCODER_ENABLE     ?= yes
 ENCODER_MAP_ENABLE ?= yes
 MOUSEKEY_ENABLE    ?= no       # Mouse keys
@@ -62,7 +64,7 @@ OS_DETECTION_ENABLE ?= yes
 # AUTO_SHIFT_ENABLE = yes
 CAPS_WORD_ENABLE     ?= yes
 COMBO_ENABLE         ?= yes
-DYNAMIC_MACRO_ENABLE ?= yes
+DYNAMIC_MACRO_ENABLE ?= no
 
 TAP_DANCE_ENABLE ?= yes
 ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)

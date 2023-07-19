@@ -5,7 +5,10 @@
 #include "spacerock.h"
 
 typedef enum userspace_custom_keycodes {
-    CTALDEL = QK_USER,
+    LY_DEF = QK_USER,
+    LY_COLE,
+    LY_GAME,
+    CTALDEL,
     CTALESC,
     SEARCH,
     OPN,
@@ -19,9 +22,10 @@ typedef enum userspace_custom_keycodes {
     KC_TOGG,
     KC_QWER,
     KC_COLE,
-    LY_DEF,
-    LY_GAME,
-    LY_COLE,
+    OS_SWAP,
+    SNAP1,
+    SNAP2,
+    MAKE_H,
 } CUSTOM_KEYCODES_T;
 
 bool process_record_secrets(uint16_t keycode, keyrecord_t *record);

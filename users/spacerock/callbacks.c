@@ -3,6 +3,28 @@
 
 #include "spacerock.h"
 
+__attribute__((weak)) void keyboard_post_init_keymap(void) {}
+void                       keyboard_post_init_user(void) {
+    #if defined(CUSTOM_RGB_MATRIX)
+        keyboard_post_init_rgb_matrix();
+    #endif
+
+    #if defined(SPLIT_KEYBOARD) && defined(SPLIT_TRANSACTION_IDS_USER)
+        keyboard_post_init_transport_sync();
+    #endif
+
+    #if HAPTIC_ENABLE
+        haptic_disable(); // disables per key haptic feedback by default
+    #endif //HAPTIC ENABLE
+
+    #if RGB_MATRIX_ENABLE
+        rgblight_enable_noeeprom();
+        //rgblight_sethsv_noeeprom(35, 255, 255); // set default RGB color to yellow
+    #endif //RGB_MATRIX_ENABLE
+
+    keyboard_post_init_keymap();
+}
+
 __attribute__((weak)) void suspend_power_down_keymap(void) {}
 
 void suspend_power_down_user(void) {
