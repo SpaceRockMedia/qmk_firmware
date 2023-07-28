@@ -4,10 +4,10 @@
 #pragma once
 
 // Use custom magic number so that when switching branches, EEPROM always gets reset
-//#define EECONFIG_MAGIC_NUMBER (uint16_t)0x1339
+// #define EECONFIG_MAGIC_NUMBER (uint16_t)0x1339
 
 // Will probably only have 16 or less layers.
-#define LAYER_STATE_16BIT
+// #define LAYER_STATE_16BIT
 
 #if defined(SPLIT_KEYBOARD)
 #    include "split/split_config.h"

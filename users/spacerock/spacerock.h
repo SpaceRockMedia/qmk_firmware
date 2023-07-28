@@ -30,26 +30,7 @@
 #    include "os_detection.h"
 #endif
 
-typedef union {
-    uint32_t raw;
-    struct {
-        bool     rgb_layer_change     :1;
-        bool     is_overwatch         :1;
-        bool     nuke_switch          :1;
-        bool     swapped_numbers      :1;
-        bool     rgb_matrix_idle_anim :1;
-        bool     mouse_jiggler        :1;
-        uint8_t  align_reserved       :2;
-        uint8_t  oled_brightness      :8;
-        uint32_t reserved             :15;
-        bool     check                :1;
-    };
-} userspace_config_t;
 // clang-format on
-
-_Static_assert(sizeof(userspace_config_t) == sizeof(uint32_t), "Userspace EECONFIG out of spec.");
-
-extern userspace_config_t userspace_config;
 
 // ┌───────────────────────────────────────────────────────────┐
 // │ d e f i n e   l a y e r s                                 │

@@ -2,14 +2,14 @@
 
 // Alternate reference layers by layer
 //              Layer    Reference layer
-COMBO_REF_LAYER(_COLEMAK, _GAME)
-COMBO_REF_LAYER(_NAV,     _GAME)
-COMBO_REF_LAYER(_FUNC,    _GAME)
-COMBO_REF_LAYER(_SYM,     _GAME)
-COMBO_REF_LAYER(_ADJUST,  _GAME)
+//COMBO_REF_LAYER(_COLEMAK, _GAME)
+//COMBO_REF_LAYER(_NAV,     _GAME)
+//COMBO_REF_LAYER(_FUNC,    _GAME)
+//COMBO_REF_LAYER(_SYM,     _GAME)
+//COMBO_REF_LAYER(_ADJUST,  _GAME)
 
 //   name      result    chord keys
 COMB(CL_BSPC,  KC_BSPC,  KC_W, KC_E)
 COMB(CL_DEL,   KC_DEL,   KC_E, KC_R)
-COMB(CL_BSPC,  KC_BSPC,  KC_U, KC_I)
-COMB(CL_DEL,   KC_DEL,   KC_I, KC_O)
+COMB(CR_BSPC,  KC_BSPC,  KC_U, KC_I)
+COMB(CR_DEL,   KC_DEL,   KC_I, KC_O)

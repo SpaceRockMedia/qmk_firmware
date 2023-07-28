@@ -14,9 +14,6 @@
 __attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
-__attribute__((weak)) bool process_record_secrets(uint16_t keycode, keyrecord_t *record) {
-    return true;
-}
 
 /**
  * @brief Main user keycode handler
@@ -134,7 +131,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
               #ifdef HAPTIC_ENABLE
                 DRV_pulse(pulsing_strong);
               #endif // HAPTIC_ENABLE
-            eeconfig_update_keymap(keymap_config.raw);
             clear_keyboard();  // ──── clear to prevent stuck keys
             return false;
         }
@@ -169,9 +165,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 
     return true;
-}
-
-__attribute__((weak)) void post_process_record_keymap(uint16_t keycode, keyrecord_t *record) {}
-void                       post_process_record_user(uint16_t keycode, keyrecord_t *record) {
-    post_process_record_keymap(keycode, record);
 }

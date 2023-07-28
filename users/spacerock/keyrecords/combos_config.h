@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
-#include "quantum.h"
 
-bool rgb_matrix_indicators_advanced_keymap(uint8_t led_min, uint8_t led_max);
-bool rgb_matrix_indicators_keymap(void);
+#define COMBO_TERM 60
+// use GAME layer for combo binding
+#define COMBO_ONLY_FROM_LAYER 1

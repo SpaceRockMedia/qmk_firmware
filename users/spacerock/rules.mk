@@ -1,8 +1,7 @@
 SRC += $(USER_PATH)/spacerock.c \
         $(USER_PATH)/callbacks.c \
         $(USER_PATH)/keyrecords/process_records.c \
-        $(USER_PATH)/keyrecords/tapping.c \
-        $(USER_PATH)/eeconfig_users.c
+        $(USER_PATH)/keyrecords/tapping.c
 
 # ┌─────────────────────────────────────────────────┐
 # │ c o n t r o l l e r   f e a t u r e s           │
@@ -71,7 +70,9 @@ TAPPING_TERM_PER_KEY        ?= yes
 CAPS_WORD_ENABLE     ?= yes
 COMBO_ENABLE         ?= yes
 ifeq ($(strip $(COMBO_ENABLE)), yes)
-	SRC += $(USER_PATH)/keyrecords/combos.c
+	VPATH += keyboards/gboards
+	INTROSPECTION_KEYMAP_C = $(USER_PATH)/keyrecords/combos.c
+	# SRC += $(USER_PATH)/keyrecords/combos.c
 endif
 DYNAMIC_MACRO_ENABLE ?= no
 

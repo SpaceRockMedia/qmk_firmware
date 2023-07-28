@@ -3,19 +3,6 @@
 #include "rgb_matrix.h"
 #include "lib/lib8tion/lib8tion.h"
 
-void keyboard_post_init_rgb_matrix(void) {
-#if defined(RGB_MATRIX_FRAMEBUFFER_EFFECTS)
-    // if (userspace_config.rgb_matrix_idle_anim) {
-    //     rgb_matrix_mode_noeeprom(RGB_MATRIX_REST_MODE);
-    // }
-#endif
-    if (userspace_config.rgb_layer_change) {
-        rgb_matrix_set_flags(LED_FLAG_UNDERGLOW | LED_FLAG_KEYLIGHT | LED_FLAG_INDICATOR);
-    } else {
-        rgb_matrix_set_flags(LED_FLAG_ALL);
-    }
-}
-
 __attribute__((weak)) bool rgb_matrix_indicators_advanced_keymap(uint8_t led_min, uint8_t led_max) {
     return true;
 }

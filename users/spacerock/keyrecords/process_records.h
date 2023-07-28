@@ -28,10 +28,6 @@ typedef enum userspace_custom_keycodes {
     MAKE_H,
 } CUSTOM_KEYCODES_T;
 
-bool process_record_secrets(uint16_t keycode, keyrecord_t *record);
-bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
-void post_process_record_keymap(uint16_t keycode, keyrecord_t *record);
-
 #define xxxxxxx KC_NO
 #define _______ KC_TRNS
 
@@ -84,14 +80,3 @@ void post_process_record_keymap(uint16_t keycode, keyrecord_t *record);
 // Task Manager
 #define CTALESC LCTL(LALT(KC_ESC))
 #define CTL_ESC CTL_T(KC_ESC)
-
-//
-// COMBOS
-//
-enum combo_keycodes {
-    CB_BSPC = 0,
-    CB_DEL,
-
-    COMBO_LENGTH,
-};
-combo_t key_combos[COMBO_LENGTH];
