@@ -175,14 +175,3 @@ __attribute__((weak)) void post_process_record_keymap(uint16_t keycode, keyrecor
 void                       post_process_record_user(uint16_t keycode, keyrecord_t *record) {
     post_process_record_keymap(keycode, record);
 }
-
-// ┌───────────────────────────────────────────────────────────┐
-// │ d e f i n e   c o m b o s                                 │
-// └───────────────────────────────────────────────────────────┘
-
-const uint16_t PROGMEM cb_bspc[] = {KC_W, KC_E, COMBO_END};
-const uint16_t PROGMEM cb_del[] = {KC_E, KC_R, COMBO_END};
-combo_t key_combos[] = {
-    [CB_BSPC] = COMBO(cb_bspc, KC_BSPC),
-    [CB_DEL] = COMBO(cb_del, KC_DEL), // keycodes with modifiers are possible too!
-};

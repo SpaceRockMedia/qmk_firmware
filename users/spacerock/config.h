@@ -13,6 +13,10 @@
 #    include "split/split_config.h"
 #endif
 
+#if defined(COMBO_ENABLE)
+#    include "keyrecords/combos_config.h"
+#endif
+
 #ifdef RGB_MATRIX_ENABLE
 #    include "rgb/rgb_matrix_config.h"
 #endif // RGB_MATRIX_ENABLE
@@ -56,10 +60,3 @@
 #define ENABLE_COMPILE_KEYCODE
 
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
-
-
-
-//
-// COMBOS
-//
-#define COMBO_TERM 60
