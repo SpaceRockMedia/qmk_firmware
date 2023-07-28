@@ -40,6 +40,8 @@ const char *get_layer_name_string(layer_state_t state, bool alt_name) {
             return "Symbol";
         case _NAV:
             return "Nav";
+        case _FUNC:
+            return "Func";
         case _ADJUST:
             return "Adjust";
         default:

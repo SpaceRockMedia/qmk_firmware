@@ -38,9 +38,10 @@ void post_process_record_keymap(uint16_t keycode, keyrecord_t *record);
 //
 // Layers
 //
-#define LY_NAV MO(_NAV)
+#define LY_NAV TO(_NAV)
 #define LY_SYM TO(_SYM)
 #define LY_ADJ TO(_ADJUST)
+#define LY_FUN OSL(_FUNC)
 
 //
 // One Shot Mods
@@ -62,10 +63,14 @@ void post_process_record_keymap(uint16_t keycode, keyrecord_t *record);
 
 #define KHYP HYPR_T(KC_LPRN)
 #define KMEH MEH_T(KC_RPRN)
-#define H_UP HYPR_T(KC_UP)
-#define H_DOWN HYPR_T(KC_DOWN)
-#define H_LEFT HYPR_T(KC_LEFT)
-#define H_RIGHT HYPR_T(KC_RGHT)
+#define M_UP MEH(KC_UP)
+#define M_DOWN MEH(KC_DOWN)
+#define M_LEFT MEH(KC_LEFT)
+#define M_RIGHT MEH(KC_RGHT)
+#define M_PGUP MEH(KC_PGUP)
+#define M_PGDN MEH(KC_PGDN)
+
+#define MT_PGUP MT(KC_PGUP, KC_PGDN)
 
 
 // (For OS X, you'll want to change these editing keys to LGUI(KC_Z) etc.)
@@ -89,6 +94,4 @@ enum combo_keycodes {
 
     COMBO_LENGTH,
 };
-#undef COMBO_LEN
-// uint16_t COMBO_LEN = COMBO_LENGTH;
 combo_t key_combos[COMBO_LENGTH];

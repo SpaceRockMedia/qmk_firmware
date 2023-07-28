@@ -3,29 +3,29 @@
 
 #pragma once
 
-#ifndef OLED_UPDATE_INTERVAL
-#    ifdef OLED_DRIVER_SH1107
-#        define OLED_UPDATE_INTERVAL 75
-#    else
-#        ifdef SPLIT_KEYBOARD
-#            define OLED_UPDATE_INTERVAL 60
-#        else
-#            define OLED_UPDATE_INTERVAL 15
-#        endif
-#    endif
-#endif
-#define OLED_DISABLE_TIMEOUT
+// #ifndef OLED_UPDATE_INTERVAL
+// #    ifdef OLED_DRIVER_SH1107
+// #        define OLED_UPDATE_INTERVAL 75
+// #    else
+// #        ifdef SPLIT_KEYBOARD
+// #            define OLED_UPDATE_INTERVAL 60
+// #        else
+// #            define OLED_UPDATE_INTERVAL 15
+// #        endif
+// #    endif
+// #endif
+// #define OLED_DISABLE_TIMEOUT
 
-
-//#define OLED_FONT_H "oled/drashna_font.h"
+#undef OLED_FONT_H
+#define OLED_FONT_H "oled/drashna_font.h"
 // klor font
-#define OLED_FONT_H  "./lib/glcdfont.c"
+// #define OLED_FONT_H  "oled/glcdfont.c"
 // #define OLED_FONT_END 255
 // #    define OLED_FONT_5X5
 // #    define OLED_FONT_AZTECH
 // #    define OLED_FONT_BMPLAIN
 // #    define OLED_FONT_CRACKERS
-#define OLED_FONT_DEAD_MEAL
+// #define OLED_FONT_DEAD_MEAL
 // #    define OLED_FONT_EIN
 // #    define OLED_FONT_HISKYF21
 // #    define OLED_FONT_SQUASH
@@ -38,6 +38,6 @@
 // #    define OLED_LOGO_GOTHAM
 // #    define OLED_LOGO_HUE_MANITEE
 // #    define OLED_LOGO_LOOSE
-#define OLED_LOGO_SCIFI
+// #define OLED_LOGO_SCIFI
 // #    define OLED_LOGO_SETS3N
 // #    define OLED_LOGO_SKEEB

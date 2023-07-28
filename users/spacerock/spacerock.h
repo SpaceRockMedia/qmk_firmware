@@ -26,10 +26,6 @@
 #    include "oled/oled_stuff.h"
 #endif
 
-#ifdef SPLIT_KEYBOARD
-#    include "split/transport_sync.h"
-#endif
-
 #ifdef OS_DETECTION_ENABLE
 #    include "os_detection.h"
 #endif
@@ -63,6 +59,7 @@ typedef enum userspace_layers {
     _COLEMAK = 0,
     _GAME,
     _NAV,
+    _FUNC,
     _SYM,
     _ADJUST,
 } CUSTOM_LAYERS_T;

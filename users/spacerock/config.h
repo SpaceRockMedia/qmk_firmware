@@ -34,13 +34,15 @@
 #    define WPM_ESTIMATED_WORD_SIZE 5
 #endif
 
-#if defined(PER_KEY_TAPPING)
+#if defined(TAP_DANCE_ENABLE)
 #    define PERMISSIVE_HOLD_PER_KEY
 #    define QUICK_TAP_TERM_PER_KEY
 #    define HOLD_ON_OTHER_KEY
 #    define RETRO_TAPPING_PER_KEY
 #    define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 #    define TAPPING_TERM_PER_KEY
+     // Lets you roll mod-tap keys
+#    define TAPPING_TERM 225
 #else
 #    undef PERMISSIVE_HOLD
 #endif
@@ -55,8 +57,7 @@
 
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 
-// Lets you roll mod-tap keys
-#define TAPPING_TERM 225
+
 
 //
 // COMBOS

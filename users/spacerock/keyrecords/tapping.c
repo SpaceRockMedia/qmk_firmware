@@ -3,8 +3,8 @@
 
 #include "spacerock.h"
 
-#ifdef TAPPING_TERM_PER_KEY
-__attribute__((weak)) uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+// __attribute__((weak))
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
     switch (keycode) {
         case QK_TAP_DANCE ... QK_TAP_DANCE_MAX:
@@ -17,7 +17,6 @@ __attribute__((weak)) uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *r
             return TAPPING_TERM;
     }
 }
-#endif // TAPPING_TERM_PER_KEY
 
 // Determine the current tap dance state
 td_state_t cur_dance(tap_dance_state_t *state) {

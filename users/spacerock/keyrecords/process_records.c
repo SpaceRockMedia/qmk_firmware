@@ -56,41 +56,41 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 if (IS_LAYER_ON(_GAME)) {
                     layer_clear();
-                    // layer_move(_GAME);
+                    layer_move(_GAME);
                 } else {
                     layer_clear();
-                    // layer_move(_COLEMAK);
+                    layer_move(_COLEMAK);
                 }
                 #ifdef HAPTIC_ENABLE
                   DRV_pulse(transition_hum);
                 #endif // HAPTIC_ENABLE
             }
             return false;
-        case LY_NAV:
-            if (record->event.pressed) {
-                layer_on(_NAV);
-                // update_tri_layer(_NAV, _SYM, _ADJUST);
-            } else {
-                layer_off(_NAV);
-                // update_tri_layer(_NAV, _SYM, _ADJUST);
-            }
-            return false;
-        case LY_SYM:
-            if (record->event.pressed) {
-                layer_on(_SYM);
-                // update_tri_layer(_NAV, _SYM, _ADJUST);
-            } else {
-                layer_off(_SYM);
-                // update_tri_layer(_NAV, _SYM, _ADJUST);
-            }
-            return false;
-        case LY_ADJ:
-            if (record->event.pressed) {
-                layer_on(_ADJUST);
-            } else {
-                layer_off(_ADJUST);
-            }
-            return false;
+        // case LY_NAV:
+        //     if (record->event.pressed) {
+        //         layer_on(_NAV);
+        //         // update_tri_layer(_NAV, _SYM, _ADJUST);
+        //     } else {
+        //         layer_off(_NAV);
+        //         // update_tri_layer(_NAV, _SYM, _ADJUST);
+        //     }
+        //     return false;
+        // case LY_SYM:
+        //     if (record->event.pressed) {
+        //         layer_on(_SYM);
+        //         // update_tri_layer(_NAV, _SYM, _ADJUST);
+        //     } else {
+        //         layer_off(_SYM);
+        //         // update_tri_layer(_NAV, _SYM, _ADJUST);
+        //     }
+        //     return false;
+        // case LY_ADJ:
+        //     if (record->event.pressed) {
+        //         layer_on(_ADJUST);
+        //     } else {
+        //         layer_off(_ADJUST);
+        //     }
+        //     return false;
 
 // ┌───────────────────────────────────────────────────────────┐
 // │ q m k                                                     │

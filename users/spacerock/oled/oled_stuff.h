@@ -18,5 +18,4 @@
 
 #include "quantum.h"
 #include "oled_driver.h"
-
-oled_rotation_t oled_init_keymap(oled_rotation_t rotation);
+#include "oled_assets.h"

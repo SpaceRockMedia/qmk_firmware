@@ -46,9 +46,10 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                           ((row == 0 && col == 3) || (row == 1 && col >= 2 && col <= 4))
                           ) {
                         rgb_matrix_set_color(index, RGB_ORANGE);
-                    } else {
-                        rgb_matrix_set_color(index, RGB_GREEN);
                     }
+                    // else {
+                    //   rgb_matrix_set_color(index, RGB_GREEN);
+                    // }
                 }
             }
         }
