@@ -14,7 +14,7 @@
 #endif
 
 #if defined(COMBO_ENABLE)
-#    include "keyrecords/combos_config.h"
+#    include "combos/combos_config.h"
 #endif
 
 #ifdef RGB_MATRIX_ENABLE

@@ -71,7 +71,7 @@ CAPS_WORD_ENABLE     ?= yes
 COMBO_ENABLE         ?= yes
 ifeq ($(strip $(COMBO_ENABLE)), yes)
 	VPATH += keyboards/gboards
-	INTROSPECTION_KEYMAP_C = $(USER_PATH)/keyrecords/combos.c
+	INTROSPECTION_KEYMAP_C = $(USER_PATH)/combos/combos.c
 	# SRC += $(USER_PATH)/keyrecords/combos.c
 endif
 DYNAMIC_MACRO_ENABLE ?= no

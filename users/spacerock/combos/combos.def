@@ -1,0 +1,25 @@
+
+// Alternate reference layers by layer
+//              Layer    Reference layer
+//COMBO_REF_LAYER(_COLEMAK, _GAME)
+//COMBO_REF_LAYER(_NAV,     _GAME)
+//COMBO_REF_LAYER(_FUNC,    _GAME)
+//COMBO_REF_LAYER(_SYM,     _GAME)
+//COMBO_REF_LAYER(_ADJUST,  _GAME)
+
+#include "combos/symbols.def"
+
+//   name      result    chord keys
+COMB(CL_BSPC,  KC_BSPC,  KC_W, KC_E)
+COMB(CL_DEL,   KC_DEL,   KC_E, KC_R)
+COMB(CR_BSPC,  KC_BSPC,  KC_U, KC_I)
+COMB(CR_DEL,   KC_DEL,   KC_I, KC_O)
+
+COMB(cmHome, KC_HOME, KC_S, KC_D)
+COMB(cmEND,  KC_END,  KC_D, KC_F)
+
+COMB(cbUndo,  LCTL(KC_Z), KC_Z, KC_X)
+COMB(cbCut,   LCTL(KC_X), KC_X, KC_C)
+COMB(cbCopy,  LCTL(KC_C), KC_C, KC_V)
+COMB(cbPaste, LCTL(KC_V), KC_X, KC_V)
+COMB(cbRedo,  LCTL(KC_Y), KC_V, KC_B)
