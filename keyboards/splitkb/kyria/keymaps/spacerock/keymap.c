@@ -22,14 +22,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] = LAYOUT_wrapper(
     KC_TAB,  _______________COLEMAK_L_TOP_______________,                                       _______________COLEMAK_R_TOP_______________, LY_GAME,
     CTL_ESC, _______________COLEMAK_L_MID_______________,                                       _______________COLEMAK_R_MID_______________,
-    KC_LCTL, _______________COLEMAK_L_BOT_______________,   KHYP,     LY_FUN,  KC_RGUI, KMEH,   _______________COLEMAK_R_BOT_______________, KC_LCTL,
+    KC_LCTL, _______________COLEMAK_L_BOT_______________,   KHYP,     KMEH,  KMEH, KHYP,   _______________COLEMAK_R_BOT_______________, KC_LCTL,
                                  _______, ____________THUMB_LEFT____________,  ____________THUMB_RIGHT___________, _______
     ),
 
     [_GAME] = LAYOUT_wrapper(
      KC_TAB,  _______________QUERTY__L_TOP_______________,                                       _______________QUERTY__R_TOP_______________, LY_COLE,
      CTL_ESC, _______________QUERTY__L_MID_______________,                                       _______________QUERTY__R_MID_______________,
-     KC_LCTL, _______________QUERTY__L_BOT_______________,   KHYP,   KC_LGUI,  KC_MPLY, KMEH,    _______________QUERTY__R_BOT_______________, KC_RCTL,
+     KC_LCTL, _______________QUERTY__L_BOT_______________,   KHYP,     KMEH,  KMEH, KHYP,    _______________QUERTY__R_BOT_______________, KC_RCTL,
                                  _______, ____________THUMB_LEFT____________,  ____________THUMB_RIGHT___________, _______
     ),
 

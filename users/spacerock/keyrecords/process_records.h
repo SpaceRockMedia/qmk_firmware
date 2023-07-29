@@ -9,7 +9,6 @@ typedef enum userspace_custom_keycodes {
     LY_COLE,
     LY_GAME,
     CTALDEL,
-    CTALESC,
     SEARCH,
     OPN,
     MY_COPY,
@@ -76,7 +75,7 @@ typedef enum userspace_custom_keycodes {
 //
 
 // Everything
-#define CTALDEL LCTL(LALT(KC_DEL))
+#define CTALDEL HYPR_T(KC_SPACE)
 // Task Manager
 #define CTALESC LCTL(LALT(KC_ESC))
 #define CTL_ESC CTL_T(KC_ESC)

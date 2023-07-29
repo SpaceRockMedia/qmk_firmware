@@ -7,14 +7,14 @@
 
 const char *get_layer_name_string(layer_state_t state, bool alt_name) {
     switch (get_highest_layer(state)) {
-        case _GAME:
-            return alt_name ? "Num Pad" : "QWERTY";
         case _COLEMAK:
             return "Colemak";
-        case _SYM:
-            return "Symbol";
+        case _GAME:
+            return "QWERTY";
         case _NAV:
             return "Nav";
+        case _SYM:
+            return "Symbol";
         case _FUNC:
             return "Func";
         case _ADJUST:
