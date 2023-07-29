@@ -40,8 +40,8 @@ typedef enum userspace_layers {
     _COLEMAK = 0,
     _GAME,
     _NAV,
-    _FUNC,
     _SYM,
+    _FUNC,
     _ADJUST,
 } CUSTOM_LAYERS_T;
 
