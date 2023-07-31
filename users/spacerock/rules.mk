@@ -70,7 +70,7 @@ TAP_DANCE_ENABLE            ?= yes
 DYNAMIC_TAPPING_TERM_ENABLE ?= no
 TAPPING_TERM_PER_KEY        ?= yes
 
-AUTO_SHIFT_ENABLE    ?= yes
+AUTO_SHIFT_ENABLE    ?= no
 CAPS_WORD_ENABLE     ?= yes
 COMBO_ENABLE         ?= yes
 ifeq ($(strip $(COMBO_ENABLE)), yes)
