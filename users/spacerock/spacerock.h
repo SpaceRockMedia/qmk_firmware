@@ -15,7 +15,7 @@
 #include "callbacks.h"
 
 #ifdef TAP_DANCE_ENABLE
-#    include "keyrecords/tap_dances.h"
+#    include "taps/tap_dances.h"
 #endif // TAP_DANCE_ENABLE
 
 #if defined(RGB_MATRIX_ENABLE)
@@ -23,7 +23,7 @@
 #endif
 
 #if defined(OLED_ENABLE)
-#    include "oled/oled_stuff.h"
+#    include "oled/oled.h"
 #endif
 
 #ifdef OS_DETECTION_ENABLE

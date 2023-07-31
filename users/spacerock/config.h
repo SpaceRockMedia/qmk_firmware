@@ -14,7 +14,7 @@
 #endif
 
 #if defined(COMBO_ENABLE)
-#    include "combos/combos_config.h"
+#    include "combos/config.h"
 #endif
 
 #ifdef RGB_MATRIX_ENABLE
@@ -22,7 +22,7 @@
 #endif // RGB_MATRIX_ENABLE
 
 #ifdef OLED_ENABLE
-#    include "oled/oled_config.h"
+#    include "oled/config.h"
 #endif
 
 #ifdef AUDIO_ENABLE
@@ -38,24 +38,8 @@
 #    define WPM_ESTIMATED_WORD_SIZE 5
 #endif
 
-#if defined(TAP_DANCE_ENABLE)
-#    define PERMISSIVE_HOLD_PER_KEY
-#    define QUICK_TAP_TERM_PER_KEY
-#    define HOLD_ON_OTHER_KEY
-#    define RETRO_TAPPING_PER_KEY
-#    define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
-#    define TAPPING_TERM_PER_KEY
-     // Lets you roll mod-tap keys
-#    define TAPPING_TERM 225
-#else
-#    undef PERMISSIVE_HOLD
-#endif
-
-#ifndef TAPPING_TOGGLE
-#    define TAPPING_TOGGLE 1
-#endif
-
-#define TAP_CODE_DELAY 5
+// Tapping
+#include "taps/config.h"
 
 #define ENABLE_COMPILE_KEYCODE
 

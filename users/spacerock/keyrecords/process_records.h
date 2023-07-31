@@ -33,7 +33,7 @@ typedef enum userspace_custom_keycodes {
 //
 // Layers
 //
-#define LY_NAV TO(_NAV)
+#define LY_NAV TT(_NAV)
 #define LY_SYM TO(_SYM)
 #define LY_ADJ TO(_ADJUST)
 #define LY_FUN OSL(_FUNC)

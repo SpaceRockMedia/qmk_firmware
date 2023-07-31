@@ -4,8 +4,6 @@
 #pragma once
 #include "spacerock.h"
 
-#define TAPPING_TERM_PER_KEY
-
 // Define a type for as many tap dance states as you need
 typedef enum {
     TD_NONE,
