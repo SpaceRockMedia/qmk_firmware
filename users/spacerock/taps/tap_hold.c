@@ -48,7 +48,9 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     // if `true` is returned with a given code, it will force use the hold action
     // this applies if the sequence happens before the TAPPING_TERM limit
     switch (keycode) {
-        case LT(1, KC_BSPC):
+        case LALT_T(KC_SPC):
+        case RALT_T(KC_ENT):
+        case LY_NAV:
             // Immediately select the hold action when another key is pressed.
             return true;
         default:

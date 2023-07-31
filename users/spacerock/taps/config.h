@@ -1,6 +1,6 @@
 
 
-#define TAPPING_TERM 300
+#define TAPPING_TERM 200
 #define TAPPING_TERM_PER_KEY
 
 // https://docs.qmk.fm/#/tap_hold?id=tap-or-hold-decision-modes

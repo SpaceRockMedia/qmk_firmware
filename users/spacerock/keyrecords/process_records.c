@@ -111,6 +111,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
 
 // ┌───────────────────────────────────────────────────────────┐
+// │ c o d i n g                                               │
+// └───────────────────────────────────────────────────────────┘
+
+        case LALT(KC_W):
+        case MEH_T(KC_W):
+            if (record->event.pressed) {
+                set_oneshot_layer(_NAV, ONESHOT_START);
+            } else {
+                clear_oneshot_layer_state(ONESHOT_PRESSED);
+            }
+            return true;
+
+// ┌───────────────────────────────────────────────────────────┐
 // │ p r o d u c t i v i t y                                   │
 // └───────────────────────────────────────────────────────────┘
 
