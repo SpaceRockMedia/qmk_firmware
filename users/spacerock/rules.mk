@@ -1,7 +1,30 @@
 SRC += $(USER_PATH)/spacerock.c \
         $(USER_PATH)/callbacks.c \
-        $(USER_PATH)/keyrecords/process_records.c \
         $(USER_PATH)/taps/taps.c
+
+# ┌─────────────────────────────────────────────────┐
+# │ f e a t u r e s                                 │
+# └─────────────────────────────────────────────────┘
+
+CALLUM_ENABLE ?= yes
+ifeq ($(strip $(CALLUM_ENABLE)), yes)
+	SRC += $(USER_PATH)/features/callum.c
+	OPT_DEFS += -DCALLUM_ENABLE
+endif
+
+SWAPPER_ENABLE ?= yes
+ifeq ($(strip $(SWAPPER_ENABLE)), yes)
+	SRC += $(USER_PATH)/features/swapper.c
+	OPT_DEFS += -DSWAPPER_ENABLE
+endif
+
+SENTENCE_CASE_ENABLE ?= yes
+ifeq ($(strip $(SENTENCE_CASE_ENABLE)), yes)
+	SRC += $(USER_PATH)/features/sentence_case.c
+	OPT_DEFS += -DSENTENCE_CASE_ENABLE
+endif
+
+SRC += $(USER_PATH)/keyrecords/process_records.c
 
 # ┌─────────────────────────────────────────────────┐
 # │ c o n t r o l l e r   f e a t u r e s           │
@@ -52,13 +75,16 @@ endif
 # │ s o f t w a r e   f e a t u r e s               │
 # └─────────────────────────────────────────────────┘
 
-CONSOLE_ENABLE      ?= yes       # Console for debug
+CONSOLE_ENABLE      ?= no       # Console for debug
 EXTRAKEY_ENABLE     ?= yes	# multi media keys
 KEY_OVERRIDE_ENABLE ?= no
-LEADER_ENABLE       ?= yes
 MOUSEKEY_ENABLE     ?= no       # Mouse keys
 OS_DETECTION_ENABLE ?= yes
 
+LEADER_ENABLE ?= yes
+ifeq ($(strip $(LEADER_ENABLE)), yes)
+	SRC += $(USER_PATH)/features/leader.c
+endif
 
 REPEAT_KEY_ENABLE ?= yes
 ifeq ($(strip $(REPEAT_KEY_ENABLE)), yes)

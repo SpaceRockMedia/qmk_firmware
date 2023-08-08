@@ -41,8 +41,11 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _______________QUERTY__R_MID_______________ KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,  KC_QUOT
 #define _______________QUERTY__R_BOT_______________ KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH
 
-#define ____________THUMB_LEFT____________ KC_LGUI, LY_NAV,         LALT_T(KC_SPC), SC_LSPO
-#define ____________THUMB_RIGHT___________ SC_RSPC, RALT_T(KC_ENT), LY_SYM,         KC_RGUI
+#define ____________THUMB_LEFT____________ KC_LGUI, LY_SYM,        MEH_T(KC_SPC), SC_LSPO
+#define ____________THUMB_RIGHT___________ SC_RSPC, MEH_T(KC_ENT), LY_NAV,        KC_RGUI
+
+#define ________OSM_LEFT_________ OS_CMD, OS_ALT, OS_CTRL
+#define ________OSM_RIGHT________ OS_CMD, OS_ALT, OS_CTRL
 
 #define __________________RGB_INC___________________ RGB_MOD,  RGB_SPI, RGB_HUI, RGB_SAI, RGB_VAI
 #define __________________RGB_DEC___________________ RGB_RMOD, RGB_SPD, RGB_HUD, RGB_SAD, RGB_VAD

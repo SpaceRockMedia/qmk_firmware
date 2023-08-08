@@ -27,6 +27,7 @@ typedef struct {
 // Our custom TD keys
 enum {
     HYP_NAV,
+    NAV_CTL,
     MEH_NUM,
 };
 

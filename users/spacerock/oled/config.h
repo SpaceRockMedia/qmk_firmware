@@ -3,18 +3,16 @@
 
 #pragma once
 
-// #ifndef OLED_UPDATE_INTERVAL
-// #    ifdef OLED_DRIVER_SH1107
-// #        define OLED_UPDATE_INTERVAL 75
-// #    else
-// #        ifdef SPLIT_KEYBOARD
-// #            define OLED_UPDATE_INTERVAL 60
-// #        else
-// #            define OLED_UPDATE_INTERVAL 15
-// #        endif
-// #    endif
-// #endif
-// #define OLED_DISABLE_TIMEOUT
+#ifndef OLED_UPDATE_INTERVAL
+#    ifdef SPLIT_KEYBOARD
+#        define OLED_UPDATE_INTERVAL 60
+#    elif defined(OLED_DISPLAY_128X128)
+#        define OLED_UPDATE_INTERVAL 30
+#    else
+#        define OLED_UPDATE_INTERVAL 15
+#    endif
+#endif
+#define OLED_DISABLE_TIMEOUT
 
 #undef OLED_FONT_H
 // #define OLED_FONT_H "oled/fonts/drashna_font.h"

@@ -6,8 +6,14 @@
 
 typedef enum userspace_custom_keycodes {
     LY_DEF = QK_USER,
+    TG_DEF,
     LY_COLE,
     LY_GAME,
+    OS_SHFT,
+    OS_CTRL,
+    OS_ALT,
+    OS_CMD,
+    SW_WIN,
     CTALDEL,
     SEARCH,
     OPN,
@@ -34,9 +40,9 @@ typedef enum userspace_custom_keycodes {
 // Layers
 //
 #define LY_NAV TT(_NAV)
-#define LY_SYM TO(_SYM)
+#define LY_SYM TT(_SYM)
 #define LY_ADJ TO(_ADJUST)
-#define LY_FUN OSL(_FUNC)
+#define LY_FUN TO(_FUNC)
 
 //
 // One Shot Mods
@@ -56,8 +62,8 @@ typedef enum userspace_custom_keycodes {
 #define PASTE LCTL(KC_V)
 #define REDO LCTL(KC_Y)
 
-#define KHYP HYPR_T(KC_LPRN)
-#define KMEH MEH_T(KC_RPRN)
+#define KHYP MOD_HYPR
+#define KMEH MOD_MEH
 #define M_UP MEH(KC_UP)
 #define M_DOWN MEH(KC_DOWN)
 #define M_LEFT MEH(KC_LEFT)

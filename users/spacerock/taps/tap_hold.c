@@ -19,6 +19,8 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         //     return 130;
         case KC_LSFT:
         case KC_RSFT:
+        case SC_LSPO:
+        case SC_RSPC:
             // double tapping L/R shift for CAPS_WORD
             return 150;
         default:

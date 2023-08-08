@@ -23,8 +23,11 @@ td_state_t cur_dance(tap_dance_state_t *state) {
     if (state->count == 1) {
         if (!state->pressed) return TD_SINGLE_TAP;
         else return TD_SINGLE_HOLD;
-    } else if (state->count == 2) return TD_DOUBLE_TAP;
-    else return TD_UNKNOWN;
+    } else if (state->count == 2) {
+        return TD_DOUBLE_TAP;
+    } else {
+        return TD_UNKNOWN;
+    }
 }
 
 // Initialize tap structure associated with example tap dance key
@@ -92,3 +95,8 @@ void MEH_SYM_reset(tap_dance_state_t *state, void *user_data) {
     }
     ql_tap_state.state = TD_NONE;
 }
+
+// ┌─────────────────────────────────────────────────┐
+// │ T A P S :  l a y e r s                          │
+// └─────────────────────────────────────────────────┘
+

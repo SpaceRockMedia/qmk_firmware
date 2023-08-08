@@ -1,9 +1,15 @@
 
 #include "spacerock.h"
 #include "version.h"
+#include "features/callum.h"
+#include "features/swapper.h"
+
+#ifdef SENTENCE_CASE_ENABLE
+    #include "features/sentence_case.h"
+#endif
 
 #ifdef HAPTIC_ENABLE
-#include "drivers/haptic/DRV2605L.h"
+    #include "drivers/haptic/DRV2605L.h"
 #endif //HAPTIC ENABLE
 
 /**
@@ -14,6 +20,16 @@
 __attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
+
+#ifdef CALLUM_ENABLE
+    bool sw_win_active = false;
+    bool sw_lang_active = false;
+
+    oneshot_state os_shft_state = os_up_unqueued;
+    oneshot_state os_ctrl_state = os_up_unqueued;
+    oneshot_state os_alt_state = os_up_unqueued;
+    oneshot_state os_cmd_state = os_up_unqueued;
+#endif
 
 /**
  * @brief Main user keycode handler
@@ -26,27 +42,83 @@ __attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *
  * @return false Stop process keycode and do not send to host
  */
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+// ┌───────────────────────────────────────────────────────────┐
+// │ f e a t u r e s                                           │
+// └───────────────────────────────────────────────────────────┘
+
+    #ifdef CALLUM_ENABLE
+    update_swapper(
+        &sw_win_active, KC_LGUI, KC_TAB, SW_WIN,
+        keycode, record
+    );
+    // update_swapper(
+    //     &sw_lang_active, KC_LCTL, KC_SPC, SW_LANG,
+    //     keycode, record
+    // );
+
+    update_oneshot(
+        &os_shft_state, KC_LSFT, OS_SHFT,
+        keycode, record
+    );
+    update_oneshot(
+        &os_ctrl_state, KC_LCTL, OS_CTRL,
+        keycode, record
+    );
+    update_oneshot(
+        &os_alt_state, KC_LALT, OS_ALT,
+        keycode, record
+    );
+    update_oneshot(
+        &os_cmd_state, KC_LCMD, OS_CMD,
+        keycode, record
+    );
+    #endif
+
+    #ifdef SENTENCE_CASE_ENABLE
+        if (!process_sentence_case(keycode, record)) { return false; }
+    #endif
+
+    // if (get_highest_layer(layer_state | default_layer_state) == _NAV) {
+    //     switch (keycode) {
+    //         case KC_PGUP:
+    //         case KC_PGDN:
+    //         case KC_LEFT:
+    //         case KC_RIGHT:
+    //         case KC_DOWN:
+    //         case KC_UP:
+    //         case M_LEFT:
+    //         case M_RIGHT:
+    //         case M_DOWN:
+    //         case M_UP:
+    //             return true;
+
+    //         case LY_DEF:
+    //         case TG_DEF:
+    //         case KC_TRNS:
+    //         default:
+    //             layer_off(_NAV);
+    //             return true;
+    //     }
+    // }
+
     switch (keycode) {
 
 // ┌───────────────────────────────────────────────────────────┐
 // │ l a y e r                                                 │
 // └───────────────────────────────────────────────────────────┘
-        case LY_GAME:
+        case TG_DEF:
             if (record->event.pressed) {
-                set_single_persistent_default_layer(_GAME);
+                layer_clear();
+                if (IS_LAYER_ON(_GAME)) {
+                    set_single_persistent_default_layer(_COLEMAK);
+                    layer_move(_COLEMAK);
+                } else {
+                    set_single_persistent_default_layer(_GAME);
+                    layer_move(_GAME);
+                }
                 #ifdef HAPTIC_ENABLE
                   DRV_pulse(transition_hum);
                 #endif // HAPTIC_ENABLE
-                layer_move(_GAME);
-            }
-            return false;
-        case LY_COLE:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_COLEMAK);
-                #ifdef HAPTIC_ENABLE
-                  DRV_pulse(transition_hum);
-                #endif // HAPTIC_ENABLE
-                layer_move(_COLEMAK);
             }
             return false;
         case LY_DEF:
@@ -63,31 +135,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 #endif // HAPTIC_ENABLE
             }
             return false;
-        // case LY_NAV:
-        //     if (record->event.pressed) {
-        //         layer_on(_NAV);
-        //         // update_tri_layer(_NAV, _SYM, _ADJUST);
-        //     } else {
-        //         layer_off(_NAV);
-        //         // update_tri_layer(_NAV, _SYM, _ADJUST);
-        //     }
-        //     return false;
-        // case LY_SYM:
-        //     if (record->event.pressed) {
-        //         layer_on(_SYM);
-        //         // update_tri_layer(_NAV, _SYM, _ADJUST);
-        //     } else {
-        //         layer_off(_SYM);
-        //         // update_tri_layer(_NAV, _SYM, _ADJUST);
-        //     }
-        //     return false;
-        // case LY_ADJ:
-        //     if (record->event.pressed) {
-        //         layer_on(_ADJUST);
-        //     } else {
-        //         layer_off(_ADJUST);
-        //     }
-        //     return false;
 
 // ┌───────────────────────────────────────────────────────────┐
 // │ q m k                                                     │
