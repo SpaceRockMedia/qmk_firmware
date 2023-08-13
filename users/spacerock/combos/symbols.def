@@ -15,6 +15,7 @@ COMB(cmTilde, KC_TILD, KC_S, KC_X)
 COMB(cmBslh,  KC_BSLS, KC_D, KC_C)
 COMB(cmEqual, KC_EQL,  KC_F, KC_V)
 
+
 // RIGHT Hand
 COMB(cmCirc,  KC_CIRC, KC_Y, KC_H)
 COMB(cmAmpr,  KC_AMPR, KC_U, KC_J)
@@ -25,3 +26,4 @@ COMB(cmUnder, KC_UNDS, KC_H, KC_N)
 COMB(cmPipe,  KC_PIPE, KC_J, KC_M)
 COMB(cmFslh,  KC_SLSH, KC_K, KC_COMM)
 COMB(cmMinus, KC_MINS, KC_L, KC_DOT)
+COMB(cmMinusLeft, KC_MINS, KC_L, KC_LEFT)

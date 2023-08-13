@@ -4,7 +4,7 @@
 #pragma once
 #include QMK_KEYBOARD_H
 
-#include "eeprom.h"
+// #include "eeprom.h"
 
 // ┌───────────────────────────────────────────────────────────┐
 // │ l o a d   c o n f i g s                                   │
@@ -42,6 +42,7 @@ typedef enum userspace_layers {
     _NAV,
     _SYM,
     _FUNC,
+    _MEDIA,
     _ADJUST,
 } CUSTOM_LAYERS_T;
 

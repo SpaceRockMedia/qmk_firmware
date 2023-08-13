@@ -14,22 +14,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 // #include QMK_KEYBOARD_H
+#define KEYMAP_DISPLAY
 #include "spacerock.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_COLEMAK] = LAYOUT_wrapper(
-      KC_TAB,  _______________COLEMAK_L_TOP_______________,                                      _______________COLEMAK_R_TOP_______________, _______,
-      CTL_ESC, _______________COLEMAK_L_MID_______________,                                      _______________COLEMAK_R_MID_______________,
+      KC_TAB,  _______________COLEMAK_L_TOP_______________,                                     _______________COLEMAK_R_TOP_______________, LY_MED,
+      CTL_ESC, _______________COLEMAK_L_MID_______________,                                     _______________COLEMAK_R_MID_______________,
       KC_LCTL, _______________COLEMAK_L_BOT_______________, QK_LEAD, _______, _______, QK_LEAD, _______________COLEMAK_R_BOT_______________, KC_LCTL,
-                                 KHYP, ____________THUMB_LEFT____________,  ____________THUMB_RIGHT___________, KHYP
+                                 KC_HYPR, ____________THUMB_LEFT____________,  ____________THUMB_RIGHT___________, KC_HYPR
     ),
 
     [_GAME] = LAYOUT_wrapper(
-      KC_TAB,  _______________QUERTY__L_TOP_______________,                                     _______________QUERTY__R_TOP_______________, _______,
+      KC_TAB,  _______________QUERTY__L_TOP_______________,                                     _______________QUERTY__R_TOP_______________, LY_MED,
       CTL_ESC, _______________QUERTY__L_MID_______________,                                     _______________QUERTY__R_MID_______________,
       KC_LCTL, _______________QUERTY__L_BOT_______________, QK_LEAD, _______, _______, QK_LEAD, _______________QUERTY__R_BOT_______________, KC_LCTL,
-                                 KHYP, ____________THUMB_LEFT____________,    ____________THUMB_RIGHT___________, KHYP
+                                 KC_HYPR, ____________THUMB_LEFT____________,    ____________THUMB_RIGHT___________, KC_HYPR
     ),
 
     [_NAV] = LAYOUT_wrapper(
@@ -40,9 +41,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_SYM] = LAYOUT_wrapper(
-      DM_REC1, DM_REC2, _______, _______, _______, _______,                                      KC_7,    KC_8,    KC_9, KC_MINS, _______, SH_TOGG,
-      DM_PLY1, DM_PLY2, ________OSM_LEFT_________, _______,                                      KC_4,    KC_5,    KC_6, KC_PLUS, KC_ASTR, _______,
-      DM_RSTP, _______, _______, _______, _______, _______, _______, _______,  _______, KC_0,    KC_1,    KC_2,    KC_3, KC_DOT, KC_SLSH, _______,
+      DM_REC1, DM_REC2, _______, _______, _______, _______,                                      KC_ASTR, KC_7, KC_8, KC_9, KC_PLUS, SH_TOGG,
+      DM_PLY1, DM_PLY2, ________OSM_LEFT_________, _______,                                      KC_SLSH, KC_4, KC_5, KC_6, KC_MINS, _______,
+      DM_RSTP, _______, _______, _______, _______, _______, _______, _______,  _______, _______, KC_0,    KC_1, KC_2, KC_3, KC_DOT,  _______,
                                  _______, _______, LY_DEF,  KC_UNDS, _______,  _______, _______, LY_FUN,  _______, _______
     ),
 
@@ -51,6 +52,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, KC_F5, KC_F6,  KC_F7,  KC_F8,  _______,                                      _______, ________OSM_RIGHT________, _______, _______,
       _______, KC_F9, KC_F10, KC_F11, KC_F12, _______, _______, _______,  _______, _______, _______, _______, _______, _______, _______,  _______,
                             _______, _______,  LY_DEF, _______, _______,  _______, _______, LY_ADJ,  _______, _______
+    ),
+
+    [_MEDIA] = LAYOUT_wrapper(
+      _______, _______, _______, _______, _______, _______,                                      _______, _______, _______, _______, KC_MPLY, _______,
+      _______, _______, _______, _______, _______, _______,                                      _______, _______, KC_MPRV, KC_MNXT, KC_VOLU, _______,
+      _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______, _______, KC_VOLD, KC_MUTE,
+                                 _______, _______,  LY_DEF, _______, _______,  _______, _______, _______, _______, KC_MUTE
     ),
 
     [_ADJUST] = LAYOUT_wrapper(
@@ -83,11 +91,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
-    [_COLEMAK] = { ENCODER_CCW_CW(KC_WH_D,  KC_WH_U),   ENCODER_CCW_CW(KC_VOLD, KC_VOLD) },
-    [_GAME] =    { ENCODER_CCW_CW(KC_WH_D,  KC_WH_U),   ENCODER_CCW_CW(KC_VOLD, KC_VOLD) },
+    [_COLEMAK] = { ENCODER_CCW_CW(KC_WH_U,  KC_WH_D),   ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    [_GAME] =    { ENCODER_CCW_CW(KC_WH_U,  KC_WH_D),   ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [_NAV] =     { ENCODER_CCW_CW(KC_RIGHT, KC_LEFT),   ENCODER_CCW_CW(KC_MNXT, KC_MPRV) },
     [_SYM] =     { ENCODER_CCW_CW(RGB_HUI,  RGB_HUD),   ENCODER_CCW_CW(RGB_VAI, RGB_SAI) },
-    [_FUNC] =    { ENCODER_CCW_CW(KC_WH_D,  KC_WH_U),   ENCODER_CCW_CW(KC_VOLD, KC_VOLD) },
+    [_FUNC] =    { ENCODER_CCW_CW(KC_WH_U,  KC_WH_D),   ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    [_MEDIA] =   { ENCODER_CCW_CW(KC_MPRV,  KC_MNXT),   ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [_ADJUST] =  { ENCODER_CCW_CW(RGB_MOD,  RGB_RMOD),  ENCODER_CCW_CW(RGB_SPI, RGB_SPD) },
 };
 #endif

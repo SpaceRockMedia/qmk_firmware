@@ -3,6 +3,7 @@
 #include "version.h"
 #include "features/callum.h"
 #include "features/swapper.h"
+#include "os_detection.h"
 
 #ifdef SENTENCE_CASE_ENABLE
     #include "features/sentence_case.h"
@@ -47,31 +48,42 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // └───────────────────────────────────────────────────────────┘
 
     #ifdef CALLUM_ENABLE
-    update_swapper(
-        &sw_win_active, KC_LGUI, KC_TAB, SW_WIN,
-        keycode, record
-    );
-    // update_swapper(
-    //     &sw_lang_active, KC_LCTL, KC_SPC, SW_LANG,
-    //     keycode, record
-    // );
+        switch (detected_host_os()) {
+            case OS_MACOS:
+                update_swapper(
+                    &sw_win_active, KC_LGUI, KC_TAB, SW_WIN,
+                    keycode, record
+                );
+                break;
+            default:
+                update_swapper(
+                    &sw_win_active, KC_LALT, KC_TAB, SW_WIN,
+                    keycode, record
+                );
+                break;
+        }
 
-    update_oneshot(
-        &os_shft_state, KC_LSFT, OS_SHFT,
-        keycode, record
-    );
-    update_oneshot(
-        &os_ctrl_state, KC_LCTL, OS_CTRL,
-        keycode, record
-    );
-    update_oneshot(
-        &os_alt_state, KC_LALT, OS_ALT,
-        keycode, record
-    );
-    update_oneshot(
-        &os_cmd_state, KC_LCMD, OS_CMD,
-        keycode, record
-    );
+        // update_swapper(
+        //     &sw_lang_active, KC_LCTL, KC_SPC, SW_LANG,
+        //     keycode, record
+        // );
+
+        update_oneshot(
+            &os_shft_state, KC_LSFT, OS_SHFT,
+            keycode, record
+        );
+        update_oneshot(
+            &os_ctrl_state, KC_LCTL, OS_CTRL,
+            keycode, record
+        );
+        update_oneshot(
+            &os_alt_state, KC_LALT, OS_ALT,
+            keycode, record
+        );
+        update_oneshot(
+            &os_cmd_state, KC_LCMD, OS_CMD,
+            keycode, record
+        );
     #endif
 
     #ifdef SENTENCE_CASE_ENABLE
@@ -155,7 +167,72 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     tap_code(KC_ENTER);
                 #endif
             }
-            break;
+            return false;
+
+// ┌───────────────────────────────────────────────────────────┐
+// │ o s  s h o r t c u t                                      │
+// └───────────────────────────────────────────────────────────┘
+
+        case OS_COPY:
+            if (record->event.pressed) {
+                if (detected_host_os() == OS_MACOS) {
+                    SEND_STRING(SS_LCMD("c"));
+                } else {
+                    SEND_STRING(SS_LCTL("c"));
+                }
+            }
+            return true;
+
+        case OS_CUT:
+            if (record->event.pressed) {
+                if (detected_host_os() == OS_MACOS) {
+                    SEND_STRING(SS_LCMD("x"));
+                } else {
+                    SEND_STRING(SS_LCTL("x"));
+                }
+            }
+            return true;
+
+        case OS_PASTE:
+            if (record->event.pressed) {
+                if (detected_host_os() == OS_MACOS) {
+                    SEND_STRING(SS_LCMD("v"));
+                } else {
+                    SEND_STRING(SS_LCTL("v"));
+                }
+            }
+            return true;
+
+        case OS_UNDO:
+            if (record->event.pressed) {
+                if (detected_host_os() == OS_MACOS) {
+                    SEND_STRING(SS_LCMD("z"));
+                } else {
+                    SEND_STRING(SS_LCTL("z"));
+                }
+            }
+            return true;
+
+        case OS_REDO:
+            if (record->event.pressed) {
+                if (detected_host_os() == OS_MACOS) {
+                    SEND_STRING(SS_LCMD(SS_LSFT("z")));
+                } else {
+                    SEND_STRING(SS_LCTL(SS_LSFT("z")));
+                }
+            }
+            return true;
+
+        case OS_SAVE:
+            if (record->event.pressed) {
+                if (detected_host_os() == OS_MACOS) {
+                    SEND_STRING(SS_LCMD("s"));
+                } else {
+                    SEND_STRING(SS_LCTL("s"));
+                }
+            }
+            return true;
+
 
 // ┌───────────────────────────────────────────────────────────┐
 // │ c o d i n g                                               │

@@ -17,12 +17,12 @@ typedef enum userspace_custom_keycodes {
     CTALDEL,
     SEARCH,
     OPN,
-    MY_COPY,
-    MY_CUT,
-    MY_PAST,
-    MY_UNDO,
-    MY_REDO,
-    MY_SAVE,
+    OS_COPY,
+    OS_CUT,
+    OS_PASTE,
+    OS_UNDO,
+    OS_REDO,
+    OS_SAVE,
     CAPWORD,
     KC_TOGG,
     KC_QWER,
@@ -43,6 +43,7 @@ typedef enum userspace_custom_keycodes {
 #define LY_SYM TT(_SYM)
 #define LY_ADJ TO(_ADJUST)
 #define LY_FUN TO(_FUNC)
+#define LY_MED MO(_MEDIA)
 
 //
 // One Shot Mods

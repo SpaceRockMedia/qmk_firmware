@@ -44,8 +44,8 @@ NOTE: These are all the same length.  If you do a search/replace
 #define ____________THUMB_LEFT____________ KC_LGUI, LY_SYM,        MEH_T(KC_SPC), SC_LSPO
 #define ____________THUMB_RIGHT___________ SC_RSPC, MEH_T(KC_ENT), LY_NAV,        KC_RGUI
 
-#define ________OSM_LEFT_________ OS_CMD, OS_ALT, OS_CTRL
-#define ________OSM_RIGHT________ OS_CMD, OS_ALT, OS_CTRL
+#define ________OSM_LEFT_________ OS_CMD,  OS_ALT, OS_CTRL
+#define ________OSM_RIGHT________ OS_CTRL, OS_ALT, OS_CMD
 
 #define __________________RGB_INC___________________ RGB_MOD,  RGB_SPI, RGB_HUI, RGB_SAI, RGB_VAI
 #define __________________RGB_DEC___________________ RGB_RMOD, RGB_SPD, RGB_HUD, RGB_SAD, RGB_VAD

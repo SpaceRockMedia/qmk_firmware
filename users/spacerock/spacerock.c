@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "spacerock.h"
-#include <stdio.h>
-#include <ctype.h>
+// #include <stdio.h>
+// #include <ctype.h>
 
 
