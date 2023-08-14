@@ -1,6 +1,7 @@
 
 #include QMK_KEYBOARD_H
-#include "features/callum.h"
+// #include "features/callum.h"
+#include "features/swapper.h"
 
 bool is_oneshot_cancel_key(uint16_t keycode) {
     switch (keycode) {
@@ -11,7 +12,6 @@ bool is_oneshot_cancel_key(uint16_t keycode) {
     case LY_SYM:
     case LY_NAV:
     case LY_ADJ:
-    case LY_FUN:
         return true;
     default:
         return false;
@@ -27,7 +27,6 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
     case LY_SYM:
     case LY_NAV:
     case LY_ADJ:
-    case LY_FUN:
     case KC_LSFT:
     case OS_SHFT:
     case OS_CTRL:

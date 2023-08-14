@@ -1,7 +1,7 @@
 
 #include "spacerock.h"
 #include "version.h"
-#include "features/callum.h"
+// #include "features/callum.h"
 #include "features/swapper.h"
 #include "os_detection.h"
 
@@ -22,10 +22,12 @@ __attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *
     return true;
 }
 
-#ifdef CALLUM_ENABLE
+#ifdef SWAPPER_ENABLE
     bool sw_win_active = false;
     bool sw_lang_active = false;
+#endif
 
+#ifdef CALLUM_ENABLE
     oneshot_state os_shft_state = os_up_unqueued;
     oneshot_state os_ctrl_state = os_up_unqueued;
     oneshot_state os_alt_state = os_up_unqueued;
@@ -47,27 +49,27 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // │ f e a t u r e s                                           │
 // └───────────────────────────────────────────────────────────┘
 
+    switch (detected_host_os()) {
+        case OS_MACOS:
+            update_swapper(
+                &sw_win_active, KC_LGUI, KC_TAB, SW_WIN,
+                keycode, record
+            );
+            break;
+        default:
+            update_swapper(
+                &sw_win_active, KC_LALT, KC_TAB, SW_WIN,
+                keycode, record
+            );
+            break;
+    }
+
+    // update_swapper(
+    //     &sw_lang_active, KC_LCTL, KC_SPC, SW_LANG,
+    //     keycode, record
+    // );
+
     #ifdef CALLUM_ENABLE
-        switch (detected_host_os()) {
-            case OS_MACOS:
-                update_swapper(
-                    &sw_win_active, KC_LGUI, KC_TAB, SW_WIN,
-                    keycode, record
-                );
-                break;
-            default:
-                update_swapper(
-                    &sw_win_active, KC_LALT, KC_TAB, SW_WIN,
-                    keycode, record
-                );
-                break;
-        }
-
-        // update_swapper(
-        //     &sw_lang_active, KC_LCTL, KC_SPC, SW_LANG,
-        //     keycode, record
-        // );
-
         update_oneshot(
             &os_shft_state, KC_LSFT, OS_SHFT,
             keycode, record
@@ -80,10 +82,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             &os_alt_state, KC_LALT, OS_ALT,
             keycode, record
         );
-        update_oneshot(
-            &os_cmd_state, KC_LCMD, OS_CMD,
-            keycode, record
-        );
+        switch (detected_host_os()) {
+            case OS_MACOS:
+                update_oneshot(
+                    &os_cmd_state, KC_LGUI, OS_CMD,
+                    keycode, record
+                );
+                break;
+            default:
+                update_oneshot(
+                    &os_cmd_state, KC_LGUI, OS_CMD,
+                    keycode, record
+                );
+                break;
+        }
     #endif
 
     #ifdef SENTENCE_CASE_ENABLE

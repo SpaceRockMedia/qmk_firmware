@@ -6,7 +6,7 @@ SRC += $(USER_PATH)/spacerock.c \
 # │ f e a t u r e s                                 │
 # └─────────────────────────────────────────────────┘
 
-CALLUM_ENABLE ?= yes
+CALLUM_ENABLE ?= no
 ifeq ($(strip $(CALLUM_ENABLE)), yes)
 	SRC += $(USER_PATH)/features/callum.c
 	OPT_DEFS += -DCALLUM_ENABLE

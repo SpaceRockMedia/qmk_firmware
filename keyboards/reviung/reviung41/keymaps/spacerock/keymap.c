@@ -24,10 +24,10 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] =  LAYOUT_wrapper(
-        KC_TAB,  _______________QUERTY__L_TOP_______________,    _______________QUERTY__R_TOP_______________,  KC_BSPC,
-        CTL_ESC, _______________QUERTY__L_MID_______________,    KC_H,    KC_J,    KC_K,    KC_L,    KC_UP,    KC_QUOT,
-        QK_LEAD, _______________QUERTY__L_BOT_______________,    KC_N,    KC_M,    KC_COMM, KC_LEFT,  KC_DOWN, KC_RGHT,
-                                LY_SYM, OSM(MOD_LSFT), MT(MOD_MEH,KC_SPACE), OSM(MOD_RCTL), LY_NAV
+        KC_TAB,  _______________QUERTY__L_TOP_______________,    _______________QUERTY__R_TOP_______________, LY_MED,
+        CTL_ESC, _______________QUERTY__L_MID_______________,    _______________QUERTY__R_MID_______________, KC_QUOT,
+        QK_LEAD, _______________QUERTY__L_BOT_______________,    _______________QUERTY__R_BOT_______________, KC_LCTL,
+                                LY_SYM, OSM(MOD_LSFT), MEH_T(KC_SPC), OSM(MOD_RCTL), LY_NAV
     ),
 
      [_GAME] =  LAYOUT_reviung41(
@@ -48,15 +48,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          SH_TOGG, KC_PGUP, M_LEFT,  KC_UP,   M_RIGHT, M_UP,     _______, _______, _______, _______, _______, _______,
          _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, M_DOWN,   _______, OS_CTRL, OS_ALT, OS_CMD, _______, _______,
          _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______, _______,
-                                            LY_DEF, _______, KC_ENT, _______, LY_FUN
+                                            LY_DEF, _______, KC_ENT, _______, LY_ADJ
      ),
-
-    [_FUNC] = LAYOUT_reviung41(
-        SH_TOGG, KC_F1, KC_F2,  KC_F3,  KC_F4,  _______,   _______, _______, _______, _______, _______, _______,
-        _______, KC_F5, KC_F6,  KC_F7,  KC_F8,  _______,   _______, OS_CTRL, OS_ALT, OS_CMD, _______, _______,
-        _______, KC_F9, KC_F10, KC_F11, KC_F12, _______,   _______, _______, _______, _______, _______,  _______,
-                                      LY_DEF, _______, KC_ENT, _______, LY_ADJ
-    ),
 
     [_ADJUST] = LAYOUT_reviung41(
         _______, RGB_TOG,  _______, _______, _______, OS_SWAP,   OS_SWAP, _______, _______, _______,  _______, TG_DEF,

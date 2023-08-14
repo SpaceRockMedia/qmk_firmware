@@ -28,8 +28,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_GAME] = LAYOUT_wrapper(
       KC_TAB,  _______________QUERTY__L_TOP_______________,                                     _______________QUERTY__R_TOP_______________, LY_MED,
-      CTL_ESC, _______________QUERTY__L_MID_______________,                                     _______________QUERTY__R_MID_______________,
-      KC_LCTL, _______________QUERTY__L_BOT_______________, QK_LEAD, _______, _______, QK_LEAD, _______________QUERTY__R_BOT_______________, KC_LCTL,
+      CTL_ESC, _______________QUERTY__L_MID_______________,                                     _______________QUERTY__R_MID_______________, KC_QUOT,
+      QK_LEAD, _______________QUERTY__L_BOT_______________, QK_LEAD, _______, _______, QK_LEAD, _______________QUERTY__R_BOT_______________, QK_LEAD,
                                  KC_HYPR, ____________THUMB_LEFT____________,    ____________THUMB_RIGHT___________, KC_HYPR
     ),
 
@@ -37,21 +37,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       SH_TOGG, KC_PGUP, M_LEFT,  KC_UP,   M_RIGHT, M_UP,                                         _______, _______, _______, _______, _______, _______,
       _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, M_DOWN,                                       _______, ________OSM_RIGHT________, _______, _______,
       _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______, _______, _______,  _______,
-                                _______, _______,  LY_DEF,  _______, _______,  _______, _______, LY_FUN,  _______, _______
+                                _______, _______,  LY_DEF,  _______, _______,  _______, _______, LY_SYM,  _______, _______
     ),
 
     [_SYM] = LAYOUT_wrapper(
       DM_REC1, DM_REC2, _______, _______, _______, _______,                                      KC_ASTR, KC_7, KC_8, KC_9, KC_PLUS, SH_TOGG,
       DM_PLY1, DM_PLY2, ________OSM_LEFT_________, _______,                                      KC_SLSH, KC_4, KC_5, KC_6, KC_MINS, _______,
       DM_RSTP, _______, _______, _______, _______, _______, _______, _______,  _______, _______, KC_0,    KC_1, KC_2, KC_3, KC_DOT,  _______,
-                                 _______, _______, LY_DEF,  KC_UNDS, _______,  _______, _______, LY_FUN,  _______, _______
-    ),
-
-    [_FUNC] = LAYOUT_wrapper(
-      SH_TOGG, KC_F1, KC_F2,  KC_F3,  KC_F4,  _______,                                      _______, _______, _______, _______, _______, _______,
-      _______, KC_F5, KC_F6,  KC_F7,  KC_F8,  _______,                                      _______, ________OSM_RIGHT________, _______, _______,
-      _______, KC_F9, KC_F10, KC_F11, KC_F12, _______, _______, _______,  _______, _______, _______, _______, _______, _______, _______,  _______,
-                            _______, _______,  LY_DEF, _______, _______,  _______, _______, LY_ADJ,  _______, _______
+                                 _______, _______, LY_DEF,  KC_UNDS, _______,  _______, _______, LY_ADJ,  _______, _______
     ),
 
     [_MEDIA] = LAYOUT_wrapper(
@@ -95,7 +88,6 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [_GAME] =    { ENCODER_CCW_CW(KC_WH_U,  KC_WH_D),   ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [_NAV] =     { ENCODER_CCW_CW(KC_RIGHT, KC_LEFT),   ENCODER_CCW_CW(KC_MNXT, KC_MPRV) },
     [_SYM] =     { ENCODER_CCW_CW(RGB_HUI,  RGB_HUD),   ENCODER_CCW_CW(RGB_VAI, RGB_SAI) },
-    [_FUNC] =    { ENCODER_CCW_CW(KC_WH_U,  KC_WH_D),   ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [_MEDIA] =   { ENCODER_CCW_CW(KC_MPRV,  KC_MNXT),   ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [_ADJUST] =  { ENCODER_CCW_CW(RGB_MOD,  RGB_RMOD),  ENCODER_CCW_CW(RGB_SPI, RGB_SPD) },
 };

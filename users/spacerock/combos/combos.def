@@ -42,16 +42,15 @@ COMB(cbCut,   OS_CUT, KC_X, KC_C)
 COMB(cbCopy,  OS_COPY, KC_C, KC_V)
 COMB(cbPaste, OS_PASTE, KC_X, KC_V)
 COMB(cbRedo,  OS_REDO, KC_V, KC_B)
-COMB(cbSave,  OS_SAVE, KC_A, KC_S)
 
 COMB(cbRpt,  QK_REP, KC_F, KC_G)
-//COMB(cbEsc,  KC_ESC, KC_A, KC_S)
+COMB(cbEsc,  KC_ESC, KC_A, KC_S)
 COMB(cbSwap, SW_WIN, KC_Q, KC_W)
 
 /*
    ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
    ┌───────────────────────────────────────────────────────────┐
-   │ f u n c i o n                                             │
+   │ f u n c t i o n                                           │
    └───────────────────────────────────────────────────────────┘ */
 
 

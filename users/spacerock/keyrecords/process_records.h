@@ -42,7 +42,6 @@ typedef enum userspace_custom_keycodes {
 #define LY_NAV TT(_NAV)
 #define LY_SYM TT(_SYM)
 #define LY_ADJ TO(_ADJUST)
-#define LY_FUN TO(_FUNC)
 #define LY_MED MO(_MEDIA)
 
 //

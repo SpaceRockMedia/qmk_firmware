@@ -34,8 +34,6 @@ const char *get_layer_name_string(layer_state_t state) {
             return "Nav\n";
         case _SYM:
             return "Symbol\n";
-        case _FUNC:
-            return "Func\n";
         case _ADJUST:
             return "Adjust\n";
         default:

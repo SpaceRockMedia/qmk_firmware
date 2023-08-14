@@ -3,6 +3,7 @@
 
 #include "spacerock.h"
 
+// TAPPING_TERM_PER_KEY
 // __attribute__((weak))
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
@@ -13,8 +14,26 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
             if (QK_MOD_TAP_GET_MODS(keycode) & MOD_LGUI) {
                 return 300;
             }
+        case KC_LSFT:
+        case KC_RSFT:
+        case SC_LSPO:
+        case SC_RSPC:
+            // double tapping L/R shift for CAPS_WORD
+            return 150;
         default:
             return TAPPING_TERM;
+    }
+}
+
+// RETRO_TAPPING_PER_KEY
+// https://docs.qmk.fm/#/tap_hold?id=retro-tapping
+bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(2, KC_SPC):
+            return true;
+        default:
+            // use retro functionality by default
+            return true;
     }
 }
 

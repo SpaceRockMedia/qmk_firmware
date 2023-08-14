@@ -41,7 +41,6 @@ typedef enum userspace_layers {
     _GAME,
     _NAV,
     _SYM,
-    _FUNC,
     _MEDIA,
     _ADJUST,
 } CUSTOM_LAYERS_T;
