@@ -13,16 +13,16 @@ typedef enum userspace_custom_keycodes {
     OS_CTRL,
     OS_ALT,
     OS_CMD,
-    SW_WIN,
-    CTALDEL,
-    SEARCH,
-    OPN,
     OS_COPY,
     OS_CUT,
     OS_PASTE,
     OS_UNDO,
     OS_REDO,
     OS_SAVE,
+    SW_WIN,
+    CTALDEL,
+    SEARCH,
+    OPN,
     CAPWORD,
     KC_TOGG,
     KC_QWER,
@@ -31,6 +31,7 @@ typedef enum userspace_custom_keycodes {
     SNAP1,
     SNAP2,
     MAKE_H,
+    OS_CTL,
 } CUSTOM_KEYCODES_T;
 
 #define xxxxxxx KC_NO
@@ -45,16 +46,8 @@ typedef enum userspace_custom_keycodes {
 #define LY_MED MO(_MEDIA)
 
 //
-// One Shot Mods
-//
-#define ALT_GR OSM(MOD_RALT)
-#define O_LSFT OSM(MOD_LSFT)
-#define O_RSFT OSM(MOD_RSFT)
-
-//
 // Abbreviations
 //
-#define PPLAY KC_MEDIA_PLAY_PAUSE
 
 #define UNDO LCTL(KC_Z)
 #define CUT  LCTL(KC_X)
@@ -85,3 +78,4 @@ typedef enum userspace_custom_keycodes {
 // Task Manager
 #define CTALESC LCTL(LALT(KC_ESC))
 #define CTL_ESC CTL_T(KC_ESC)
+#define CTL_QUO CTL_T(KC_QUOT)

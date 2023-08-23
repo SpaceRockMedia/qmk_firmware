@@ -2,9 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
-
-#define AUDIO_CLICKY
-#define AUDIO_CLICKY_FREQ_RANDOMNESS 1.5f
+#define NO_MUSIC_MODE
 
 #if __has_include("user_song_list.h")
 #    include "user_song_list.h"
@@ -22,7 +20,7 @@
 // #endif
 #undef STARTUP_SONG
 // #define STARTUP_SONG SONG(STARTUP_SOUND)
-#define STARTUP_SONG SONG(KLOR_SOUND)
+#define STARTUP_SONG SONG(ZELDA_PUZZLE_2)
 #undef GOODBYE_SONG
 #define GOODBYE_SONG SONG(BYE_SOUND)
 #undef DEFAULT_LAYER_SONGS

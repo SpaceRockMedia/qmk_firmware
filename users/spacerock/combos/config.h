@@ -2,8 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
-#include "spacerock.h"
 
-#define COMBO_TERM 30
+#define COMBO_TERM 35
 // use GAME layer for combo binding
-#define COMBO_ONLY_FROM_LAYER _GAME
+#define COMBO_ONLY_FROM_LAYER 1

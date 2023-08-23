@@ -10,7 +10,7 @@
 #endif
 
 #ifdef HAPTIC_ENABLE
-    #include "drivers/haptic/DRV2605L.h"
+    #include "drivers/haptic/drv2605l.h"
 #endif //HAPTIC ENABLE
 
 /**
@@ -64,38 +64,29 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
     }
 
-    // update_swapper(
-    //     &sw_lang_active, KC_LCTL, KC_SPC, SW_LANG,
-    //     keycode, record
-    // );
 
     #ifdef CALLUM_ENABLE
         update_oneshot(
-            &os_shft_state, KC_LSFT, OS_SHFT,
+            &os_shft_state, KC_LSFT, KC_LSFT,
             keycode, record
         );
         update_oneshot(
-            &os_ctrl_state, KC_LCTL, OS_CTRL,
+            &os_shft_state, KC_RSFT, KC_RSFT,
             keycode, record
         );
         update_oneshot(
-            &os_alt_state, KC_LALT, OS_ALT,
+            &os_ctrl_state, KC_LCTL, KC_LCTL,
             keycode, record
         );
-        switch (detected_host_os()) {
-            case OS_MACOS:
-                update_oneshot(
-                    &os_cmd_state, KC_LGUI, OS_CMD,
-                    keycode, record
-                );
-                break;
-            default:
-                update_oneshot(
-                    &os_cmd_state, KC_LGUI, OS_CMD,
-                    keycode, record
-                );
-                break;
-        }
+        update_oneshot(
+            &os_alt_state, KC_LALT, KC_LALT,
+            keycode, record
+        );
+        update_oneshot(
+            &os_cmd_state, KC_LGUI, KC_LGUI,
+            keycode, record
+        );
+        //break;
     #endif
 
     #ifdef SENTENCE_CASE_ENABLE
@@ -115,7 +106,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     //         case M_DOWN:
     //         case M_UP:
     //             return true;
-
     //         case LY_DEF:
     //         case TG_DEF:
     //         case KC_TRNS:
@@ -141,7 +131,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     layer_move(_GAME);
                 }
                 #ifdef HAPTIC_ENABLE
-                  DRV_pulse(transition_hum);
+                  drv2605l_pulse(transition_hum);
                 #endif // HAPTIC_ENABLE
             }
             return false;
@@ -155,7 +145,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     layer_move(_COLEMAK);
                 }
                 #ifdef HAPTIC_ENABLE
-                  DRV_pulse(transition_hum);
+                  drv2605l_pulse(transition_hum);
                 #endif // HAPTIC_ENABLE
             }
             return false;
@@ -247,46 +237,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 
 // ┌───────────────────────────────────────────────────────────┐
-// │ c o d i n g                                               │
-// └───────────────────────────────────────────────────────────┘
-
-        case LALT(KC_W):
-        case MEH_T(KC_W):
-            if (record->event.pressed) {
-                set_oneshot_layer(_NAV, ONESHOT_START);
-            } else {
-                clear_oneshot_layer_state(ONESHOT_PRESSED);
-            }
-            return true;
-
-// ┌───────────────────────────────────────────────────────────┐
 // │ p r o d u c t i v i t y                                   │
 // └───────────────────────────────────────────────────────────┘
 
-        case OS_SWAP:
-            if (record->event.pressed) {
-                if (!keymap_config.swap_lctl_lgui) {
-                  keymap_config.swap_lctl_lgui = true;  // ─── MAC
-                //   #ifdef AUDIO_ENABLE
-                //     PLAY_SONG(mac_song);
-                //   #endif // AUDIO_ENABLE
-                }
-                else {
-                  keymap_config.swap_lctl_lgui = false; // ─── WIN
-                //   #ifdef AUDIO_ENABLE
-                //     PLAY_SONG(winxp_song);
-                //   #endif // AUDIO_ENABLE
-                }
-              #ifdef HAPTIC_ENABLE
-                DRV_pulse(pulsing_strong);
-              #endif // HAPTIC_ENABLE
-            clear_keyboard();  // ──── clear to prevent stuck keys
-            return false;
-        }
-
         case SNAP1:
             if (record->event.pressed) {
-                if (keymap_config.swap_lctl_lgui) {
+                if (detected_host_os() == OS_MACOS) {
                     SEND_STRING(SS_LSFT(SS_LCMD("4")));           //MAC
                 } else {
                     SEND_STRING(SS_LWIN(SS_TAP(X_PSCR)));         //WIN
@@ -296,10 +252,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case SNAP2:
             if (record->event.pressed) {
-                if (keymap_config.swap_lctl_lgui) {
-                SEND_STRING(SS_LSFT(SS_LCMD(SS_LCTL("4"))));  //MAC
+                if (detected_host_os() == OS_MACOS) {
+                    SEND_STRING(SS_LSFT(SS_LCMD(SS_LCTL("4"))));  //MAC
                 } else {
-                SEND_STRING(SS_LSFT(SS_LWIN("S")));           //WIN
+                    SEND_STRING(SS_LSFT(SS_LWIN("S")));           //WIN
                 }
             }
             break;
@@ -307,7 +263,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_MPLY:
             if (record->event.pressed) {
             #ifdef HAPTIC_ENABLE
-                    DRV_pulse(sharp_click);
+                    drv2605l_pulse(sharp_click);
             #endif // HAPTIC_ENABL
             }
             break;

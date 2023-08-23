@@ -30,6 +30,14 @@
 #    include "os_detection.h"
 #endif
 
+#ifdef CALLUM_ENABLE
+#    include "features/callum.h"
+#endif
+
+#ifdef SWAPPER_ENABLE
+#    include "features/swapper.h"
+#endif
+
 // clang-format on
 
 // ┌───────────────────────────────────────────────────────────┐

@@ -1,6 +1,6 @@
 
 #include QMK_KEYBOARD_H
-// #include "features/callum.h"
+#include "features/callum.h"
 #include "features/swapper.h"
 
 bool is_oneshot_cancel_key(uint16_t keycode) {

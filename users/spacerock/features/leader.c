@@ -49,11 +49,11 @@ void leader_end_user(void) {
 
     leader_end_keymap();
 
-#ifdef AUDIO_ENABLE
-    if (did_leader_succeed) {
-        PLAY_SONG(leader_succeed_song);
-    } else {
-        PLAY_SONG(leader_fail_song);
-    }
-#endif
+    #ifdef AUDIO_ENABLE
+        if (did_leader_succeed) {
+            PLAY_SONG(leader_succeed_song);
+        } else {
+            PLAY_SONG(leader_fail_song);
+        }
+    #endif
 }

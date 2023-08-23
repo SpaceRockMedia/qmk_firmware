@@ -22,7 +22,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] = LAYOUT_wrapper(
       KC_TAB,  _______________COLEMAK_L_TOP_______________,                                     _______________COLEMAK_R_TOP_______________, LY_MED,
       CTL_ESC, _______________COLEMAK_L_MID_______________,                                     _______________COLEMAK_R_MID_______________,
-      KC_LCTL, _______________COLEMAK_L_BOT_______________, QK_LEAD, _______, _______, QK_LEAD, _______________COLEMAK_R_BOT_______________, KC_LCTL,
+      QK_LEAD, _______________COLEMAK_L_BOT_______________, QK_LEAD, _______, _______, QK_LEAD, _______________COLEMAK_R_BOT_______________, QK_LEAD,
                                  KC_HYPR, ____________THUMB_LEFT____________,  ____________THUMB_RIGHT___________, KC_HYPR
     ),
 
@@ -35,14 +35,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_NAV] = LAYOUT_wrapper(
       SH_TOGG, KC_PGUP, M_LEFT,  KC_UP,   M_RIGHT, M_UP,                                         _______, _______, _______, _______, _______, _______,
-      _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, M_DOWN,                                       _______, ________OSM_RIGHT________, _______, _______,
+      _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, M_DOWN,                                       _______, _______, _______, _______, _______, _______,
       _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______, _______, _______,  _______,
                                 _______, _______,  LY_DEF,  _______, _______,  _______, _______, LY_SYM,  _______, _______
     ),
 
     [_SYM] = LAYOUT_wrapper(
       DM_REC1, DM_REC2, _______, _______, _______, _______,                                      KC_ASTR, KC_7, KC_8, KC_9, KC_PLUS, SH_TOGG,
-      DM_PLY1, DM_PLY2, ________OSM_LEFT_________, _______,                                      KC_SLSH, KC_4, KC_5, KC_6, KC_MINS, _______,
+      DM_PLY1, DM_PLY2, _______, _______, _______, _______,                                      KC_SLSH, KC_4, KC_5, KC_6, KC_MINS, _______,
       DM_RSTP, _______, _______, _______, _______, _______, _______, _______,  _______, _______, KC_0,    KC_1, KC_2, KC_3, KC_DOT,  _______,
                                  _______, _______, LY_DEF,  KC_UNDS, _______,  _______, _______, LY_ADJ,  _______, _______
     ),
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_ADJUST] = LAYOUT_wrapper(
       _______, RGB_TOG,  _______, _______, _______, OS_SWAP,                                      OS_SWAP, _______, _______, _______,  _______, TG_DEF,
-      QK_BOOT, __________________RGB_INC___________________,                                      _______, ________OSM_RIGHT________,  _______, QK_BOOT,
+      QK_BOOT, __________________RGB_INC___________________,                                      _______, _______, _______, _______, _______, QK_BOOT,
       MAKE_H,  __________________RGB_DEC___________________, _______, _______,  _______, _______, AU_TOGG, DB_TOGG, HF_TOGG, _______, _______,  _______,
                                   _______, _______, LY_DEF,  _______, _______,  _______, _______, TO(_SYM),  _______, _______
     ),

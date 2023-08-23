@@ -6,7 +6,7 @@ SRC += $(USER_PATH)/spacerock.c \
 # │ f e a t u r e s                                 │
 # └─────────────────────────────────────────────────┘
 
-CALLUM_ENABLE ?= no
+CALLUM_ENABLE ?= yes
 ifeq ($(strip $(CALLUM_ENABLE)), yes)
 	SRC += $(USER_PATH)/features/callum.c
 	OPT_DEFS += -DCALLUM_ENABLE
@@ -97,6 +97,7 @@ DYNAMIC_TAPPING_TERM_ENABLE ?= no
 TAPPING_TERM_PER_KEY        ?= yes
 
 AUTO_SHIFT_ENABLE    ?= no
+# https://docs.qmk.fm/#/feature_caps_word
 CAPS_WORD_ENABLE     ?= yes
 COMBO_ENABLE         ?= yes
 ifeq ($(strip $(COMBO_ENABLE)), yes)
@@ -120,6 +121,7 @@ ifeq ($(strip $(BOOTMAGIC_ENABLE)), yes)
 	SRC += util/bootmagic_better.c
 endif
 
+COMMAND_ENABLE = no
 
 # ┌─────────────────────────────────────────────────┐
 # │ s e c r e t s                                   │
