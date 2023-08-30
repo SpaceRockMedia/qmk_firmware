@@ -4,7 +4,6 @@
 //COMBO_REF_LAYER(_COLEMAK, _GAME)
 //COMBO_REF_LAYER(_NAV,     _GAME)
 //COMBO_REF_LAYER(_FUNC,    _GAME)
-//COMBO_REF_LAYER(_SYM,     _GAME)
 //COMBO_REF_LAYER(_ADJUST,  _GAME)
 
 #include "combos/symbols.def"

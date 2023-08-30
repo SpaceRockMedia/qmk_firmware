@@ -9,7 +9,6 @@ bool is_oneshot_cancel_key(uint16_t keycode) {
     case TG_DEF:
     case LY_COLE:
     case LY_GAME:
-    case LY_SYM:
     case LY_NAV:
     case LY_ADJ:
         return true;
@@ -24,7 +23,6 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
     case TG_DEF:
     case LY_COLE:
     case LY_GAME:
-    case LY_SYM:
     case LY_NAV:
     case LY_ADJ:
     case KC_LSFT:

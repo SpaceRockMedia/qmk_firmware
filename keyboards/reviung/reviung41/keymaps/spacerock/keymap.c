@@ -21,41 +21,42 @@
 
 #undef LAYOUT_wrapper
 #define LAYOUT_wrapper(...)   LAYOUT_reviung41(__VA_ARGS__)
+#define ___THUMB_REVIUNG___ OSM(MOD_LSFT), MEH_T(KC_SPC), LY_NAV, MEH_T(KC_ENT), OSM(MOD_RCTL)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] =  LAYOUT_wrapper(
-        KC_TAB,  _______________QUERTY__L_TOP_______________,    _______________QUERTY__R_TOP_______________, LY_MED,
-        CTL_ESC, _______________QUERTY__L_MID_______________,    _______________QUERTY__R_MID_______________, KC_QUOT,
-        QK_LEAD, _______________QUERTY__L_BOT_______________,    _______________QUERTY__R_BOT_______________, KC_LCTL,
-                                LY_SYM, OSM(MOD_LSFT), MEH_T(KC_SPC), OSM(MOD_RCTL), LY_NAV
+        KC_TAB,        _______________QUERTY__L_TOP_______________,    _______________QUERTY__R_TOP_______________, LY_MED,
+        OSM(MOD_LALT), _______________QUERTY__L_MID_______________,    _______________QUERTY__R_MID_______________, OSM(KC_LALT),
+        OSM(MOD_LGUI), _______________QUERTY__L_BOT_______________,    _______________QUERTY__R_BOT_______________, OSM(MOD_RGUI),
+                                                           ___THUMB_REVIUNG___
     ),
 
-     [_GAME] =  LAYOUT_reviung41(
-        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_BSPC,
-        CTL_ESC, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_UP,    KC_QUOT,
-        QK_LEAD, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_LEFT,  KC_DOWN, KC_RGHT,
-                                LY_SYM, OSM(MOD_LSFT), MT(MOD_MEH,KC_SPACE), OSM(MOD_RCTL), LY_NAV
+    [_GAME] =  LAYOUT_wrapper(
+        KC_TAB,        _______________QUERTY__L_TOP_______________,    _______________QUERTY__R_TOP_______________, KC_BSPC,
+        OSM(MOD_LALT), _______________QUERTY__L_MID_______________,    _______________QUERTY__R_MID_______________, OSM(MOD_LALT),
+        OSM(MOD_LGUI), _______________QUERTY__L_BOT_______________,    _______________QUERTY__R_BOT_______________, OSM(MOD_RGUI),
+                                                           ___THUMB_REVIUNG___
     ),
 
-    [_SYM] = LAYOUT_reviung41(
-        DM_REC1, DM_REC2, _______, _______, _______, _______,   KC_7, KC_8, KC_9, KC_PLUS, KC_ASTR, SH_TOGG,
-        DM_PLY1, DM_PLY2, OS_CMD,  OS_ALT, OS_CTRL, _______,    KC_4, KC_5, KC_6, KC_MINS, KC_SLSH, _______,
-        DM_RSTP, _______, _______, _______, _______, _______,   KC_1, KC_2, KC_3, KC_DOT,  _______, _______,
-                                            LY_DEF, _______, KC_ENT, KC_0, LY_FUN
-    ),
-
-     [_NAV] = LAYOUT_reviung41(
+    [_NAV] = LAYOUT_wrapper(
          SH_TOGG, KC_PGUP, M_LEFT,  KC_UP,   M_RIGHT, M_UP,     _______, _______, _______, _______, _______, _______,
-         _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, M_DOWN,   _______, OS_CTRL, OS_ALT, OS_CMD, _______, _______,
+         _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, M_DOWN,   _______, _______, _______, _______, _______, _______,
          _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______, _______,
-                                            LY_DEF, _______, KC_ENT, _______, LY_ADJ
+                                          _______, _______, LY_ADJ, _______, _______
      ),
 
-    [_ADJUST] = LAYOUT_reviung41(
-        _______, RGB_TOG,  _______, _______, _______, OS_SWAP,   OS_SWAP, _______, _______, _______,  _______, TG_DEF,
-        QK_BOOT, RGB_MOD,  RGB_SPI, RGB_HUI, RGB_SAI, RGB_VAI,   _______, OS_CTRL, OS_ALT, OS_CMD,  _______, QK_BOOT,
-        MAKE_H,  RGB_RMOD, RGB_SPD, RGB_HUD, RGB_SAD, RGB_VAD,   AU_TOGG, DB_TOGG, HF_TOGG, _______, _______,  _______,
-                                           LY_DEF, _______, KC_ENT, _______, LY_FUN
+    [_MEDIA] = LAYOUT_wrapper(
+        DM_REC1, DM_REC2, _______, _______, _______, _______,  _______, _______, _______, _______, KC_MPLY, _______,
+        DM_PLY1, DM_PLY2, _______, _______, _______, _______,  _______, _______, KC_MPRV, KC_MNXT, KC_VOLU, _______,
+        DM_RSTP, _______, _______, _______, _______, _______,  _______, _______, _______, _______, KC_VOLD, KC_MUTE,
+                                         _______, _______, _______, _______, _______
+    ),
+
+    [_ADJUST] = LAYOUT_wrapper(
+        _______, RGB_TOG,  _______, _______, _______, OS_SWAP,  OS_SWAP, _______, _______, _______,  _______, TG_DEF,
+        QK_BOOT, RGB_MOD,  RGB_SPI, RGB_HUI, RGB_SAI, RGB_VAI,  _______, OS_CTRL, OS_ALT, OS_CMD,  _______, QK_BOOT,
+        MAKE_H,  RGB_RMOD, RGB_SPD, RGB_HUD, RGB_SAD, RGB_VAD,  AU_TOGG, DB_TOGG, HF_TOGG, _______, _______,  _______,
+                                         _______, _______, LY_DEF, _______, _______
     )
 
  };

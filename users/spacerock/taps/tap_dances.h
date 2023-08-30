@@ -42,5 +42,3 @@ void ql_reset(tap_dance_state_t *state, void *user_data);
 
 void HYP_NAV_finished(tap_dance_state_t *state, void *user_data);
 void HYP_NAV_reset(tap_dance_state_t *state, void *user_data);
-void MEH_SYM_finished(tap_dance_state_t *state, void *user_data);
-void MEH_SYM_reset(tap_dance_state_t *state, void *user_data);

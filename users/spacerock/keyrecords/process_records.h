@@ -41,7 +41,6 @@ typedef enum userspace_custom_keycodes {
 // Layers
 //
 #define LY_NAV TT(_NAV)
-#define LY_SYM TT(_SYM)
 #define LY_ADJ TO(_ADJUST)
 #define LY_MED MO(_MEDIA)
 
@@ -66,6 +65,15 @@ typedef enum userspace_custom_keycodes {
 
 #define MT_PGUP MT(KC_PGUP, KC_PGDN)
 
+//
+// Mods
+//
+#define OSM_LALT OSM(MOD_LALT)
+#define OSM_RALT OSM(MOD_RALT)
+#define OSM_LGUI OSM(MOD_LGUI)
+#define OSM_RGUI OSM(MOD_RGUI)
+#define OSM_LCTL OSM(MOD_LCTL)
+#define OSM_RCTL OSM(MOD_RCTL)
 
 // (For OS X, you'll want to change these editing keys to LGUI(KC_Z) etc.)
 

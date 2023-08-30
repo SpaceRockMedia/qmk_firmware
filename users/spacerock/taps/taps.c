@@ -86,34 +86,34 @@ void HYP_NAV_reset(tap_dance_state_t *state, void *user_data) {
 }
 
 // Functions that control what our tap dance key does
-void MEH_SYM_finished(tap_dance_state_t *state, void *user_data) {
-    ql_tap_state.state = cur_dance(state);
-    switch (ql_tap_state.state) {
-        case TD_SINGLE_TAP:
-            // Check to see if the layer is already set
-            if (layer_state_is(_SYM)) {
-                // If already set, then switch it off
-                layer_off(_SYM);
-            } else {
-                // If not already set, then switch the layer on
-                layer_on(_SYM);
-            }
-            break;
-        case TD_SINGLE_HOLD:
-            register_code16(KC_MEH);
-            break;
-        default:
-            break;
-    }
-}
+// void MEH_SYM_finished(tap_dance_state_t *state, void *user_data) {
+//     ql_tap_state.state = cur_dance(state);
+//     switch (ql_tap_state.state) {
+//         case TD_SINGLE_TAP:
+//             // Check to see if the layer is already set
+//             if (layer_state_is(_SYM)) {
+//                 // If already set, then switch it off
+//                 layer_off(_SYM);
+//             } else {
+//                 // If not already set, then switch the layer on
+//                 layer_on(_SYM);
+//             }
+//             break;
+//         case TD_SINGLE_HOLD:
+//             register_code16(KC_MEH);
+//             break;
+//         default:
+//             break;
+//     }
+// }
 
-void MEH_SYM_reset(tap_dance_state_t *state, void *user_data) {
-    // If the key was held down and now is released then switch off the layer
-    if (ql_tap_state.state == TD_SINGLE_HOLD) {
-        unregister_code16(KC_MEH);
-    }
-    ql_tap_state.state = TD_NONE;
-}
+// void MEH_SYM_reset(tap_dance_state_t *state, void *user_data) {
+//     // If the key was held down and now is released then switch off the layer
+//     if (ql_tap_state.state == TD_SINGLE_HOLD) {
+//         unregister_code16(KC_MEH);
+//     }
+//     ql_tap_state.state = TD_NONE;
+// }
 
 // ┌─────────────────────────────────────────────────┐
 // │ T A P S :  l a y e r s                          │

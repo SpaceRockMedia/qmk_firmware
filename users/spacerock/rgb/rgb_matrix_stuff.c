@@ -23,7 +23,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                         // F Keys
                         (layer == _NAV && row == 2)
                         // digits
-                        || (layer == _SYM && (col >= 14 && col <= 19))
+                        || (layer == _MEDIA && (col >= 14 && col <= 19))
                         // rgb inputs
                         || (layer == _ADJUST && (row >= 1 && row <= 3))
                     ) {

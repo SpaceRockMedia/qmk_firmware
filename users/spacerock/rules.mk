@@ -41,8 +41,8 @@ LTO_ENABLE       = no
 
 AUDIO_ENABLE       ?= no
 MUSIC_ENABLE       ?= no
-ENCODER_ENABLE     ?= yes
-ENCODER_MAP_ENABLE ?= yes
+ENCODER_ENABLE     ?= no
+ENCODER_MAP_ENABLE ?= no
 MOUSEKEY_ENABLE    ?= no       # Mouse keys
 NKRO_ENABLE        ?= yes
 OLED_ENABLE        ?= yes
