@@ -26,7 +26,8 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
     case LY_NAV:
     case LY_ADJ:
     case KC_LSFT:
-    case OS_SHFT:
+    case OS_LSFT:
+    case OS_RSFT:
     case OS_CTRL:
     case OS_ALT:
     case OS_CMD:

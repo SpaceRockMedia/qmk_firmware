@@ -21,15 +21,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_COLEMAK] = LAYOUT_wrapper(
       KC_TAB,  _______________COLEMAK_L_TOP_______________,                                     _______________COLEMAK_R_TOP_______________, LY_MED,
-      OSM(MOD_LALT), _______________COLEMAK_L_MID_______________,                                     _______________COLEMAK_R_MID_______________, OSM(MOD_LALT),
-      OSM(MOD_LGUI), _______________COLEMAK_L_BOT_______________, KC_MEH, KC_HYPR, KC_HYPR, KC_MEH, _______________COLEMAK_R_BOT_______________, OSM(MOD_RGUI),
+      KC_LALT, _______________COLEMAK_L_MID_______________,                                     _______________COLEMAK_R_MID_______________, KC_RALT,
+      KC_LGUI, _______________COLEMAK_L_BOT_______________, KC_MEH, KC_HYPR, KC_HYPR, KC_MEH, _______________COLEMAK_R_BOT_______________, KC_RGUI,
                                  QK_LEAD, ____________THUMB_LEFT____________, ____________THUMB_RIGHT___________, QK_LEAD
     ),
 
     [_GAME] = LAYOUT_wrapper(
       KC_TAB,  _______________QUERTY__L_TOP_______________,                                     _______________QUERTY__R_TOP_______________, LY_MED,
-      OSM(MOD_LALT), _______________QUERTY__L_MID_______________,                                     _______________QUERTY__R_MID_______________, OSM(MOD_LALT),
-      OSM(MOD_LGUI), _______________QUERTY__L_BOT_______________, KC_MEH, KC_HYPR, KC_HYPR, KC_MEH, _______________QUERTY__R_BOT_______________, OSM(MOD_RGUI),
+      KC_LALT, _______________QUERTY__L_MID_______________,                                     _______________QUERTY__R_MID_______________, KC_RALT,
+      KC_LGUI, _______________QUERTY__L_BOT_______________, KC_MEH, KC_HYPR, KC_HYPR, KC_MEH, _______________QUERTY__R_BOT_______________, KC_RGUI,
                                  QK_LEAD, ____________THUMB_LEFT____________, ____________THUMB_RIGHT___________, QK_LEAD
     ),
 

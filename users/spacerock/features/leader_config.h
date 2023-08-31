@@ -3,7 +3,7 @@
 
 #pragma once
 
-#define LEADER_TIMEOUT 250
+#define LEADER_TIMEOUT 300
 #define LEADER_PER_KEY_TIMING
 
 // https://docs.qmk.fm/#/feature_leader_key?id=strict-key-processing

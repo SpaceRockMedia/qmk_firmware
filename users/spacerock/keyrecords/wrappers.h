@@ -41,8 +41,8 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _______________QUERTY__R_MID_______________ KC_H, KC_J, KC_K,    KC_L,   KC_SCLN
 #define _______________QUERTY__R_BOT_______________ KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH
 
-#define ____________THUMB_LEFT____________ KC_LCTL, OSM(MOD_LSFT), HYPR_T(KC_SPC), LY_NAV
-#define ____________THUMB_RIGHT___________ LY_NAV,  HYPR_T(KC_ENT), OSM(MOD_RSFT), KC_LCTL
+#define ____________THUMB_LEFT____________ OS_CTRL, OS_LSFT, HYPR_T(KC_SPC), LY_NAV
+#define ____________THUMB_RIGHT___________ LY_NAV,  HYPR_T(KC_ENT), OS_RSFT, OS_CTRL
 
 #define ________OSM_LEFT_________ OS_CMD,  OS_ALT, OS_CTRL
 #define ________OSM_RIGHT________ OS_CTRL, OS_ALT, OS_CMD

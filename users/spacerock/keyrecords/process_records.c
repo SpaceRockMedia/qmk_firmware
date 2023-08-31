@@ -67,23 +67,23 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     #ifdef CALLUM_ENABLE
         update_oneshot(
-            &os_shft_state, KC_LSFT, KC_LSFT,
+            &os_shft_state, KC_LSFT, OS_LSFT,
             keycode, record
         );
         update_oneshot(
-            &os_shft_state, KC_RSFT, KC_RSFT,
+            &os_shft_state, KC_RSFT, OS_RSFT,
             keycode, record
         );
         update_oneshot(
-            &os_ctrl_state, KC_LCTL, KC_LCTL,
+            &os_ctrl_state, KC_LCTL, OS_CTRL,
             keycode, record
         );
         update_oneshot(
-            &os_alt_state, KC_LALT, KC_LALT,
+            &os_alt_state, KC_LALT, OS_ALT,
             keycode, record
         );
         update_oneshot(
-            &os_cmd_state, KC_LGUI, KC_LGUI,
+            &os_cmd_state, KC_LGUI, OS_CMD,
             keycode, record
         );
         //break;
@@ -93,27 +93,42 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (!process_sentence_case(keycode, record)) { return false; }
     #endif
 
-    // if (get_highest_layer(layer_state | default_layer_state) == _NAV) {
-    //     switch (keycode) {
-    //         case KC_PGUP:
-    //         case KC_PGDN:
-    //         case KC_LEFT:
-    //         case KC_RIGHT:
-    //         case KC_DOWN:
-    //         case KC_UP:
-    //         case M_LEFT:
-    //         case M_RIGHT:
-    //         case M_DOWN:
-    //         case M_UP:
-    //             return true;
-    //         case LY_DEF:
-    //         case TG_DEF:
-    //         case KC_TRNS:
-    //         default:
-    //             layer_off(_NAV);
-    //             return true;
-    //     }
-    // }
+    if (get_highest_layer(layer_state | default_layer_state) == _NAV) {
+        // if one of the keys below is not pressed then disable _NAV
+        switch (keycode) {
+            // navs
+            case KC_PGUP:
+            case KC_PGDN:
+            case KC_LEFT:
+            case KC_RIGHT:
+            case KC_DOWN:
+            case KC_UP:
+            case M_LEFT:
+            case M_RIGHT:
+            case M_DOWN:
+            case M_UP:
+            // nums
+            case KC_ASTR:
+            case KC_SLSH:
+            case KC_0:
+            case KC_1:
+            case KC_2:
+            case KC_3:
+            case KC_4:
+            case KC_5:
+            case KC_6:
+            case KC_7:
+            case KC_8:
+            case KC_9:
+            case KC_PLUS:
+            case KC_MINS:
+            case KC_DOT:
+                return true;
+            default:
+                layer_off(_NAV);
+                return true;
+        }
+    }
 
     switch (keycode) {
 

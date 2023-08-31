@@ -25,6 +25,10 @@
 #    include "oled/config.h"
 #endif
 
+#ifdef LEADER_ENABLE
+#    include "features/leader_config.h"
+#endif
+
 #ifdef AUDIO_ENABLE
 #    include "audio_config.h"
 #endif // AUDIO_ENABLE

@@ -26,6 +26,10 @@
 #    include "oled/oled.h"
 #endif
 
+#ifdef LEADER_ENABLE
+#    include "features/leader.h"
+#endif
+
 #ifdef OS_DETECTION_ENABLE
 #    include "os_detection.h"
 #endif
@@ -36,6 +40,10 @@
 
 #ifdef SWAPPER_ENABLE
 #    include "features/swapper.h"
+#endif
+
+#ifdef SWAPPER_ENABLE
+#    include "features/sentence_case.h"
 #endif
 
 // clang-format on
@@ -51,5 +59,3 @@ typedef enum userspace_layers {
     _MEDIA,
     _ADJUST,
 } CUSTOM_LAYERS_T;
-
-
