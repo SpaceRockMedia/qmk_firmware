@@ -26,23 +26,27 @@
 #    include "oled/oled.h"
 #endif
 
-#ifdef LEADER_ENABLE
+#ifdef FEATURE_LEADER_ENABLE
 #    include "features/leader.h"
 #endif
 
-#ifdef OS_DETECTION_ENABLE
-#    include "os_detection.h"
-#endif
+// #ifdef OS_DETECTION_ENABLE
+// #    include "os_detection.h"
+// #endif
 
-#ifdef CALLUM_ENABLE
+#ifdef FEATURE_CALLUM_ENABLE
 #    include "features/callum.h"
 #endif
 
-#ifdef SWAPPER_ENABLE
+#ifdef FEATURE_SWAPPER_ENABLE
 #    include "features/swapper.h"
 #endif
 
-#ifdef SWAPPER_ENABLE
+#ifdef FEATURE_REPEAT_KEY_ENABLE
+#    include "features/repeat_key.h"
+#endif
+
+#ifdef FEATURE_SENTENCE_CASE_ENABLE
 #    include "features/sentence_case.h"
 #endif
 

@@ -32,7 +32,8 @@ typedef enum userspace_custom_keycodes {
     SNAP1,
     SNAP2,
     MAKE_H,
-    OS_CTL,
+    REPEAT,
+    ALTREP,
 } CUSTOM_KEYCODES_T;
 
 #define xxxxxxx KC_NO

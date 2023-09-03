@@ -41,11 +41,24 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _______________QUERTY__R_MID_______________ KC_H, KC_J, KC_K,    KC_L,   KC_SCLN
 #define _______________QUERTY__R_BOT_______________ KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH
 
-#define ____________THUMB_LEFT____________ OS_CTRL, OS_LSFT, HYPR_T(KC_SPC), LY_NAV
-#define ____________THUMB_RIGHT___________ LY_NAV,  HYPR_T(KC_ENT), OS_RSFT, OS_CTRL
+#define ____________THUMB_LEFT____________ KC_LCTL, SC_LSPO, HYPR_T(KC_SPC), LY_NAV
+#define ____________THUMB_RIGHT___________ LY_NAV,  HYPR_T(KC_ENT), SC_RSPC, KC_RCTL
 
-#define ________OSM_LEFT_________ OS_CMD,  OS_ALT, OS_CTRL
+#define ________OSM_LEFT_________ KC_LGUI,  LC_LALT, OS_CTRL
 #define ________OSM_RIGHT________ OS_CTRL, OS_ALT, OS_CMD
 
 #define __________________RGB_INC__________________ RGB_MOD,  RGB_SPI, RGB_HUI, RGB_SAI, RGB_VAI
 #define __________________RGB_DEC__________________ RGB_RMOD, RGB_SPD, RGB_HUD, RGB_SAD, RGB_VAD
+#define __________________RGB_DEC__________________ RGB_RMOD, RGB_SPD, RGB_HUD, RGB_SAD, RGB_VAD
+
+#define __________________NAV__LT__________________ KC_PGUP, M_LEFT,  KC_UP,   M_RIGHT, M_UP
+#define __________________NAV__LM__________________ KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, M_DOWN
+
+
+#define __LPT__ KC_TAB
+#define __LPM__ KC_LALT
+#define __LPB__ KC_LGUI
+
+#define __RPT__ LY_MED
+#define __RPM__ KC_LALT
+#define __RPB__ KC_RGUI

@@ -6,22 +6,34 @@ SRC += $(USER_PATH)/spacerock.c \
 # │ f e a t u r e s                                 │
 # └─────────────────────────────────────────────────┘
 
-CALLUM_ENABLE ?= yes
-ifeq ($(strip $(CALLUM_ENABLE)), yes)
+FEATURE_CALLUM_ENABLE ?= yes
+ifeq ($(strip $(FEATURE_CALLUM_ENABLE)), yes)
 	SRC += $(USER_PATH)/features/callum.c
-	OPT_DEFS += -DCALLUM_ENABLE
+	OPT_DEFS += -DFEATURE_CALLUM_ENABLE
 endif
 
-SWAPPER_ENABLE ?= yes
-ifeq ($(strip $(SWAPPER_ENABLE)), yes)
+FEATURE_SWAPPER_ENABLE ?= yes
+ifeq ($(strip $(FEATURE_SWAPPER_ENABLE)), yes)
 	SRC += $(USER_PATH)/features/swapper.c
-	OPT_DEFS += -DSWAPPER_ENABLE
+	OPT_DEFS += -DFEATURE_SWAPPER_ENABLE
 endif
 
-SENTENCE_CASE_ENABLE ?= yes
-ifeq ($(strip $(SENTENCE_CASE_ENABLE)), yes)
+FEATURE_REPEAT_KEY_ENABLE ?= yes
+ifeq ($(strip $(FEATURE_REPEAT_KEY_ENABLE)), yes)
+	SRC += $(USER_PATH)/features/repeat_key_callbacks.c
+	SRC += $(USER_PATH)/features/repeat_key.c
+	OPT_DEFS += -DFEATURE_REPEAT_KEY_ENABLE
+endif
+
+FEATURE_SENTENCE_CASE_ENABLE ?= yes
+ifeq ($(strip $(FEATURE_SENTENCE_CASE_ENABLE)), yes)
 	SRC += $(USER_PATH)/features/sentence_case.c
-	OPT_DEFS += -DSENTENCE_CASE_ENABLE
+	OPT_DEFS += -DFEATURE_SENTENCE_CASE_ENABLE
+endif
+
+FEATURE_LEADER_ENABLE ?= yes
+ifeq ($(strip $(FEATURE_LEADER_ENABLE)), yes)
+	SRC += $(USER_PATH)/features/leader.c
 endif
 
 SRC += $(USER_PATH)/keyrecords/process_records.c
@@ -80,16 +92,6 @@ EXTRAKEY_ENABLE     ?= yes	# multi media keys
 KEY_OVERRIDE_ENABLE ?= no
 MOUSEKEY_ENABLE     ?= no       # Mouse keys
 OS_DETECTION_ENABLE ?= yes
-
-LEADER_ENABLE ?= yes
-ifeq ($(strip $(LEADER_ENABLE)), yes)
-	SRC += $(USER_PATH)/features/leader.c
-endif
-
-REPEAT_KEY_ENABLE ?= yes
-ifeq ($(strip $(REPEAT_KEY_ENABLE)), yes)
-	SRC += $(USER_PATH)/keyrecords/repeat.c
-endif
 
 # tapping
 TAP_DANCE_ENABLE            ?= yes

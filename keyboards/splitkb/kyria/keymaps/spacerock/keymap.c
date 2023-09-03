@@ -17,25 +17,27 @@
 #define KEYMAP_DISPLAY
 #include "spacerock.h"
 
+#define __________UPPER__THUMB__________ KC_MEH, KC_HYPR, KC_HYPR, KC_MEH
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_COLEMAK] = LAYOUT_wrapper(
-      KC_TAB,  _______________COLEMAK_L_TOP_______________,                                     _______________COLEMAK_R_TOP_______________, LY_MED,
-      KC_LALT, _______________COLEMAK_L_MID_______________,                                     _______________COLEMAK_R_MID_______________, KC_RALT,
-      KC_LGUI, _______________COLEMAK_L_BOT_______________, KC_MEH, KC_HYPR, KC_HYPR, KC_MEH, _______________COLEMAK_R_BOT_______________, KC_RGUI,
+      __LPT__, _______________COLEMAK_L_TOP_______________,                                   _______________COLEMAK_R_TOP_______________, __RPT__,
+      __LPM__, _______________COLEMAK_L_MID_______________,                                   _______________COLEMAK_R_MID_______________, __RPM__,
+      __LPB__, _______________COLEMAK_L_BOT_______________, __________UPPER__THUMB__________, _______________COLEMAK_R_BOT_______________, __RPB__,
                                  QK_LEAD, ____________THUMB_LEFT____________, ____________THUMB_RIGHT___________, QK_LEAD
     ),
 
     [_GAME] = LAYOUT_wrapper(
-      KC_TAB,  _______________QUERTY__L_TOP_______________,                                     _______________QUERTY__R_TOP_______________, LY_MED,
-      KC_LALT, _______________QUERTY__L_MID_______________,                                     _______________QUERTY__R_MID_______________, KC_RALT,
-      KC_LGUI, _______________QUERTY__L_BOT_______________, KC_MEH, KC_HYPR, KC_HYPR, KC_MEH, _______________QUERTY__R_BOT_______________, KC_RGUI,
+      __LPT__, _______________QUERTY__L_TOP_______________,                                   _______________QUERTY__R_TOP_______________, __RPT__,
+      __LPM__, _______________QUERTY__L_MID_______________,                                   _______________QUERTY__R_MID_______________, __RPM__,
+      __LPB__, _______________QUERTY__L_BOT_______________, __________UPPER__THUMB__________, _______________QUERTY__R_BOT_______________, __RPB__,
                                  QK_LEAD, ____________THUMB_LEFT____________, ____________THUMB_RIGHT___________, QK_LEAD
     ),
 
     [_NAV] = LAYOUT_wrapper(
-      SH_TOGG, KC_PGUP, M_LEFT,  KC_UP,   M_RIGHT, M_UP,                                         KC_ASTR, KC_7,    KC_8,    KC_9,    KC_PLUS, SH_TOGG,
-      _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, M_DOWN,                                       KC_SLSH, KC_4,    KC_5,    KC_6,    KC_MINS, _______,
+      SH_TOGG, __________________NAV__LT__________________,                                      KC_ASTR, KC_7,    KC_8,    KC_9,    KC_PLUS, SH_TOGG,
+      _______, __________________NAV__LM__________________,                                      KC_SLSH, KC_4,    KC_5,    KC_6,    KC_MINS, _______,
       SNAP1,   SNAP2,   _______, _______, _______, _______, _______, _______,  _______, _______, KC_0,    KC_1,    KC_2,    KC_3,    KC_DOT,  _______,
                                  _______, _______, _______, KC_UNDS, LY_DEF,   LY_ADJ,  _______, _______,  _______, _______
     ),
@@ -48,10 +50,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_ADJUST] = LAYOUT_wrapper(
-      _______, RGB_TOG,  _______, _______, _______, OS_SWAP,                                      OS_SWAP, _______, _______, _______, _______, TG_DEF,
-      QK_BOOT, RGB_MOD,  RGB_SPI, RGB_HUI, RGB_SAI, RGB_VAI,                                      _______, _______, _______, _______, _______, QK_BOOT,
-      MAKE_H,  RGB_RMOD, RGB_SPD, RGB_HUD, RGB_SAD, RGB_VAD, _______, _______,  _______, _______, AU_TOGG, DB_TOGG, HF_TOGG, _______, _______, _______,
-                                  _______, _______, _______, _______, LY_DEF,   LY_DEF, _______, _______,  _______, _______
+      _______, RGB_TOG, _______, _______, _______, OS_SWAP,                                      OS_SWAP, _______, _______, _______, _______, TG_DEF,
+      QK_BOOT, __________________RGB_INC__________________,                                      _______, _______, _______, _______, _______, QK_BOOT,
+      MAKE_H,  __________________RGB_DEC__________________, _______, _______,  _______, _______, AU_TOGG, DB_TOGG, HF_TOGG, _______, _______, _______,
+                                  _______, _______, _______, _______, LY_DEF,  LY_DEF, _______, _______,  _______, _______
     ),
 
 // /*

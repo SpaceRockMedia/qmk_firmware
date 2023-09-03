@@ -5,7 +5,7 @@
 #include "features/swapper.h"
 #include "os_detection.h"
 
-#ifdef SENTENCE_CASE_ENABLE
+#ifdef FEATURE_SENTENCE_CASE_ENABLE
     #include "features/sentence_case.h"
 #endif
 
@@ -22,12 +22,12 @@ __attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *
     return true;
 }
 
-#ifdef SWAPPER_ENABLE
+#ifdef FEATURE_SWAPPER_ENABLE
     bool sw_win_active = false;
     bool sw_lang_active = false;
 #endif
 
-#ifdef CALLUM_ENABLE
+#ifdef FEATURE_CALLUM_ENABLE
     oneshot_state os_shft_state = os_up_unqueued;
     oneshot_state os_ctrl_state = os_up_unqueued;
     oneshot_state os_alt_state = os_up_unqueued;
@@ -49,6 +49,60 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // │ f e a t u r e s                                           │
 // └───────────────────────────────────────────────────────────┘
 
+    //
+    // Repeat
+    // this needs to be the first check for keycodes unless achordion is used then
+    // that should be first
+    #ifdef FEATURE_REPEAT_KEY_ENABLE
+        if (!process_repeat_key_with_alt(keycode, record, REPEAT, ALTREP)) {
+            return false;
+        }
+    #endif
+
+    //
+    // Deactivte NAV layer if a non nav key is pressed
+    if (get_highest_layer(layer_state | default_layer_state) == _NAV) {
+        if (record->event.pressed) {
+            // if one of the keys below is not pressed then disable _NAV
+            switch (keycode) {
+                case LY_ADJ:
+                // navs
+                case KC_PGUP:
+                case KC_PGDN:
+                case KC_LEFT:
+                case KC_RIGHT:
+                case KC_DOWN:
+                case KC_UP:
+                case M_LEFT:
+                case M_RIGHT:
+                case M_DOWN:
+                case M_UP:
+                // nums
+                case KC_ASTR:
+                case KC_SLSH:
+                case KC_0:
+                case KC_1:
+                case KC_2:
+                case KC_3:
+                case KC_4:
+                case KC_5:
+                case KC_6:
+                case KC_7:
+                case KC_8:
+                case KC_9:
+                case KC_PLUS:
+                case KC_MINS:
+                case KC_DOT:
+                    return true;
+                default:
+                    layer_off(_NAV);
+                    return true;
+            }
+        }
+    }
+
+    //
+    // Swapper
     switch (detected_host_os()) {
         case OS_MACOS:
             update_swapper(
@@ -64,8 +118,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
     }
 
-
-    #ifdef CALLUM_ENABLE
+    //
+    // Callum
+    #ifdef FEATURE_CALLUM_ENABLE
         update_oneshot(
             &os_shft_state, KC_LSFT, OS_LSFT,
             keycode, record
@@ -89,46 +144,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         //break;
     #endif
 
-    #ifdef SENTENCE_CASE_ENABLE
+    //
+    // Sentence Case
+    #ifdef FEATURE_SENTENCE_CASE_ENABLE
         if (!process_sentence_case(keycode, record)) { return false; }
     #endif
-
-    if (get_highest_layer(layer_state | default_layer_state) == _NAV) {
-        // if one of the keys below is not pressed then disable _NAV
-        switch (keycode) {
-            // navs
-            case KC_PGUP:
-            case KC_PGDN:
-            case KC_LEFT:
-            case KC_RIGHT:
-            case KC_DOWN:
-            case KC_UP:
-            case M_LEFT:
-            case M_RIGHT:
-            case M_DOWN:
-            case M_UP:
-            // nums
-            case KC_ASTR:
-            case KC_SLSH:
-            case KC_0:
-            case KC_1:
-            case KC_2:
-            case KC_3:
-            case KC_4:
-            case KC_5:
-            case KC_6:
-            case KC_7:
-            case KC_8:
-            case KC_9:
-            case KC_PLUS:
-            case KC_MINS:
-            case KC_DOT:
-                return true;
-            default:
-                layer_off(_NAV);
-                return true;
-        }
-    }
 
     switch (keycode) {
 

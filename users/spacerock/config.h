@@ -25,7 +25,7 @@
 #    include "oled/config.h"
 #endif
 
-#ifdef LEADER_ENABLE
+#ifdef FEATURE_LEADER_ENABLE
 #    include "features/leader_config.h"
 #endif
 
