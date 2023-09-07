@@ -19,3 +19,6 @@ void update_swapper(
     uint16_t keycode,
     keyrecord_t *record
 );
+
+bool sw_win_active;
+bool sw_lang_active;

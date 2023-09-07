@@ -3,6 +3,10 @@
 
 #pragma once
 
+#if defined(WPM_ENABLE)
+#    include "oled/wpm_config.h"
+#endif
+
 #ifndef OLED_UPDATE_INTERVAL
 #    ifdef SPLIT_KEYBOARD
 #        define OLED_UPDATE_INTERVAL 60

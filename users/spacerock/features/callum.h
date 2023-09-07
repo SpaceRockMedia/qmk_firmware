@@ -31,4 +31,7 @@ bool is_oneshot_cancel_key(uint16_t keycode);
 // between layers.
 bool is_oneshot_ignored_key(uint16_t keycode);
 
-
+oneshot_state os_shft_state;
+oneshot_state os_ctrl_state;
+oneshot_state os_alt_state;
+oneshot_state os_cmd_state;

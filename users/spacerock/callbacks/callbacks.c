@@ -3,9 +3,4 @@
 
 #include "spacerock.h"
 
-#ifdef FEATURE_SENTENCE_CASE_ENABLED
-void sentence_case_primed(bool primed) {
-  // Change B0 to the pin for the LED to use.
-  writePin(L21, primed);
-}
-#endif
+#include "callbacks/layers.c"

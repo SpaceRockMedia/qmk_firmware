@@ -12,7 +12,7 @@
 
 #include "keyrecords/wrappers.h"
 #include "keyrecords/process_records.h"
-#include "callbacks.h"
+#include "callbacks/callbacks.h"
 
 #ifdef TAP_DANCE_ENABLE
 #    include "taps/tap_dances.h"

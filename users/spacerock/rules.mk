@@ -1,43 +1,9 @@
 SRC += $(USER_PATH)/spacerock.c \
-        $(USER_PATH)/callbacks.c \
-        $(USER_PATH)/taps/taps.c
+        $(USER_PATH)/callbacks/callbacks.c \
+        $(USER_PATH)/taps/taps.c \
+        $(USER_PATH)/keyrecords/process_records.c
 
-# ┌─────────────────────────────────────────────────┐
-# │ f e a t u r e s                                 │
-# └─────────────────────────────────────────────────┘
-
-FEATURE_CALLUM_ENABLE ?= yes
-ifeq ($(strip $(FEATURE_CALLUM_ENABLE)), yes)
-	SRC += $(USER_PATH)/features/callum.c
-	OPT_DEFS += -DFEATURE_CALLUM_ENABLE
-endif
-
-FEATURE_SWAPPER_ENABLE ?= yes
-ifeq ($(strip $(FEATURE_SWAPPER_ENABLE)), yes)
-	SRC += $(USER_PATH)/features/swapper.c
-	OPT_DEFS += -DFEATURE_SWAPPER_ENABLE
-endif
-
-FEATURE_REPEAT_KEY_ENABLE ?= yes
-ifeq ($(strip $(FEATURE_REPEAT_KEY_ENABLE)), yes)
-	SRC += $(USER_PATH)/features/repeat_key_callbacks.c
-	SRC += $(USER_PATH)/features/repeat_key.c
-	OPT_DEFS += -DFEATURE_REPEAT_KEY_ENABLE
-endif
-
-FEATURE_SENTENCE_CASE_ENABLE ?= yes
-ifeq ($(strip $(FEATURE_SENTENCE_CASE_ENABLE)), yes)
-	SRC += $(USER_PATH)/features/sentence_case.c
-	OPT_DEFS += -DFEATURE_SENTENCE_CASE_ENABLE
-endif
-
-FEATURE_LEADER_ENABLE ?= yes
-ifeq ($(strip $(FEATURE_LEADER_ENABLE)), yes)
-	SRC += $(USER_PATH)/features/leader.c
-endif
-
-SRC += $(USER_PATH)/keyrecords/process_records.c
-
+-include $(USER_PATH)/features/rules.mk
 # ┌─────────────────────────────────────────────────┐
 # │ c o n t r o l l e r   f e a t u r e s           │
 # └─────────────────────────────────────────────────┘
@@ -51,7 +17,6 @@ LTO_ENABLE       = no
 # │ h a r d w a r e   f e a t u r e s               │
 # └─────────────────────────────────────────────────┘
 
-AUDIO_ENABLE       ?= no
 MUSIC_ENABLE       ?= no
 ENCODER_ENABLE     ?= no
 ENCODER_MAP_ENABLE ?= no
