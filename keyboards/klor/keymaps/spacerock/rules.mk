@@ -1,0 +1,9 @@
+
+#AUDIO
+AUDIO_ENABLE = yes
+MUSIC_ENABLE = no
+
+#HAPTIC FEEBACK
+HAPTIC_ENABLE = yes
+
+CONVERT_TO       = promicro_rp2040
