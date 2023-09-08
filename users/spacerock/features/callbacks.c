@@ -3,7 +3,7 @@
 
 #include "spacerock.h"
 
-#include "callbacks/layers.c"
+#include "features/layers/callbacks.c"
 
 #ifdef RGB_MATRIX_ENABLE
     #include "features/rgb/callbacks.c"

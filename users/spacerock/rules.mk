@@ -1,5 +1,5 @@
 SRC += $(USER_PATH)/spacerock.c \
-        $(USER_PATH)/callbacks/callbacks.c \
+        $(USER_PATH)/features/callbacks.c \
         $(USER_PATH)/features/taps/taps.c \
         $(USER_PATH)/keyrecords/process_records.c
 
