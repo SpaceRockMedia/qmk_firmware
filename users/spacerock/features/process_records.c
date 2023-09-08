@@ -1,8 +1,6 @@
-
+#include QMK_KEYBOARD_H
 #include "spacerock.h"
 #include "features/process_records.h"
-#include "features/swapper.h"
-#include "features/keyswapper.h"
 #include "os_detection.h"
 
 #ifdef FEATURE_SWAPPER_ENABLE
@@ -28,16 +26,6 @@ bool process_record_features(uint16_t keycode, keyrecord_t *record) {
                     &sw_win_active, KC_LGUI, KC_TAB, SW_WIN,
                     keycode, record
                 );
-            #endif
-
-            // we dont need to test for keycodes as we always will be swapping these keys
-            // when we need to process them
-
-            #ifdef FEATURE_KEYSWAPPER_ENABLE
-                keyswapper(record, KC_LCTL, KC_LCMD);
-                keyswapper(record, KC_RCTL, KC_RCMD);
-                keyswapper(record, KC_LCMD, KC_LCTL);
-                keyswapper(record, KC_RCMD, KC_RCTL);
             #endif
 
             break;

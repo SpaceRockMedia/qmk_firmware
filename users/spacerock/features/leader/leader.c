@@ -1,5 +1,5 @@
 #include QMK_KEYBOARD_H
-#include "features/leader.h"
+#include "features/leader/leader.h"
 
 #ifdef AUDIO_ENABLE
     float leader_start_song[][2] = SONG(ONE_UP_SOUND);

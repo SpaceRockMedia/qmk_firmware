@@ -17,7 +17,7 @@
  * @brief Repeat Key implementation
  */
 
-#include "features/repeat_key.h"
+#include "features/repeat_key/repeat_key.h"
 
 #pragma message \
     "Repeat Key is now a core QMK feature! To use it, update your QMK set up and see https://docs.qmk.fm/#/feature_repeat_key"

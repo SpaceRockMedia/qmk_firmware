@@ -1,6 +1,6 @@
 
 #include "spacerock.h"
-#include "rgb_matrix.h"
+#include "features/rgb/callbacks.h"
 #include "lib/lib8tion/lib8tion.h"
 
 __attribute__((weak)) bool rgb_matrix_indicators_advanced_keymap(uint8_t led_min, uint8_t led_max) {

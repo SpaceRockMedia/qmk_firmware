@@ -4,3 +4,7 @@
 #include "spacerock.h"
 
 #include "callbacks/layers.c"
+
+#ifdef RGB_MATRIX_ENABLE
+    #include "features/rgb/callbacks.c"
+#endif

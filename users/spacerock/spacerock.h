@@ -4,57 +4,14 @@
 #pragma once
 #include QMK_KEYBOARD_H
 
-// #include "eeprom.h"
-
-// ┌───────────────────────────────────────────────────────────┐
-// │ l o a d   c o n f i g s                                   │
-// └───────────────────────────────────────────────────────────┘
+#ifdef OS_DETECTION_ENABLE
+#    include "os_detection.h"
+#endif
 
 #include "keyrecords/wrappers.h"
 #include "keyrecords/process_records.h"
 #include "callbacks/callbacks.h"
-
-#ifdef TAP_DANCE_ENABLE
-#    include "taps/tap_dances.h"
-#endif // TAP_DANCE_ENABLE
-
-#if defined(RGB_MATRIX_ENABLE)
-#    include "rgb/rgb_matrix_stuff.h"
-#endif
-
-#if defined(OLED_ENABLE)
-#    include "oled/oled.h"
-#endif
-
-#ifdef FEATURE_LEADER_ENABLE
-#    include "features/leader.h"
-#endif
-
-// #ifdef OS_DETECTION_ENABLE
-// #    include "os_detection.h"
-// #endif
-
-#ifdef FEATURE_CALLUM_ENABLE
-#    include "features/callum.h"
-#endif
-
-#ifdef FEATURE_SWAPPER_ENABLE
-#    include "features/swapper.h"
-#endif
-
-#ifdef FEATURE_REPEAT_KEY_ENABLE
-#    include "features/repeat_key.h"
-#endif
-
-#ifdef FEATURE_SENTENCE_CASE_ENABLE
-#    include "features/sentence_case.h"
-#endif
-
-// clang-format on
-
-// ┌───────────────────────────────────────────────────────────┐
-// │ d e f i n e   l a y e r s                                 │
-// └───────────────────────────────────────────────────────────┘
+#include "features/features.h"
 
 typedef enum userspace_layers {
     _COLEMAK = 0,

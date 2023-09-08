@@ -21,8 +21,8 @@
 #include "lib/lib8tion/lib8tion.h"
 
 #include "spacerock.h"
-#include "oled/oled.h"
-#include "oled/assets.h"
+#include "features/oled/oled.h"
+#include "features/oled/assets.h"
 
 const char *get_layer_name_string(layer_state_t state) {
     switch (get_highest_layer(state)) {
