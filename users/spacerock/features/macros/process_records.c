@@ -1,7 +1,9 @@
 
+#include QMK_KEYBOARD_H
 #include "spacerock.h"
+#include "features/macros/process_records.h"
 
-bool process_records_macros(uint16_t keycode, keyrecord_t *record) {
+bool process_record_features_macros(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
 // ┌───────────────────────────────────────────────────────────┐
 // │ q m k                                                     │

@@ -4,15 +4,17 @@
 #pragma once
 #include QMK_KEYBOARD_H
 
-#ifdef FEATURE_CALLUM_ENABLE
-#    include "features/callum/callum.h"
-#endif
+#include "features/wrappers.h"
+#include "features/callbacks.h"
+#include "features/process_records.h"
+#include "features/layers/layers.h"
 
-#ifdef FEATURE_SWAPPER_ENABLE
+#ifdef LEADER_ENABLE
+#    include "features/callum/callum.h"
 #    include "features/callum/swapper.h"
 #endif
 
-#ifdef FEATURE_LEADER_ENABLE
+#ifdef LEADER_ENABLE
 #    include "features/leader/leader.h"
 #endif
 
@@ -28,6 +30,6 @@
 #    include "features/taps/tap_dances.h"
 #endif
 
-#if defined(OLED_ENABLE)
+#ifdef OLED_ENABLE
 #    include "features/oled/oled.h"
 #endif

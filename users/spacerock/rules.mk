@@ -1,7 +1,4 @@
-SRC += $(USER_PATH)/spacerock.c \
-        $(USER_PATH)/features/callbacks.c \
-        $(USER_PATH)/features/taps/taps.c \
-        $(USER_PATH)/keyrecords/process_records.c
+SRC += $(USER_PATH)/spacerock.c
 
 -include $(USER_PATH)/features/rules.mk
 # ┌─────────────────────────────────────────────────┐

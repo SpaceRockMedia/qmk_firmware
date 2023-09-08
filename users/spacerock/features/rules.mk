@@ -1,14 +1,15 @@
+SRC += $(USER_PATH)/features/callbacks.c \
+       $(USER_PATH)/features/process_records.c \
+       $(USER_PATH)/features/layers/process_records.c \
+       $(USER_PATH)/features/macros/process_records.c \
+       $(USER_PATH)/features/taps/taps.c
 
-FEATURE_CALLUM_ENABLE ?= no
+FEATURE_CALLUM_ENABLE ?= yes
 ifeq ($(strip $(FEATURE_CALLUM_ENABLE)), yes)
 	SRC += $(USER_PATH)/features/callum/callum.c
-	OPT_DEFS += -DFEATURE_CALLUM_ENABLE
-endif
-
-FEATURE_SWAPPER_ENABLE ?= yes
-ifeq ($(strip $(FEATURE_SWAPPER_ENABLE)), yes)
 	SRC += $(USER_PATH)/features/callum/swapper.c
-	OPT_DEFS += -DFEATURE_SWAPPER_ENABLE
+	SRC += $(USER_PATH)/features/callum/process_records.c
+	OPT_DEFS += -DFEATURE_CALLUM_ENABLE
 endif
 
 FEATURE_REPEAT_KEY_ENABLE ?= yes

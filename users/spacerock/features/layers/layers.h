@@ -4,8 +4,10 @@
 #pragma once
 #include QMK_KEYBOARD_H
 
-#ifdef OS_DETECTION_ENABLE
-#    include "os_detection.h"
-#endif
-
-#include "features/features.h"
+typedef enum userspace_layers {
+    _COLEMAK = 0,
+    _GAME,
+    _NAV,
+    _MEDIA,
+    _ADJUST,
+} CUSTOM_LAYERS_T;

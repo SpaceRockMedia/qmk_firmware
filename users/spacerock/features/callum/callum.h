@@ -1,7 +1,7 @@
 #pragma once
 
 #include QMK_KEYBOARD_H
-#include "keyrecords/process_records.h"
+#include "features/process_records.h"
 
 // Represents the four states a oneshot key can be in
 typedef enum {

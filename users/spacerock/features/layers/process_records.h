@@ -2,10 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
-#include QMK_KEYBOARD_H
 
-#ifdef OS_DETECTION_ENABLE
-#    include "os_detection.h"
-#endif
+#include "spacerock.h"
 
-#include "features/features.h"
+bool process_record_features_layers(uint16_t keycode, keyrecord_t *record);
