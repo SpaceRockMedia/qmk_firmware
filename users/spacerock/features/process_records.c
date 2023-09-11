@@ -4,6 +4,7 @@
 #include "features/callum/process_records.h"
 #include "features/layers/process_records.h"
 #include "features/macros/process_records.h"
+#include "features/caps_word/process_records.h"
 #include "os_detection.h"
 
 /**

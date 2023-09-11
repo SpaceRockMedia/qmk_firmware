@@ -34,6 +34,7 @@ RGB_MATRIX_SUPPORTED ?= yes
 # └─────────────────────────────────────────────────┘
 
 CONSOLE_ENABLE      ?= no       # Console for debug
+DEFERRED_EXEC_ENABLE = yes
 EXTRAKEY_ENABLE     ?= yes	# multi media keys
 KEY_OVERRIDE_ENABLE ?= no
 MOUSEKEY_ENABLE     ?= no       # Mouse keys

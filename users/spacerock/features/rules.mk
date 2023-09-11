@@ -47,7 +47,7 @@ endif
 
 OLED_ENABLE        ?= yes
 ifeq ($(strip $(OLED_ENABLE)), yes)
-	OLED_DRIVER ?= SSD1306
+	OLED_DRIVER ?= ssd1306
 	WPM_ENABLE ?= yes
 	ifeq ($(strip $(WPM_ENABLE)), yes)
 		WPM_SAMPLE_SECONDS = 15

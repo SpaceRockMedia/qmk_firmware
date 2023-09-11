@@ -4,7 +4,18 @@
 #pragma once
 
 #define TAPPING_TERM 350
-#define TAPPING_TERM_PER_KEY
+#define BILATERAL_COMBINATIONS
+
+/* Miryoku */
+// https://github.com/manna-harbour/qmk_firmware/pull/56
+#define BILATERAL_COMBINATIONS_LIMIT_CHORD_TO_N_KEYS 4 /* GUI, Alt, Ctrl, Shift */
+#define BILATERAL_COMBINATIONS_DELAY_MODS_THAT_MATCH MOD_MASK_GUI
+#define BILATERAL_COMBINATIONS_DELAY_MATCHED_MODS_BY 120  /* ms */
+#define BILATERAL_COMBINATIONS_ALLOW_CROSSOVER_AFTER 80   /* ms */
+#define BILATERAL_COMBINATIONS_ALLOW_SAMESIDED_AFTER 3000 /* ms */
+#define BILATERAL_COMBINATIONS_TYPING_STREAK_TIMEOUT 175  /* ms */
+#define BILATERAL_COMBINATIONS_TYPING_STREAK_MODMASK (~MOD_MASK_SHIFT)
+// #define TAPPING_TERM_PER_KEY
 
 // https://docs.qmk.fm/#/tap_hold?id=tap-or-hold-decision-modes
 // The PERMISSIVE_HOLD option is not noticeable if you also enable
@@ -19,11 +30,11 @@
 // #define HOLD_ON_OTHER_KEY_PRESS
 // #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 
-#ifndef TAPPING_TOGGLE
-#    define TAPPING_TOGGLE 1
-#endif
+// #ifndef TAPPING_TOGGLE
+// #    define TAPPING_TOGGLE 1
+// #endif
 
 // #define TAP_CODE_DELAY 5
 
-#define RETRO_TAPPING
-#define RETRO_TAPPING_PER_KEY
+// #define RETRO_TAPPING
+// #define RETRO_TAPPING_PER_KEY
