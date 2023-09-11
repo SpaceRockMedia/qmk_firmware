@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <ctype.h>
 
+// https://getreuer.info/posts/keyboards/repeat-key/index.html#customization
+
 uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
     bool shifted = (mods & MOD_MASK_SHIFT);  // Was Shift held?
     bool controlled = (mods & MOD_MASK_CTRL);  // Was Ctrl held?

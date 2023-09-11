@@ -45,6 +45,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 
+    if (!process_record_features_caps_word(keycode, record)) {
+        return false;
+    }
+
     if (!process_record_features_macros(keycode, record)) {
         return false;
     }

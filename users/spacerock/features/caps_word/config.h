@@ -3,8 +3,5 @@
 
 #pragma once
 
-#define LAYER_STATE_16BIT
-
-#define ENABLE_COMPILE_KEYCODE
-
-#include "features/config.h"
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+#define CAPS_WORD_IDLE_TIMEOUT 5000

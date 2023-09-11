@@ -2,9 +2,3 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "spacerock.h"
-
-#include "features/layers/callbacks.c"
-
-#ifdef RGB_MATRIX_ENABLE
-    #include "features/rgb/callbacks.c"
-#endif

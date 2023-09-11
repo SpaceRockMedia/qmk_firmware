@@ -40,8 +40,6 @@ MOUSEKEY_ENABLE     ?= no       # Mouse keys
 OS_DETECTION_ENABLE ?= yes
 
 AUTO_SHIFT_ENABLE    ?= no
-# https://docs.qmk.fm/#/feature_caps_word
-CAPS_WORD_ENABLE     ?= yes
 
 # ┌─────────────────────────────────────────────────┐
 # │ u t i l i t y                                   │

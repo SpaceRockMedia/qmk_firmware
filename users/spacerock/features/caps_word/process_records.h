@@ -3,8 +3,4 @@
 
 #pragma once
 
-#define LAYER_STATE_16BIT
-
-#define ENABLE_COMPILE_KEYCODE
-
-#include "features/config.h"
+bool process_record_features_caps_word(uint16_t keycode, keyrecord_t *record);
