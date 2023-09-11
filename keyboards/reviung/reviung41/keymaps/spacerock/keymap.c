@@ -21,42 +21,42 @@
 
 #undef LAYOUT_wrapper
 #define LAYOUT_wrapper(...)   LAYOUT_reviung41(__VA_ARGS__)
-#define ___THUMB_REVIUNG___ OSM(MOD_LSFT), MEH_T(KC_SPC), LY_NAV, MEH_T(KC_ENT), OSM(MOD_RCTL)
+#define ___THUMB_REVIUNG___ KC_RCTL, MEH_T(KC_SPC), MO(_NAV), HYPR_T(KC_ENT), KC_LSFT
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] =  LAYOUT_wrapper(
-        KC_TAB,        _______________QUERTY__L_TOP_______________,    _______________QUERTY__R_TOP_______________, LY_MED,
-        OSM(MOD_LALT), _______________QUERTY__L_MID_______________,    _______________QUERTY__R_MID_______________, OSM(KC_LALT),
-        OSM(MOD_LGUI), _______________QUERTY__L_BOT_______________,    _______________QUERTY__R_BOT_______________, OSM(MOD_RGUI),
-                                                           ___THUMB_REVIUNG___
+        __LPT__, _______________QUERTY__L_TOP_______________,    _______________QUERTY__R_TOP_______________, __RPT__,
+        __LPM__, _______________QUERTY__L_MID_______________,    _______________QUERTY__R_MID_______________, __RPM__,
+        __LPB__, _______________QUERTY__L_BOT_______________,    _______________QUERTY__R_BOT_______________, __RPB__,
+                                                     ___THUMB_REVIUNG___
     ),
 
     [_GAME] =  LAYOUT_wrapper(
-        KC_TAB,        _______________QUERTY__L_TOP_______________,    _______________QUERTY__R_TOP_______________, KC_BSPC,
-        OSM(MOD_LALT), _______________QUERTY__L_MID_______________,    _______________QUERTY__R_MID_______________, OSM(MOD_LALT),
-        OSM(MOD_LGUI), _______________QUERTY__L_BOT_______________,    _______________QUERTY__R_BOT_______________, OSM(MOD_RGUI),
-                                                           ___THUMB_REVIUNG___
+        __LPT__, _______________QUERTY__L_TOP_______________,    _______________QUERTY__R_TOP_______________, __RPT__,
+        __LPM__, _______________QUERTY__L_MID_______________,    _______________QUERTY__R_MID_______________, __RPM__,
+        __LPB__, _______________QUERTY__L_BOT_______________,    _______________QUERTY__R_BOT_______________, __RPB__,
+                                                     ___THUMB_REVIUNG___
     ),
 
     [_NAV] = LAYOUT_wrapper(
-         SH_TOGG, KC_PGUP, M_LEFT,  KC_UP,   M_RIGHT, M_UP,     _______, _______, _______, _______, _______, _______,
-         _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, M_DOWN,   _______, _______, _______, _______, _______, _______,
-         _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______, _______,
-                                          _______, _______, LY_ADJ, _______, _______
+        SH_TOGG, __________________NAV__LT__________________,   KC_ASTR, KC_7,    KC_8,    KC_9,    KC_PLUS, SH_TOGG,
+        _______, __________________NAV__LM__________________,   KC_SLSH, KC_4,    KC_5,    KC_6,    KC_MINS, _______,
+        SNAP1,   SNAP2,   _______, _______, _______, _______,   KC_0,    KC_1,    KC_2,    KC_3,    KC_DOT,  _______,
+                                         _______, _______, LY_DEF, _______, _______
      ),
 
     [_MEDIA] = LAYOUT_wrapper(
-        DM_REC1, DM_REC2, _______, _______, _______, _______,  _______, _______, _______, _______, KC_MPLY, _______,
-        DM_PLY1, DM_PLY2, _______, _______, _______, _______,  _______, _______, KC_MPRV, KC_MNXT, KC_VOLU, _______,
-        DM_RSTP, _______, _______, _______, _______, _______,  _______, _______, _______, _______, KC_VOLD, KC_MUTE,
-                                         _______, _______, _______, _______, _______
+        DM_REC1, DM_REC2, _______, _______, _______, _______,   _______, _______, _______, _______, KC_MPLY, _______,
+        DM_PLY1, DM_PLY2, _______, _______, _______, _______,   _______, _______, KC_MPRV, KC_MNXT, KC_VOLU, _______,
+        DM_RSTP, _______, _______, _______, _______, _______,   _______, _______, _______, _______, KC_VOLD, KC_MUTE,
+                                         _______, _______, LY_DEF, _______, _______
     ),
 
     [_ADJUST] = LAYOUT_wrapper(
-        _______, RGB_TOG,  _______, _______, _______, OS_SWAP,  OS_SWAP, _______, _______, _______,  _______, TG_DEF,
-        QK_BOOT, RGB_MOD,  RGB_SPI, RGB_HUI, RGB_SAI, RGB_VAI,  _______, OS_CTRL, OS_ALT, OS_CMD,  _______, QK_BOOT,
-        MAKE_H,  RGB_RMOD, RGB_SPD, RGB_HUD, RGB_SAD, RGB_VAD,  AU_TOGG, DB_TOGG, HF_TOGG, _______, _______,  _______,
-                                         _______, _______, LY_DEF, _______, _______
+        TG_DEF,  RGB_TOG,  _______, _______, _______, OS_SWAP,   HF_TOGG, _______, _______, _______, KC_MPLY, _______,
+        QK_BOOT, RGB_MOD,  RGB_SPI, RGB_HUI, RGB_SAI, RGB_VAI,   DB_TOGG, _______, KC_MPRV, KC_MNXT, KC_VOLU, _______,
+        MAKE_H,  RGB_RMOD, RGB_SPD, RGB_HUD, RGB_SAD, RGB_VAD,   AU_TOGG, _______, _______, _______, KC_VOLD, KC_MUTE,
+                                          _______, _______, LY_DEF, _______, _______
     )
 
  };

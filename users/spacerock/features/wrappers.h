@@ -59,6 +59,6 @@ NOTE: These are all the same length.  If you do a search/replace
 #define __LPM__ KC_LALT
 #define __LPB__ KC_LGUI
 
-#define __RPT__ LY_MED
+#define __RPT__ MO(_ADJUST)
 #define __RPM__ KC_LALT
 #define __RPB__ KC_RGUI

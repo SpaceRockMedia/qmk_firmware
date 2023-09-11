@@ -36,7 +36,7 @@ ifeq ($(strip $(COMBO_ENABLE)), yes)
 	INTROSPECTION_KEYMAP_C = $(USER_PATH)/features/combos/combos.c
 endif
 
-AUDIO_ENABLE ?= yes
+AUDIO_ENABLE ?= no
 ifeq ($(strip $(AUDIO_ENABLE)), yes)
 	MUSIC_ENABLE ?= no
 # 	SRC += $(USER_PATH)/features/audio/udio.c
