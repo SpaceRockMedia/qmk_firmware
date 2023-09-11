@@ -4,10 +4,9 @@
 #pragma once
 #include QMK_KEYBOARD_H
 
-#include "features/wrappers.h"
+#include "keycodes/keycodes.h"
 #include "features/callbacks.h"
 #include "features/process_records.h"
-#include "features/layers/layers.h"
 
 #ifdef LEADER_ENABLE
 #    include "features/callum/callum.h"

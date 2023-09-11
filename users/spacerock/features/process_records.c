@@ -1,11 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "spacerock.h"
 #include "features/process_records.h"
-#include "features/callum/process_records.h"
-#include "features/layers/process_records.h"
-#include "features/macros/process_records.h"
-#include "features/caps_word/process_records.h"
-#include "os_detection.h"
+
 
 /**
  * @brief Keycode handler for keymaps

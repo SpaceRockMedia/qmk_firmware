@@ -28,31 +28,31 @@
 //----------------------------------------------------------------
 
 // LEFT Hand
-COMB(cmExcl,  KC_EXLM, KC_Q, KC_A)
-COMB(cmAt,    KC_AT,   KC_W, KC_S)
-COMB(cmHash,  KC_HASH, KC_E, KC_D)
-COMB(cmDollr, KC_DLR,  KC_R, KC_F)
+COMB(cmExcl,  KC_EXLM, KC_Q, HRM_GUI_A)
+COMB(cmAt,    KC_AT,   KC_W, HRM_ALT_S)
+COMB(cmHash,  KC_HASH, KC_E, HRM_SFT_D)
+COMB(cmDollr, KC_DLR,  KC_R, HRM_CTL_F)
 COMB(cmPerc,  KC_PERC, KC_T, KC_G)
 
-COMB(cmGrave, KC_GRV,  KC_A, KC_Z)
-COMB(cmTilde, KC_TILD, KC_S, KC_X)
-COMB(cmBslh,  KC_BSLS, KC_D, KC_C)
-COMB(cmEqual, KC_EQL,  KC_F, KC_V)
+COMB(cmGrave, KC_GRV,  HRM_GUI_A, KC_Z)
+COMB(cmTilde, KC_TILD, HRM_ALT_S, KC_X)
+COMB(cmBslh,  KC_BSLS, HRM_SFT_D, KC_C)
+COMB(cmEqual, KC_EQL,  HRM_CTL_F, KC_V)
 
 
 // RIGHT Hand
 COMB(cmCirc,  KC_CIRC, KC_Y, KC_H)
-COMB(cmAmpr,  KC_AMPR, KC_U, KC_J)
-COMB(cmAstr,  KC_ASTR, KC_I, KC_K)
-COMB(cmPlus,  KC_PLUS, KC_O, KC_L)
-COMB(cmDqt,   KC_DQT,  KC_P, KC_SCLN)
+COMB(cmAmpr,  KC_AMPR, KC_U, HRM_CTL_J)
+COMB(cmAstr,  KC_ASTR, KC_I, HRM_SFT_K)
+COMB(cmPlus,  KC_PLUS, KC_O, HRM_ALT_L)
+COMB(cmDqt,   KC_DQT,  KC_P, HRM_GUI_SCLN)
 
 COMB(cmUnder, KC_UNDS, KC_H, KC_N)
-COMB(cmPipe,  KC_PIPE, KC_J, KC_M)
-COMB(cmFslh,  KC_SLSH, KC_K, KC_COMM)
-COMB(cmMinus, KC_MINS, KC_L, KC_DOT)
-COMB(cmMinusLeft, KC_MINS, KC_L, KC_LEFT)
-COMB(cmQuot,  KC_QUOT, KC_SCLN, KC_SLSH)
+COMB(cmPipe,  KC_PIPE, HRM_CTL_J, KC_M)
+COMB(cmFslh,  KC_SLSH, HRM_SFT_K, KC_COMM)
+COMB(cmMinus, KC_MINS, HRM_ALT_L, KC_DOT)
+COMB(cmMinusLeft, KC_MINS, HRM_ALT_L, KC_LEFT)
+COMB(cmQuot,  KC_QUOT, HRM_GUI_SCLN, KC_SLSH)
 
 //----------------------------------------------------------------
 // HORIZONTAL Combos
@@ -63,10 +63,10 @@ COMB(cbSwap,  SW_WIN,  KC_Q, KC_W)
 COMB(CL_BSPC, KC_BSPC, KC_W, KC_E)
 COMB(CL_DEL,  KC_DEL,  KC_E, KC_R)
 
-COMB(cbEsc,   KC_ESC,  KC_A, KC_S)
-COMB(cmLHome, KC_HOME, KC_S, KC_D)
-COMB(cmLEnd,  KC_END,  KC_D, KC_F)
-COMB(cbRpt,   REPEAT,  KC_F, KC_G)
+COMB(cbEsc,   KC_ESC,  HRM_GUI_A, HRM_ALT_S)
+COMB(cmLHome, KC_HOME, HRM_ALT_S, HRM_SFT_D)
+COMB(cmLEnd,  KC_END,  HRM_SFT_D, HRM_CTL_F)
+COMB(cbRpt,   REPEAT,  HRM_CTL_F, KC_G)
 
 COMB(cbUndo,  OS_UNDO,  KC_Z, KC_X)
 COMB(cbCut,   OS_CUT,   KC_X, KC_C)
@@ -79,9 +79,9 @@ COMB(cbRedo,  OS_REDO,  KC_V, KC_B)
 COMB(CR_BSPC,  KC_BSPC,  KC_U, KC_I)
 COMB(CR_DEL,   KC_DEL,   KC_I, KC_O)
 
-COMB(cbARpt,  ALTREP,  KC_H, KC_J)
-COMB(cmRHome, KC_HOME, KC_J, KC_K)
-COMB(cmREnd,  KC_END,  KC_K, KC_L)
+COMB(cbARpt,  ALTREP,  KC_H, HRM_CTL_J)
+COMB(cmRHome, KC_HOME, HRM_CTL_J, HRM_SFT_K)
+COMB(cmREnd,  KC_END,  HRM_SFT_K, HRM_ALT_L)
 
 /*
    ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
@@ -110,17 +110,17 @@ COMB(cbF12,  KC_F12, LY_MED, OS_CMD)
    └───────────────────────────────────────────────────────────┘ */
 
 // {}
-COMB(cbLCbr, KC_LCBR, KC_S, KC_E)
-COMB(cbRCbr, KC_RCBR, KC_F, KC_E)
+COMB(cbLCbr, KC_LCBR, HRM_ALT_S, KC_E)
+COMB(cbRCbr, KC_RCBR, HRM_CTL_F, KC_E)
 // <>
-COMB(cbLAbk, KC_LABK, KC_X, KC_D)
-COMB(cbRAbk, KC_RABK, KC_V, KC_D)
+COMB(cbLAbk, KC_LABK, KC_X, HRM_SFT_D)
+COMB(cbRAbk, KC_RABK, KC_V, HRM_SFT_D)
 // []
-COMB(cbLBrc, KC_LBRC, KC_D, KC_R)
+COMB(cbLBrc, KC_LBRC, HRM_SFT_D, KC_R)
 COMB(cbRBrc, KC_RBRC, KC_G, KC_R)
 //
-COMB(cbLPrn, KC_LPRN, KC_C, KC_F)
-COMB(cbRPrn, KC_RPRN, KC_F, KC_B)
+COMB(cbLPrn, KC_LPRN, KC_C, HRM_CTL_F)
+COMB(cbRPrn, KC_RPRN, HRM_CTL_F, KC_B)
 
 
  /*

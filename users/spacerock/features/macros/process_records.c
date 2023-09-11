@@ -1,5 +1,6 @@
 
 #include QMK_KEYBOARD_H
+#include "os_detection.h"
 #include "spacerock.h"
 #include "features/macros/process_records.h"
 
