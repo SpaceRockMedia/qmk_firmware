@@ -4,6 +4,7 @@
 #include "features/callum/process_records.h"
 #include "features/layers/process_records.h"
 #include "features/macros/process_records.h"
+#include "os_detection.h"
 
 /**
  * @brief Keycode handler for keymaps
@@ -29,6 +30,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 
+    if (is_keyboard_master()) {
+        os_variant_t os_type = detected_host_os();
+        if (os_type) {
+            bool is_mac = (os_type == OS_MACOS) || (os_type == OS_IOS);
+            if (keymap_config.swap_lctl_lgui != is_mac) {
+                keymap_config.swap_lctl_lgui = keymap_config.swap_rctl_rgui = is_mac;
+                eeconfig_update_keymap(keymap_config.raw);
+            }
+        }
+    }
+
     if (!process_record_features_callum(keycode, record)) {
         return false;
     }
@@ -37,7 +49,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 
-    //
+//
     // Repeat
     // this needs to be the first check for keycodes unless achordion is used then
     // that should be first

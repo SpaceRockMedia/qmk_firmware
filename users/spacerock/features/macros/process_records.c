@@ -104,7 +104,7 @@ bool process_record_features_macros(uint16_t keycode, keyrecord_t *record) {
                     SEND_STRING(SS_LWIN(SS_TAP(X_PSCR)));         //WIN
                 }
             }
-            break;
+            return true;
 
         case SNAP2:
             if (record->event.pressed) {
@@ -114,15 +114,15 @@ bool process_record_features_macros(uint16_t keycode, keyrecord_t *record) {
                     SEND_STRING(SS_LSFT(SS_LWIN("S")));           //WIN
                 }
             }
-            break;
+            return true;
 
-        case KC_MPLY:
-            if (record->event.pressed) {
-            #ifdef HAPTIC_ENABLE
-                    drv2605l_pulse(sharp_click);
-            #endif // HAPTIC_ENABL
-            }
-            break;
+        // case KC_MPLY:
+        //     if (record->event.pressed) {
+        //     #ifdef HAPTIC_ENABLE
+        //             drv2605l_pulse(sharp_click);
+        //     #endif // HAPTIC_ENABL
+        //     }
+        //     break;
 
     }
     return true;

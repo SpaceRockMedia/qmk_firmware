@@ -63,10 +63,10 @@ COMB(cbSwap,  SW_WIN,  KC_Q, KC_W)
 COMB(CL_BSPC, KC_BSPC, KC_W, KC_E)
 COMB(CL_DEL,  KC_DEL,  KC_E, KC_R)
 
-COMB(cbEsc,  KC_ESC,  KC_A, KC_S)
-COMB(cmHome, KC_HOME, KC_S, KC_D)
-COMB(cmEND,  KC_END,  KC_D, KC_F)
-COMB(cbRpt,  REPEAT,  KC_F, KC_G)
+COMB(cbEsc,   KC_ESC,  KC_A, KC_S)
+COMB(cmLHome, KC_HOME, KC_S, KC_D)
+COMB(cmLEnd,  KC_END,  KC_D, KC_F)
+COMB(cbRpt,   REPEAT,  KC_F, KC_G)
 
 COMB(cbUndo,  OS_UNDO,  KC_Z, KC_X)
 COMB(cbCut,   OS_CUT,   KC_X, KC_C)
@@ -79,7 +79,9 @@ COMB(cbRedo,  OS_REDO,  KC_V, KC_B)
 COMB(CR_BSPC,  KC_BSPC,  KC_U, KC_I)
 COMB(CR_DEL,   KC_DEL,   KC_I, KC_O)
 
-COMB(cbARpt,  ALTREP,  KC_R, KC_J)
+COMB(cbARpt,  ALTREP,  KC_H, KC_J)
+COMB(cmRHome, KC_HOME, KC_J, KC_K)
+COMB(cmREnd,  KC_END,  KC_K, KC_L)
 
 /*
    ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸

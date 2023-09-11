@@ -3,9 +3,6 @@
 
 #pragma once
 #include QMK_KEYBOARD_H
-
-#ifdef OS_DETECTION_ENABLE
-#    include "os_detection.h"
-#endif
+#include "os_detection.h"
 
 #include "features/features.h"
