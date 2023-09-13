@@ -3,34 +3,6 @@
 
 #include "spacerock.h"
 
-// TAPPING_TERM_PER_KEY
-// __attribute__((weak))
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-
-    switch (keycode) {
-        case QK_TAP_DANCE ... QK_TAP_DANCE_MAX:
-            return 275;
-        // case QK_MOD_TAP ... QK_MOD_TAP_MAX:
-            // if (QK_MOD_TAP_GET_MODS(keycode) & MOD_LGUI) {
-                // return 300;
-            // }
-        default:
-            return TAPPING_TERM;
-    }
-}
-
-// RETRO_TAPPING_PER_KEY
-// https://docs.qmk.fm/#/tap_hold?id=retro-tapping
-bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LT(2, KC_SPC):
-            return true;
-        default:
-            // use retro functionality by default
-            return true;
-    }
-}
-
 // Determine the current tap dance state
 td_state_t cur_dance(tap_dance_state_t *state) {
     if (state->count == 1) {
@@ -43,7 +15,7 @@ td_state_t cur_dance(tap_dance_state_t *state) {
     }
 }
 
-// Initialize tap structure associated with example tap dance key
+// Initialize tap structute associated with example tap dance key
 static td_tap_t ql_tap_state = {
     .is_press_action = true,
     .state = TD_NONE

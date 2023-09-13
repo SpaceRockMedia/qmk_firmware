@@ -1,8 +1,9 @@
 // Copyright 2020 Christopher Courtney, aka Drashna Jael're  (@drashna) <drashna@live.com>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-#include "spacerock.h"
 #include "bootmagic_lite.h"
+#include "spacerock.h"
+#include "util/util.h"
 
 void bootmagic_lite(void) {
     bool perform_reset = false;

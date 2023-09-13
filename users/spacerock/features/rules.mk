@@ -5,6 +5,7 @@ SRC += $(USER_PATH)/features/callbacks.c \
        $(USER_PATH)/features/macros/process_records.c \
        $(USER_PATH)/features/caps_word/callbacks.c \
        $(USER_PATH)/features/caps_word/process_records.c \
+       $(USER_PATH)/features/taps/callbacks.c \
        $(USER_PATH)/features/taps/taps.c
 
 FEATURE_CALLUM_ENABLE ?= yes
