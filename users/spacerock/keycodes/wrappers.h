@@ -55,8 +55,8 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _______________QUERTY__R_MID_CSAG__________ KC_H, RCTL_T(KC_J), RSFT_T(KC_K), LALT_T(KC_L), RGUI_T(KC_SCLN)
 #define _______________QUERTY__R_BOT_______________ KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH
 
-#define ____________THUMB_LEFT____________ KC_LCTL, SC_LSPO, HYPR_T(KC_SPC), LY_NAV
-#define ____________THUMB_RIGHT___________ LY_NAV,  HYPR_T(KC_ENT), SC_RSPC, KC_RCTL
+#define ____________THUMB_LEFT____________ KC_LCTL, LY_NAV, HYPR_T(KC_SPC), SC_LSPO
+#define ____________THUMB_RIGHT___________ SC_RSPC,  HYPR_T(KC_ENT), LY_NAV, KC_RCTL
 
 #define ________OSM_LEFT_________ KC_LGUI,  LC_LALT, OS_CTRL
 #define ________OSM_RIGHT________ OS_CTRL, OS_ALT, OS_CMD
