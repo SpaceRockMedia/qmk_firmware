@@ -10,6 +10,15 @@
       "type": "shell"
     },
     {
+      "command": "clear && qmk compile -kb reviung/reviung41 -km spacerock",
+      "group": {
+        "isDefault": true,
+        "kind": "build"
+      },
+      "label": "Build reviung41",
+      "type": "shell"
+    },
+    {
       "command": "clear && qmk compile -kb hillside/52 -km spacerock",
       "group": {
         "isDefault": false,

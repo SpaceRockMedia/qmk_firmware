@@ -23,7 +23,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_COLEMAK] = LAYOUT_wrapper(
       __LPT__, _______________COLEMAK_L_TOP_______________,                                   _______________COLEMAK_R_TOP_______________, __RPT__,
-      __LPM__, _______________COLEMAK_L_MID_______________,                                   _______________COLEMAK_R_MID_______________, __RPM__,
+      __LPM__, _______________COLEMAK_L_MID_GASC__________,                                   _______________COLEMAK_R_MID_CSAG__________, __RPM__,
       __LPB__, _______________COLEMAK_L_BOT_______________, __________UPPER__THUMB__________, _______________COLEMAK_R_BOT_______________, __RPB__,
                                  QK_LEAD, ____________THUMB_LEFT____________, ____________THUMB_RIGHT___________, QK_LEAD
     ),
@@ -39,21 +39,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       SH_TOGG, __________________NAV__LT__________________,                                      KC_ASTR, KC_7,    KC_8,    KC_9,    KC_PLUS, SH_TOGG,
       _______, __________________NAV__LM__________________,                                      KC_SLSH, KC_4,    KC_5,    KC_6,    KC_MINS, _______,
       SNAP1,   SNAP2,   _______, _______, _______, _______, _______, _______,  _______, _______, KC_0,    KC_1,    KC_2,    KC_3,    KC_DOT,  _______,
-                                 _______, _______, _______, KC_UNDS, LY_DEF,   LY_ADJ,  _______, _______,  _______, _______
+                                 _______, _______, LY_DEF, KC_UNDS, _______,   _______, _______, LY_DEF,   _______, _______
     ),
 
     [_MEDIA] = LAYOUT_wrapper(
       DM_REC1, DM_REC2, _______, _______, _______, _______,                                      _______, _______, _______, _______, KC_MPLY, _______,
       DM_PLY1, DM_PLY2, _______, _______, _______, _______,                                      _______, _______, KC_MPRV, KC_MNXT, KC_VOLU, _______,
       DM_RSTP, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______, _______, KC_VOLD, KC_MUTE,
-                                 _______, _______, _______, _______, LY_DEF,   _______, _______, _______, _______, KC_MUTE
+                                 _______, _______, LY_DEF, _______, _______,   _______, _______, LY_DEF, _______, KC_MUTE
     ),
 
     [_ADJUST] = LAYOUT_wrapper(
-      TG_DEF, RGB_TOG, _______, _______, _______, OS_SWAP,                                      HF_TOGG, _______, _______, _______, KC_MPLY, _______,
-      QK_BOOT, __________________RGB_INC__________________,                                     DB_TOGG, _______, KC_MPRV, KC_MNXT, KC_VOLU, _______,
-      MAKE_H,  __________________RGB_DEC__________________, _______, _______, _______, _______, AU_TOGG, _______, _______, _______, KC_VOLD, KC_MUTE,
-                                 _______, _______, _______, _______, LY_DEF,  LY_DEF,  _______, _______,  _______, _______
+      TG_DEF, RGB_TOG, xxxxxxx, xxxxxxx, xxxxxxx, OS_SWAP,                                      HF_TOGG, xxxxxxx, xxxxxxx, xxxxxxx, KC_MPLY, xxxxxxx,
+      QK_BOOT, __________________RGB_INC__________________,                                     DB_TOGG, xxxxxxx, KC_MPRV, KC_MNXT, KC_VOLU, xxxxxxx,
+      MAKE_H,  __________________RGB_DEC__________________, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, AU_TOGG, xxxxxxx, xxxxxxx, xxxxxxx, KC_VOLD, KC_MUTE,
+                                 xxxxxxx, xxxxxxx, LY_DEF,  xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, LY_DEF,  xxxxxxx, xxxxxxx
     ),
 
 // /*

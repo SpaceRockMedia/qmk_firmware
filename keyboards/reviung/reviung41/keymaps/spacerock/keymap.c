@@ -21,19 +21,19 @@
 
 #undef LAYOUT_wrapper
 #define LAYOUT_wrapper(...)   LAYOUT_reviung41(__VA_ARGS__)
-#define ___THUMB_REVIUNG___ KC_RCTL, MEH_T(KC_SPC), MO(_NAV), HYPR_T(KC_ENT), KC_LSFT
+#define ___THUMB_REVIUNG___ KC_LCTL, KC_LSFT, MEH_T(KC_SPC), HYPR_T(KC_ENT), MO(_NAV)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] =  LAYOUT_wrapper(
         __LPT__, _______________QUERTY__L_TOP_______________,    _______________QUERTY__R_TOP_______________, __RPT__,
-        __LPM__, _______________QUERTY__L_MID_______________,    _______________QUERTY__R_MID_______________, __RPM__,
+        __LPM__, _______________COLEMAK_L_MID_GASC__________,    _______________COLEMAK_R_MID_CSAG__________, __RPM__,
         __LPB__, _______________QUERTY__L_BOT_______________,    _______________QUERTY__R_BOT_______________, __RPB__,
                                                      ___THUMB_REVIUNG___
     ),
 
     [_GAME] =  LAYOUT_wrapper(
         __LPT__, _______________QUERTY__L_TOP_______________,    _______________QUERTY__R_TOP_______________, __RPT__,
-        __LPM__, _______________QUERTY__L_MID_______________,    _______________QUERTY__R_MID_______________, __RPM__,
+        __LPM__, _______________QUERTY__L_MID_GASC__________,    _______________QUERTY__R_MID_CSAG__________, __RPM__,
         __LPB__, _______________QUERTY__L_BOT_______________,    _______________QUERTY__R_BOT_______________, __RPB__,
                                                      ___THUMB_REVIUNG___
     ),
