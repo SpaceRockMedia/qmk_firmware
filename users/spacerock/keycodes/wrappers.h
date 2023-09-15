@@ -65,6 +65,9 @@ NOTE: These are all the same length.  If you do a search/replace
 #define ____________THUMB_LEFT____________ KC_LCTL, LY_NAV, HYPR_T(KC_SPC), SC_LSPO
 #define ____________THUMB_RIGHT___________ SC_RSPC,  HYPR_T(KC_ENT), LY_NAV, KC_RCTL
 
+#define ____THREE_THUMB_LEFT_____ LY_NAV, HYPR_T(KC_SPC), SC_LSPO
+#define ____THREE_THUMB_RIGHT____ SC_RSPC, HYPR_T(KC_ENT), LY_NAV
+
 #define ________OSM_LEFT_________ KC_LGUI,  LC_LALT, OS_CTRL
 #define ________OSM_RIGHT________ OS_CTRL, OS_ALT, OS_CMD
 

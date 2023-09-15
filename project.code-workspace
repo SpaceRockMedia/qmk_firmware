@@ -12,6 +12,10 @@
                         "path": "keyboards/reviung/reviung41"
                 },
                 {
+                        "name": "keyboards/crkbd",
+                        "path": "keyboards/crkbd/keymaps/spacerock"
+                },
+                {
                         "name": "keyboards/klor",
                         "path": "keyboards/klor"
                 },

@@ -1,0 +1,58 @@
+/*
+Copyright 2019 @foostan
+Copyright 2020 Drashna Jaelre <@drashna>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+//#include QMK_KEYBOARD_H
+#define KEYMAP_DISPLAY
+#include "spacerock.h"
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    [_COLEMAK] = LAYOUT_wrapper(
+        __LPT__, _______________COLEMAK_L_TOP_______________,                      _______________COLEMAK_R_TOP_______________, __RPT__,
+        HYPR_T(QK_LEAD), _______________COLEMAK_L_MID_GASC__________,                      _______________COLEMAK_R_MID_CSAG__________, HYPR_T(QK_LEAD),
+        __LPB__, _______________COLEMAK_L_BOT_______________,                      _______________COLEMAK_R_BOT_______________, __RPB__,
+                                            ____THREE_THUMB_LEFT_____,     ____THREE_THUMB_RIGHT____
+  ),
+
+    [_GAME] = LAYOUT_wrapper(
+        __LPT__, _______________QUERTY__L_TOP_______________,                      _______________QUERTY__R_TOP_______________, __RPT__,
+        HYPR_T(QK_LEAD), _______________QUERTY__L_MID_GASC__________,                      _______________QUERTY__R_MID_CSAG__________, HYPR_T(QK_LEAD),
+        __LPB__, _______________QUERTY__L_BOT_______________,                      _______________QUERTY__R_BOT_______________, __RPB__,
+                                            ____THREE_THUMB_LEFT_____,     ____THREE_THUMB_RIGHT____
+  ),
+
+    [_NAV] = LAYOUT_wrapper(
+        SH_TOGG, __________________NAV__LT__________________,                      KC_ASTR, KC_7,    KC_8,    KC_9,    KC_PLUS, SH_TOGG,
+        _______, __________________NAV__LM__________________,                      KC_SLSH, KC_4,    KC_5,    KC_6,    KC_MINS, _______,
+        SNAP1,   SNAP2,   _______, _______, _______, _______,                      KC_0,    KC_1,    KC_2,    KC_3,    KC_DOT,  _______,
+                                            LY_DEF, _______,  _______,     _______, _______, LY_DEF
+  ),
+
+    [_MEDIA] = LAYOUT_wrapper(
+        _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
+                                            LY_DEF, _______,  _______,     _______, _______, LY_DEF
+  ),
+
+    [_ADJUST] = LAYOUT_wrapper(
+        TG_DEF,  RGB_TOG, xxxxxxx, xxxxxxx, xxxxxxx, OS_SWAP,                      HF_TOGG, xxxxxxx, xxxxxxx, xxxxxxx, KC_MPLY, xxxxxxx,
+        QK_BOOT, __________________RGB_INC__________________,                      DB_TOGG, xxxxxxx, KC_MPRV, KC_MNXT, KC_VOLU, xxxxxxx,
+        MAKE_H,  __________________RGB_DEC__________________,                      AU_TOGG, xxxxxxx, xxxxxxx, xxxxxxx, KC_VOLD, KC_MUTE,
+                                            LY_DEF,  _______, _______,     _______, _______, LY_DEF
+  )
+};
