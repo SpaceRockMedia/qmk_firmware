@@ -80,9 +80,9 @@ NOTE: These are all the same length.  If you do a search/replace
 
 
 #define __LPT__ KC_TAB
-#define __LPM__ LALT_T(KC_ESC)
+#define __LPM__ HYPR_T(QK_LEAD)
 #define __LPB__ KC_LGUI
 
 #define __RPT__ MO(_ADJUST)
-#define __RPM__ KC_LALT
+#define __RPM__ HYPR_T(QK_LEAD)
 #define __RPB__ KC_RGUI

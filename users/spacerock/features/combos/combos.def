@@ -12,9 +12,9 @@
    │ v e r t i c a l / h o r i z o n t a l                     │
    └───────────────────────────────────────────────────────────┘
    ┌─────────┌─────────┬─────────┬─────────┬─────────┬─────────┐                                        ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
-   │      swapper              BSPC       DEL                  │ ╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮ │                 BSPC       DEL                            │
+   │                swapper    BSPC       DEL                  │ ╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮ │                 BSPC       DEL                            │
    ├─       ─┼─   !   ─┼─   @   ─┼─   #   ─┼─   $   ─┼─   %   ─┤ │╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯│ ├─   ^   ─┼─   &   ─┼─   *   ─┼─   +   ─┼─   "   ─┼─       ─┤
-   │                 Save      HOME       END     Repeat       ├─╯                                    ╰─│      ALTREP                                               │
+   │                  ESC      HOME       END     Repeat       ├─╯                                    ╰─│      ALTREP                                               │
    ├─       ─┼─   `   ─┼─   ~   ─┼─   \   ─┼─   =   ─┼─       ─┤╭─      ─┬─       ─╮╭─       ─┬─      ─╮├─   _   ─┼─   |   ─┼─   /   ─┼─   -   ─┼─   '   ─┼─       ─┤
                             ┌────── paste ──────┐
    │                 undo       cut      copy      redo        ││                  ││                  ││                 HOME       END                            │
@@ -111,16 +111,16 @@ COMB(cbF12,  KC_F12, LY_MED, OS_CMD)
 
 // {}
 COMB(cbLCbr, KC_LCBR, HRM_ALT_S, KC_E)
-COMB(cbRCbr, KC_RCBR, HRM_CTL_F, KC_E)
+COMB(cbRCbr, KC_RCBR, KC_W, HRM_SFT_D)
 // <>
 COMB(cbLAbk, KC_LABK, KC_X, HRM_SFT_D)
-COMB(cbRAbk, KC_RABK, KC_V, HRM_SFT_D)
+COMB(cbRAbk, KC_RABK, HRM_ALT_S, KC_C)
 // []
 COMB(cbLBrc, KC_LBRC, HRM_SFT_D, KC_R)
-COMB(cbRBrc, KC_RBRC, KC_G, KC_R)
-//
+COMB(cbRBrc, KC_RBRC, KC_E, HRM_CTL_F)
+// ()
 COMB(cbLPrn, KC_LPRN, KC_C, HRM_CTL_F)
-COMB(cbRPrn, KC_RPRN, HRM_CTL_F, KC_B)
+COMB(cbRPrn, KC_RPRN, HRM_SFT_D, KC_V)
 
 
  /*
