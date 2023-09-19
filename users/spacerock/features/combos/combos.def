@@ -12,7 +12,7 @@
    │ v e r t i c a l / h o r i z o n t a l                     │
    └───────────────────────────────────────────────────────────┘
    ┌─────────┌─────────┬─────────┬─────────┬─────────┬─────────┐                                        ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
-   │                swapper    BSPC       DEL                  │ ╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮ │                 BSPC       DEL                            │
+   │                swapper    BSPC       DEL       Tab        │ ╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮ │                 BSPC       DEL                            │
    ├─       ─┼─   !   ─┼─   @   ─┼─   #   ─┼─   $   ─┼─   %   ─┤ │╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯│ ├─   ^   ─┼─   &   ─┼─   *   ─┼─   +   ─┼─   "   ─┼─       ─┤
    │                  ESC      HOME       END     Repeat       ├─╯                                    ╰─│      ALTREP                                               │
    ├─       ─┼─   `   ─┼─   ~   ─┼─   \   ─┼─   =   ─┼─       ─┤╭─      ─┬─       ─╮╭─       ─┬─      ─╮├─   _   ─┼─   |   ─┼─   /   ─┼─   -   ─┼─   '   ─┼─       ─┤
@@ -62,6 +62,7 @@ COMB(cmQuot,  KC_QUOT, HRM_GUI_SCLN, KC_SLSH)
 COMB(cbSwap,  SW_WIN,  KC_Q, KC_W)
 COMB(CL_BSPC, KC_BSPC, KC_W, KC_E)
 COMB(CL_DEL,  KC_DEL,  KC_E, KC_R)
+COMB(cbTab,   KC_TAB,  KC_R, KC_T)
 
 COMB(cbEsc,   KC_ESC,  HRM_GUI_A, HRM_ALT_S)
 COMB(cmLHome, KC_HOME, HRM_ALT_S, HRM_SFT_D)

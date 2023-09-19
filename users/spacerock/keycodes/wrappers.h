@@ -31,10 +31,10 @@ NOTE: These are all the same length.  If you do a search/replace
 #define HRM_ALT_R    LALT_T(KC_R)
 #define HRM_ALT_L    RALT_T(KC_L)
 #define HRM_ALT_I    RALT_T(KC_I)
-#define HRM_SFT_D    LALT_T(KC_D)
-#define HRM_SFT_S    LALT_T(KC_S)
-#define HRM_SFT_E    RALT_T(KC_E)
-#define HRM_SFT_K    RALT_T(KC_K)
+#define HRM_SFT_D    LSFT_T(KC_D)
+#define HRM_SFT_S    LSFT_T(KC_S)
+#define HRM_SFT_E    RSFT_T(KC_E)
+#define HRM_SFT_K    RSFT_T(KC_K)
 #define HRM_CTL_F    LCTL_T(KC_F)
 #define HRM_CTL_T    LCTL_T(KC_T)
 #define HRM_CTL_J    RCTL_T(KC_J)
@@ -62,14 +62,11 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _______________QUERTY__R_MID_CSAG__________ KC_H, HRM_CTL_J, HRM_SFT_K, HRM_ALT_L, HRM_GUI_SCLN
 #define _______________QUERTY__R_BOT_______________ KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH
 
-#define ____________THUMB_LEFT____________ KC_LCTL, LY_NAV, HYPR_T(KC_SPC), SC_LSPO
-#define ____________THUMB_RIGHT___________ SC_RSPC,  HYPR_T(KC_ENT), LY_NAV, KC_RCTL
+#define ____________THUMB_LEFT____________ KC_LCTL, LY_NAV, MEH_T(KC_SPC), KC_LSFT
+#define ____________THUMB_RIGHT___________ KC_RSFT,  MEH_T(KC_ENT), LY_NAV, KC_RCTL
 
-#define ____THREE_THUMB_LEFT_____ LY_NAV, HYPR_T(KC_SPC), SC_LSPO
-#define ____THREE_THUMB_RIGHT____ SC_RSPC, HYPR_T(KC_ENT), LY_NAV
-
-#define ________OSM_LEFT_________ KC_LGUI,  LC_LALT, OS_CTRL
-#define ________OSM_RIGHT________ OS_CTRL, OS_ALT, OS_CMD
+#define ____THREE_THUMB_LEFT_____ LY_NAV, MEH_T(KC_SPC), KC_LSFT
+#define ____THREE_THUMB_RIGHT____ KC_RSFT, MEH_T(KC_ENT), LY_NAV
 
 #define __________________RGB_INC__________________ RGB_MOD,  RGB_SPI, RGB_HUI, RGB_SAI, RGB_VAI
 #define __________________RGB_DEC__________________ RGB_RMOD, RGB_SPD, RGB_HUD, RGB_SAD, RGB_VAD

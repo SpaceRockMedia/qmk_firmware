@@ -17,7 +17,7 @@
 #define KEYMAP_DISPLAY
 #include "spacerock.h"
 
-#define __________UPPER__THUMB__________ KC_MEH, KC_HYPR, KC_HYPR, KC_MEH
+#define __________UPPER__THUMB__________ KC_HYPR, KC_MEH, KC_MEH, KC_HYPR
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
