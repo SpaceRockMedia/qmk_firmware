@@ -50,7 +50,7 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _______________COLEMAK_R_TOP_______________ KC_J, KC_L,    KC_U,    KC_Y,    KC_SCLN
 #define _______________COLEMAK_R_MID_______________ KC_M, KC_N,    KC_E,    KC_I,    KC_O
 #define _______________COLEMAK_R_MID_CSAG__________ KC_M, HRM_CTL_N, HRM_SFT_E, HRM_ALT_I, HRM_GUI_O
-#define _______________COLEMAK_R_BOT_______________ KC_K, KC_H,    KC_COMM, KC_DOT,  KC_SLSH
+#define _______________COLEMAK_R_BOT_______________ KC_K, KC_H,    KC_COMM, KC_DOT,  KC_QUES
 
 #define _______________QUERTY__L_TOP_______________ KC_Q, KC_W, KC_E, KC_R, KC_T
 #define _______________QUERTY__L_MID_______________ KC_A, KC_S, KC_D, KC_F, KC_G
@@ -60,7 +60,7 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _______________QUERTY__R_TOP_______________ KC_Y, KC_U, KC_I,    KC_O,   KC_P
 #define _______________QUERTY__R_MID_______________ KC_H, KC_J, KC_K, KC_L, KC_SCLN
 #define _______________QUERTY__R_MID_CSAG__________ KC_H, HRM_CTL_J, HRM_SFT_K, HRM_ALT_L, HRM_GUI_SCLN
-#define _______________QUERTY__R_BOT_______________ KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH
+#define _______________QUERTY__R_BOT_______________ KC_N, KC_M, KC_COMM, KC_DOT, KC_QUES
 
 #define ____________THUMB_LEFT____________ KC_LCTL, LY_NAV, MEH_T(KC_SPC), KC_LSFT
 #define ____________THUMB_RIGHT___________ KC_RSFT,  MEH_T(KC_ENT), LY_NAV, KC_RCTL

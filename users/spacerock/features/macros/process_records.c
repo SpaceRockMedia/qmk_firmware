@@ -6,10 +6,6 @@
 
 bool process_record_features_macros(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-// ┌───────────────────────────────────────────────────────────┐
-// │ q m k                                                     │
-// └───────────────────────────────────────────────────────────┘
-
         case MAKE_H:
             if (record->event.pressed) {
                 #ifdef KEYBOARD_klor_2040
@@ -124,6 +120,8 @@ bool process_record_features_macros(uint16_t keycode, keyrecord_t *record) {
         //     #endif // HAPTIC_ENABL
         //     }
         //     break;
+        default:
+            return true;
 
     }
     return true;

@@ -38,6 +38,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
     }
 
+    //
+    // Repeat
+    // this needs to be the first check for keycodes unless achordion is used then
+    // that should be first
+    #ifdef FEATURE_REPEAT_KEY_ENABLE
+        if (!process_repeat_key_with_alt(keycode, record, REPEAT, ALTREP)) {
+            return false;
+        }
+    #endif
+
+    switch (keycode) {
+        case KC_QUES:
+            if (get_mods() & MOD_MASK_SHIFT && record->event.pressed) {
+                tap_code16(KC_EXLM);
+                return false;
+            }
+            break;
+    }
+
     if (!process_record_features_callum(keycode, record)) {
         return false;
     }
@@ -49,16 +68,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_record_features_macros(keycode, record)) {
         return false;
     }
-
-//
-    // Repeat
-    // this needs to be the first check for keycodes unless achordion is used then
-    // that should be first
-    #ifdef FEATURE_REPEAT_KEY_ENABLE
-        if (!process_repeat_key_with_alt(keycode, record, REPEAT, ALTREP)) {
-            return false;
-        }
-    #endif
 
     //
     // Sentence Case
