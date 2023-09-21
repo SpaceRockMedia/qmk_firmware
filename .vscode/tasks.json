@@ -35,6 +35,15 @@
       },
       "label": "Build hillside",
       "type": "shell"
+    },
+    {
+      "command": "cp -fuv *.uf2 /mnt/c/Users/shawn/Documents/",
+      "group": {
+        "isDefault": false,
+        "kind": "build"
+      },
+      "label": "move uf2",
+      "type": "shell"
     }
   ],
   // See https://go.microsoft.com/fwlink/?LinkId=733558
