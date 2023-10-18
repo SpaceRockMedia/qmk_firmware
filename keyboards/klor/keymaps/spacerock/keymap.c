@@ -25,47 +25,6 @@
 #include "spacerock.h"
 
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-// │ D E F I N I T I O N S                                                                                                                      │
-// └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-// ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
-
-
-
-// ┌───────────────────────────────────────────────────────────┐
-// │ d e f i n e   m a c r o n a m e s                         │
-// └───────────────────────────────────────────────────────────┘
-
-// LEFT HAND HOME ROW MODS ├───────────────────────────────────┐
-
-// #define GUI_A MT(MOD_LGUI, KC_A)
-// #define ALT_R MT(MOD_LALT, KC_R)
-// #define CTL_S MT(MOD_LCTL, KC_S)
-// #define SHT_T MT(MOD_LSFT, KC_T)
-
-// RIGHT HAND HOME ROW MODS ├───────────────────────────────────┐
-
-// #define SHT_N MT(MOD_RSFT, KC_N)
-// #define CTL_E MT(MOD_LCTL, KC_E)
-// #define ALT_I MT(MOD_LALT, KC_I)
-// #define GUI_O MT(MOD_LGUI, KC_O)
-
-
-
-
-
-// ┌───────────────────────────────────────────────────────────┐
-// │ d e f i n e   k e y   o v e r r i d e s                   │
-// └───────────────────────────────────────────────────────────┘
-
-// const key_override_t sve_key_override = ko_make_basic(MOD_MASK_GUI, KC_S, C(KC_S));
-
-// // This globally defines all key overrides to be used ├───────────┐
-// const key_override_t **key_overrides = (const key_override_t *[]){
-//   &sve_key_override,
-//   NULL // Null terminate the array of overrides!
-// };
-
-// ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ K E Y M A P S                                                                                                                              │
 // └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 // ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
@@ -73,49 +32,38 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_COLEMAK] = LAYOUT_wrapper(
-    //          _______________COLEMAK_L_TOP_______________,                     _______________COLEMAK_R_TOP_______________,
-    // CTL_ESC,  _______________COLEMAK_L_MID_______________,                     _______________COLEMAK_R_MID_______________,
-    // QK_LEAD,  _______________COLEMAK_L_BOT_______________, _______,  _______,  _______________COLEMAK_R_BOT_______________,  QK_LEAD,
-
              _______________QUERTY__L_TOP_______________,                    _______________QUERTY__R_TOP_______________,
-    CTL_ESC, _______________QUERTY__L_MID_______________,                    _______________QUERTY__R_MID_______________, KC_QUOT,
-    QK_LEAD, _______________QUERTY__L_BOT_______________, _______,  _______, _______________QUERTY__R_BOT_______________, QK_LEAD,
+    __LPM__, _______________QUERTY__L_MID_______________,                    _______________QUERTY__R_MID_______________, __RPM__,
+    __LPB__, _______________QUERTY__L_BOT_______________, _______,  _______, _______________QUERTY__R_BOT_______________, __RPB__,
                                ____________THUMB_LEFT____________,  ____________THUMB_RIGHT___________
     ),
 
     [_GAME] = LAYOUT_wrapper(
              _______________QUERTY__L_TOP_______________,                    _______________QUERTY__R_TOP_______________,
-    CTL_ESC, _______________QUERTY__L_MID_______________,                    _______________QUERTY__R_MID_______________, KC_QUOT,
-    QK_LEAD, _______________QUERTY__L_BOT_______________, _______,  _______, _______________QUERTY__R_BOT_______________, QK_LEAD,
+    __LPM__, _______________QUERTY__L_MID_______________,                    _______________QUERTY__R_MID_______________, __RPM__,
+    __LPB__, _______________QUERTY__L_BOT_______________, _______,  _______, _______________QUERTY__R_BOT_______________, __RPB__,
                                ____________THUMB_LEFT____________,  ____________THUMB_RIGHT___________
  ),
 
    [_NAV] = LAYOUT_wrapper(
-             KC_PGUP, M_LEFT,  KC_UP,   M_RIGHT, M_UP,                       _______, _______, _______, _______, _______,
-    KC_TAB,  KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, M_DOWN,                     _______, ________OSM_RIGHT________, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______, _______, _______,
-                               _______, LY_DEF,  _______, _______,  _______, _______, LY_SYM,  _______
- ),
-
-   [_SYM] = LAYOUT_wrapper(
-             DM_REC1, DM_PLY1, _______, _______, _______,                    KC_7,     KC_8,   KC_9,    KC_MINS, _______,
-    KC_TAB,  DM_RSTP, ________OSM_LEFT_________, _______,                    KC_4,     KC_5,   KC_6,    KC_PLUS, KC_ASTR, _______,
-    _______, DM_REC2, DM_PLY2, _______, _______, _______, _______,  _______, KC_1,     KC_2,   KC_3,    KC_DOT,  KC_SLSH, _______,
-                               _______, LY_DEF,  KC_UNDS, _______,  _______, KC_0,     LY_ADJ, _______
+             __________________NAV__LT__________________,                     KC_ASTR, KC_7,    KC_8,    KC_9,    KC_PLUS, SH_TOGG,
+    SH_TOGG, __________________NAV__LM__________________,                     KC_SLSH, KC_4,    KC_5,    KC_6,    KC_MINS, _______,
+    SNAP1,   SNAP2,   _______, _______, _______, _______, _______,  _______, KC_0,    KC_1,    KC_2,    KC_3,    KC_DOT,  _______,
+                               _______, _______,  LY_DEF, KC_UNDS,  _______, _______, LY_DEF,  _______
  ),
 
  [_MEDIA] = LAYOUT_wrapper(
              _______, _______, _______, _______, _______,                    KC_ASTR, KC_7,    KC_8,    KC_9,   KC_PLUS,
-    SH_TOGG, _______, _______, _______, _______, _______,                    KC_SLSH, KC_4,    KC_5,    KC_6,   KC_MINS,  SH_TOGG,
+    _______, _______, _______, _______, _______, _______,                    KC_SLSH, KC_4,    KC_5,    KC_6,   KC_MINS,  SH_TOGG,
     _______, _______, _______, _______, _______, _______, _______,  _______, KC_0,    KC_1,    KC_2,    KC_3,   KC_DOT,  _______,
                                _______,  LY_DEF, _______, _______,  _______, _______, _______, _______
  ),
 
    [_ADJUST] = LAYOUT_wrapper(
-             RGB_TOG, _______, _______, _______, OS_SWAP,                    OS_SWAP, _______, _______, _______, TG_DEF,
-    QK_BOOT, __________________RGB_INC__________________,                    _______, ________OSM_LEFT_________, _______, QK_BOOT,
-    MAKE_H,  __________________RGB_DEC__________________, _______,  _______, AU_TOGG, DB_TOGG, HF_TOGG, _______, _______, MAKE_H,
-                               _______, LY_DEF,  _______, _______,  _______, _______, TO(_SYM),_______
+             RGB_TOG, xxxxxxx, xxxxxxx, xxxxxxx, OS_SWAP,                    HF_TOGG, xxxxxxx, xxxxxxx, xxxxxxx, KC_MPLY,
+    QK_BOOT, __________________RGB_INC__________________,                    DB_TOGG, xxxxxxx, KC_MPRV, KC_MNXT, KC_VOLU, xxxxxxx,
+    MAKE_H,  __________________RGB_DEC__________________, xxxxxxx,  xxxxxxx, AU_TOGG, xxxxxxx, xxxxxxx, xxxxxxx, KC_VOLD, KC_MUTE,
+                               xxxxxxx, LY_DEF,  xxxxxxx, xxxxxxx,  xxxxxxx, xxxxxxx, LY_DEF,xxxxxxx
  )
 
 //  [_TEMPLATE] = LAYOUT_polydactyl(
@@ -132,7 +80,6 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [_COLEMAK] = { ENCODER_CCW_CW(KC_WH_U,  KC_WH_D),   ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [_GAME] =    { ENCODER_CCW_CW(KC_WH_U,  KC_WH_D),   ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [_NAV] =     { ENCODER_CCW_CW(KC_RIGHT, KC_LEFT),   ENCODER_CCW_CW(KC_MNXT, KC_MPRV) },
-    [_SYM] =     { ENCODER_CCW_CW(RGB_HUI,  RGB_HUD),   ENCODER_CCW_CW(RGB_VAI, RGB_SAI) },
     [_MEDIA] =   { ENCODER_CCW_CW(KC_MPRV,  KC_MNXT),   ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [_ADJUST] =  { ENCODER_CCW_CW(RGB_MOD,  RGB_RMOD),  ENCODER_CCW_CW(RGB_SPI, RGB_SPD) },
 };

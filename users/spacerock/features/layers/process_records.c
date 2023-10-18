@@ -3,6 +3,10 @@
 #include "spacerock.h"
 #include "features/layers/process_records.h"
 
+#ifdef HAPTIC_ENABLE
+#    include "drivers/haptic/drv2605l.h"
+#endif
+
 bool process_record_features_layers(uint16_t keycode, keyrecord_t *record) {
 
     //
@@ -59,7 +63,7 @@ bool process_record_features_layers(uint16_t keycode, keyrecord_t *record) {
                     layer_move(_GAME);
                 }
                 #ifdef HAPTIC_ENABLE
-                  drv2605l_pulse(transition_hum);
+                  DRV_pulse(DRV2605L_EFFECT_TRANSITION_HUM_1_100);
                 #endif // HAPTIC_ENABLE
             }
             return false;
@@ -73,7 +77,7 @@ bool process_record_features_layers(uint16_t keycode, keyrecord_t *record) {
                     layer_move(_COLEMAK);
                 }
                 #ifdef HAPTIC_ENABLE
-                  drv2605l_pulse(transition_hum);
+                  DRV_pulse(DRV2605L_EFFECT_TRANSITION_HUM_1_100);
                 #endif // HAPTIC_ENABLE
             }
             return false;

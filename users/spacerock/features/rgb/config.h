@@ -5,13 +5,23 @@
 
 #define RGB_MATRIX_KEYPRESSES // reacts to keypresses
 #define RGB_MATRIX_FRAMEBUFFER_EFFECTS // enable framebuffer effects
-#define RGB_MATRIX_TIMEOUT 0 // number of milliseconds to wait until rgb automatically turns off
+#define RGB_MATRIX_TIMEOUT 3000000 // number of milliseconds to wait until rgb automatically turns off
 #define RGB_DISABLE_WHEN_USB_SUSPENDED // turn off effects when suspended
 #define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
-#define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_SOLID_COLOR // Sets the default mode, if none has been set
+#define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_TYPING_HEATMAP // Sets the default mode, if none has been set
+#ifdef RGB_MATRIX_MAXIMUM_BRIGHTNESS
+#    undef RGB_MATRIX_MAXIMUM_BRIGHTNESS
+#endif
+#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150  // limits maximum brightness of LEDs (max 255). Higher may cause the controller to crash.
 #define RGB_MATRIX_DEFAULT_VAL RGB_MATRIX_MAXIMUM_BRIGHTNESS // Sets the default brightness value, if none has been set
 #define RGB_MATRIX_DEFAULT_SPD 127 // Sets the default animation speed, if none has been set
 #define ENABLE_RGB_MATRIX_ALPHAS_MODS
+#define RGB_DISABLE_WHEN_USB_SUSPENDED     // turn off effects when suspended
+#ifdef SPLIT_KEYBOARD
+#    ifndef SPLIT_TRANSPORT_MIRROR
+#        #define SPLIT_TRANSPORT_MIRROR // If LED_MATRIX_KEYPRESSES or LED_MATRIX_KEYRELEASES is enabled, you also will want to enable SPLIT_TRANSPORT_MIRROR
+#    endif
+#endif
 
 // #define ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN
 // #define ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT
@@ -25,7 +35,7 @@
 // #define ENABLE_RGB_MATRIX_CYCLE_ALL
 // #define ENABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT
 // #define ENABLE_RGB_MATRIX_CYCLE_UP_DOWN
-#define ENABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON
+// #define ENABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON
 // #define ENABLE_RGB_MATRIX_CYCLE_OUT_IN
 // #define ENABLE_RGB_MATRIX_CYCLE_OUT_IN_DUAL
 // #define ENABLE_RGB_MATRIX_CYCLE_PINWHEEL
@@ -45,18 +55,18 @@
 #define ENABLE_RGB_MATRIX_TYPING_HEATMAP
 // #define ENABLE_RGB_MATRIX_DIGITAL_RAIN
 // requires RGB_MATRIX_KEYPRESSES or RGB_MATRIX_KEYRELEASES
-#define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE
-#define ENABLE_RGB_MATRIX_SOLID_REACTIVE
-#define ENABLE_RGB_MATRIX_SOLID_REACTIVE_WIDE
-#define ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTIWIDE
-#define ENABLE_RGB_MATRIX_SOLID_REACTIVE_CROSS
-#define ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTICROSS
-#define ENABLE_RGB_MATRIX_SOLID_REACTIVE_NEXUS
-#define ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS
-#define ENABLE_RGB_MATRIX_SPLASH
-#define ENABLE_RGB_MATRIX_MULTISPLASH
-#define ENABLE_RGB_MATRIX_SOLID_SPLASH
-#define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
+// #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE
+// #define ENABLE_RGB_MATRIX_SOLID_REACTIVE
+// #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_WIDE
+// #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTIWIDE
+// #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_CROSS
+// #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTICROSS
+// #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_NEXUS
+// #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS
+// #define ENABLE_RGB_MATRIX_SPLASH
+// #define ENABLE_RGB_MATRIX_MULTISPLASH
+// #define ENABLE_RGB_MATRIX_SOLID_SPLASH
+// #define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
 
 // Heatmap Config
 

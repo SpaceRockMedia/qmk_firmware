@@ -116,7 +116,7 @@ bool process_record_features_macros(uint16_t keycode, keyrecord_t *record) {
         // case KC_MPLY:
         //     if (record->event.pressed) {
         //     #ifdef HAPTIC_ENABLE
-        //             drv2605l_pulse(sharp_click);
+        //             DRV_pulse(sharp_click);
         //     #endif // HAPTIC_ENABL
         //     }
         //     break;

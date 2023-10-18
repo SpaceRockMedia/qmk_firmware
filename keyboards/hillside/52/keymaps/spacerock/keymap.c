@@ -13,15 +13,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] = LAYOUT_wrapper(
         __LPT__, _______________COLEMAK_L_TOP_______________,                                          _______________COLEMAK_R_TOP_______________, __RPT__,
         __LPM__, _______________COLEMAK_L_MID_GASC__________,                                          _______________COLEMAK_R_MID_CSAG__________, __RPM__,
-        __LPB__, _______________COLEMAK_L_BOT_______________, KC_MEH,                          KC_MEH, _______________COLEMAK_R_BOT_______________, __RPB__,
-        KC_MUTE, QK_LEAD, _______,          ____________THUMB_LEFT____________,     ____________THUMB_RIGHT___________,          _______, QK_LEAD, KC_MPLY
+        __LPB__, _______________COLEMAK_L_BOT_______________, KC_HYPR,                        KC_HYPR, _______________COLEMAK_R_BOT_______________, __RPB__,
+        RGB_TOG, RGB_MOD, _______,          ____________THUMB_LEFT____________,     ____________THUMB_RIGHT___________,          _______, QK_LEAD, KC_MPLY
     ),
 
     [_GAME] = LAYOUT_wrapper(
         __LPT__, _______________QUERTY__L_TOP_______________,                                          _______________QUERTY__R_TOP_______________, __RPT__,
         __LPM__, _______________QUERTY__L_MID_GASC__________,                                          _______________QUERTY__R_MID_CSAG__________, __RPM__,
-        __LPB__, _______________QUERTY__L_BOT_______________, KC_MEH,                          KC_MEH, _______________QUERTY__R_BOT_______________, __RPB__,
-        KC_MUTE, QK_LEAD, _______,          ____________THUMB_LEFT____________,    ____________THUMB_RIGHT___________,          _______, QK_LEAD, KC_MPLY
+        __LPB__, _______________QUERTY__L_BOT_______________, KC_HYPR,                        KC_HYPR, _______________QUERTY__R_BOT_______________, __RPB__,
+        RGB_TOG, RGB_MOD, _______,          ____________THUMB_LEFT____________,    ____________THUMB_RIGHT___________,          _______, KC_MPRV, KC_MNXT
     ),
 
     [_NAV] = LAYOUT_wrapper(
@@ -55,13 +55,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //      _______, _______, _______,          _______, _______, _______, _______,   _______, _______, _______, _______,          _______, _______, _______
 //    ),
 
-// #if defined(ENCODER_MAP_ENABLE)
-// const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
-//     [_COLEMAK] = { ENCODER_CCW_CW(KC_WH_D,  KC_WH_U),   ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-//     [_GAME] =    { ENCODER_CCW_CW(KC_WH_D,  KC_WH_U),   ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-//     [_NAV] =     { ENCODER_CCW_CW(KC_RIGHT, KC_LEFT),   ENCODER_CCW_CW(KC_MNXT, KC_MPRV) },
-//     [_SYM] =     { ENCODER_CCW_CW(RGB_HUI,  RGB_HUD),   ENCODER_CCW_CW(RGB_VAI, RGB_SAI) },
-//     [_MEDIA] =   { ENCODER_CCW_CW(KC_MPRV,  KC_MNXT),   ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-//     [_ADJUST] =  { ENCODER_CCW_CW(RGB_MOD,  RGB_RMOD),  ENCODER_CCW_CW(RGB_SPI, RGB_SPD) },
-// };
-// #endif
+#if defined(ENCODER_MAP_ENABLE)
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
+    [_COLEMAK] = { ENCODER_CCW_CW(RGB_MOD, RGB_RMOD),   ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    [_GAME] =    { ENCODER_CCW_CW(KC_WH_D,  KC_WH_U),   ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    [_NAV] =     { ENCODER_CCW_CW(KC_RIGHT, KC_LEFT),   ENCODER_CCW_CW(KC_MNXT, KC_MPRV) },
+    [_MEDIA] =   { ENCODER_CCW_CW(KC_MPRV,  KC_MNXT),   ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    [_ADJUST] =  { ENCODER_CCW_CW(RGB_MOD,  RGB_RMOD),  ENCODER_CCW_CW(RGB_SPI, RGB_SPD) },
+};
+#endif

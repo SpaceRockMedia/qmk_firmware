@@ -44,6 +44,24 @@
       },
       "label": "move uf2",
       "type": "shell"
+    },
+    {
+      "command": "clear && qmk compile -kb klor/2040 -km spacerock",
+      "group": {
+        "isDefault": false,
+        "kind": "build"
+      },
+      "label": "Build klor",
+      "type": "shell"
+    },
+    {
+      "command": "clear && qmk compile -kb klor/2040 -km buildhelper",
+      "group": {
+        "isDefault": false,
+        "kind": "build"
+      },
+      "label": "Build klor buildhelper",
+      "type": "shell"
     }
   ],
   // See https://go.microsoft.com/fwlink/?LinkId=733558

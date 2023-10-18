@@ -17,6 +17,7 @@ LTO_ENABLE       = no
 
 ENCODER_ENABLE     ?= no
 ENCODER_MAP_ENABLE ?= no
+HAPTIC_ENABLE      ?= no
 MOUSEKEY_ENABLE    ?= no       # Mouse keys
 NKRO_ENABLE        ?= yes
 SPLIT_KEYBOARD     ?= yes
