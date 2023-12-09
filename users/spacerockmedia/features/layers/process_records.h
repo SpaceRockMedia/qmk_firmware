@@ -3,6 +3,6 @@
 
 #pragma once
 
-#include "spacerock.h"
+#include "spacerockmedia.h"
 
 bool process_record_features_layers(uint16_t keycode, keyrecord_t *record);

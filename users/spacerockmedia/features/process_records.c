@@ -1,5 +1,5 @@
 #include QMK_KEYBOARD_H
-#include "spacerock.h"
+#include "spacerockmedia.h"
 #include "features/process_records.h"
 #include "features/callum/process_records.h"
 #include "features/layers/process_records.h"

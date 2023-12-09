@@ -1,6 +1,6 @@
 
 #include QMK_KEYBOARD_H
-#include "spacerock.h"
+#include "spacerockmedia.h"
 #include "features/macros/process_records.h"
 
 bool process_record_features_macros(uint16_t keycode, keyrecord_t *record) {
@@ -12,15 +12,15 @@ bool process_record_features_macros(uint16_t keycode, keyrecord_t *record) {
         case MAKE_H:
             if (record->event.pressed) {
                 #ifdef KEYBOARD_klor_2040
-                    SEND_STRING ("qmk compile -kb klor/2040 -km spacerock");
+                    SEND_STRING ("qmk compile -kb klor/2040 -km spacerockmedia");
                     tap_code(KC_ENTER);
                 #endif
                 #ifdef KEYBOARD_splitkb_kyria_rev3
-                    SEND_STRING ("qmk compile -kb splitkb/kyria/rev3 -km spacerock");
+                    SEND_STRING ("qmk compile -kb splitkb/kyria/rev3 -km spacerockmedia");
                     tap_code(KC_ENTER);
                 #endif
                 #ifdef KEYBOARD_splitkb_kyria_rev3
-                    SEND_STRING ("qmk compile -kb hillside/52 -km spacerock");
+                    SEND_STRING ("qmk compile -kb hillside/52 -km spacerockmedia");
                     tap_code(KC_ENTER);
                 #endif
             }

@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
-#include "spacerock.h"
+#include "spacerockmedia.h"
 /*
 Since our quirky block definitions are basically a list of comma separated
 arguments, we need a wrapper in order for these definitions to be
@@ -41,8 +41,13 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _______________QUERTY__R_MID_______________ KC_H, KC_J, KC_K,    KC_L,   KC_SCLN
 #define _______________QUERTY__R_BOT_______________ KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH
 
-#define ____________THUMB_LEFT____________ KC_LCTL, SC_LSPO, HYPR_T(KC_SPC), LY_NAV
-#define ____________THUMB_RIGHT___________ LY_NAV,  HYPR_T(KC_ENT), SC_RSPC, KC_RCTL
+#define __2THUMB_RIGHT__ LY_NAV,  HYPR_T(KC_ENT)
+
+#define _______3THUMB_LEFT_______ SC_LSPO, HYPR_T(KC_SPC), LY_NAV
+#define _______3THUMB_RIGHT______ __2THUMB_RIGHT__, SC_RSPC
+
+#define ____________THUMB_LEFT____________ KC_LCTL, _______3THUMB_LEFT_______
+#define ____________THUMB_RIGHT___________ _______3THUMB_RIGHT______, KC_RCTL
 
 #define ________OSM_LEFT_________ KC_LGUI,  LC_LALT, OS_CTRL
 #define ________OSM_RIGHT________ OS_CTRL, OS_ALT, OS_CMD
@@ -59,6 +64,6 @@ NOTE: These are all the same length.  If you do a search/replace
 #define __LPM__ KC_LALT
 #define __LPB__ KC_LGUI
 
-#define __RPT__ MO(_ADJUST)
+#define __RPT__ LY_MED
 #define __RPM__ KC_LALT
 #define __RPB__ KC_RGUI

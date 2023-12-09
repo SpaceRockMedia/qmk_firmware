@@ -20,7 +20,7 @@
 #include <stdio.h>
 #include "lib/lib8tion/lib8tion.h"
 
-#include "spacerock.h"
+#include "spacerockmedia.h"
 #include "features/oled/oled.h"
 #include "features/oled/assets.h"
 

@@ -1,4 +1,4 @@
-SRC += $(USER_PATH)/spacerock.c
+SRC += $(USER_PATH)/spacerockmedia.c
 
 -include $(USER_PATH)/features/rules.mk
 # ┌─────────────────────────────────────────────────┐

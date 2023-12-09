@@ -8,8 +8,17 @@
 #define RGB_MATRIX_TIMEOUT 0 // number of milliseconds to wait until rgb automatically turns off
 #define RGB_DISABLE_WHEN_USB_SUSPENDED // turn off effects when suspended
 #define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
+#if defined(RGB_MATRIX_DEFAULT_MODE)
+#    undef RGB_MATRIX_DEFAULT_MODE
+#endif
 #define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_SOLID_COLOR // Sets the default mode, if none has been set
+#if defined(RGB_MATRIX_DEFAULT_VAL)
+#    undef RGB_MATRIX_DEFAULT_VAL
+#endif
 #define RGB_MATRIX_DEFAULT_VAL RGB_MATRIX_MAXIMUM_BRIGHTNESS // Sets the default brightness value, if none has been set
+#if defined(RGB_MATRIX_DEFAULT_SPD)
+#    undef RGB_MATRIX_DEFAULT_SPD
+#endif
 #define RGB_MATRIX_DEFAULT_SPD 127 // Sets the default animation speed, if none has been set
 #define ENABLE_RGB_MATRIX_ALPHAS_MODS
 

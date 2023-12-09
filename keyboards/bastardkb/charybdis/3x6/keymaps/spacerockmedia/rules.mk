@@ -4,4 +4,5 @@
 
 AUDIO_ENABLE = no
 MUSIC_ENABLE = no
-CONVERT_TO       = promicro_rp2040
+OLED_ENABLE  = no
+CONVERT_TO   = promicro_rp2040
